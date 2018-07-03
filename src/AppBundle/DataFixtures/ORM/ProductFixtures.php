@@ -6,7 +6,6 @@ use AppBundle\DataFixtures\Helper\FixtureHelper;
 use AppBundle\Entity\Product;
 use Doctrine\Common\Persistence\ObjectManager;
 
-
 class ProductFixtures extends FixtureHelper
 {
     public function load(ObjectManager $manager)

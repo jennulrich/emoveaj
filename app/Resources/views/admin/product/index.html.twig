@@ -4,12 +4,12 @@
     <table id="product" class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Label</th>
-                <th>Reference</th>
-                <th>Description</th>
-                <th>Publishedat</th>
-                <th>Actions</th>
+                <th style="width:5%;">Id</th>
+                <th style="width:15%;">Label</th>
+                <th style="width:15%;">Reference</th>
+                <th style="width:35%;">Description</th>
+                <th style="width:15%;">Publishedat</th>
+                <th style="width:15%;">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -21,7 +21,7 @@
                 <td>{{ product.description }}</td>
                 <td>{% if product.publishedAt %}{{ product.publishedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>
-                    <ul style="list-style-type: none;">
+                    <ul class="puce-none">
                         <li>
                             <a href="{{ path('product_show', { 'id': product.id }) }}"> <i class="fa fa-eye"></i>Détail</a>
                         </li>

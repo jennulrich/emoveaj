@@ -13,6 +13,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{{ asset('template-emove/font-awesome/css/font-awesome.min.css') }}">
+    <!-- Style Admin -->
+    <link rel="stylesheet" href="{{ asset('template-emove/css/style-admin.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('template-emove/css/adminlte.min.css') }}">
     <!-- Google Font: Source Sans Pro -->
@@ -32,7 +34,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <p class="nav-link" style="margin-bottom:0px;">
+                <p class="nav-link margin0">
                     {% if app.request.attributes.get('_route') == 'product_index' %} Liste des produits {% endif %}
                     {% if app.request.attributes.get('_route') == 'product_show' %} Détail du produit {% endif %}
                     {% if app.request.attributes.get('_route') == 'product_edit' %} Modification du produit {% endif %}
@@ -89,17 +91,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <li class="nav-item has-treeview menu-open">
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="#" class="nav-link active">
+                                <a href="{{ path('product_index') }}" class="nav-link active">
                                     <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Active Page</p>
+                                    <p>Liste des produits</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{ path('order_index') }}" class="nav-link">
                                     <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Inactive Page</p>
+                                    <p>Commande</p>
                                 </a>
-                            </li>
+                            </li>s
                         </ul>
                     </li>
                 </ul>

@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -48,6 +49,28 @@ class Product
      * @ORM\Column(name="published_at", type="datetime")
      */
     private $publishedAt;
+
+    /**
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\CartProduct", mappedBy="product", cascade={"remove"})
+     */
+    private $cartProducts;
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getCartProducts(): ArrayCollection
+    {
+        return $this->cartProducts;
+    }
+
+    /**
+     * @param ArrayCollection $cartProducts
+     */
+    public function setCartProducts(ArrayCollection $cartProducts): void
+    {
+        $this->cartProducts = $cartProducts;
+    }
 
 
     /**

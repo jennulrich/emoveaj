@@ -1,9 +1,7 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/layout-admin.html.twig' %}
 
-{% block body %}
-    <h1>Products list</h1>
-
-    <table>
+{% block content %}
+    <table id="product" class="table">
         <thead>
             <tr>
                 <th>Id</th>
@@ -42,4 +40,15 @@
             <a href="{{ path('product_new') }}">Create a new product</a>
         </li>
     </ul>
+{% endblock %}
+{% block javascripts %}
+    <script>
+        $(document).ready( function () {
+            $('#product').DataTable({
+                "language": {
+                    "search": "Recherche:"
+                }
+            });
+        } );
+    </script>
 {% endblock %}

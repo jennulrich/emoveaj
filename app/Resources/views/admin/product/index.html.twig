@@ -21,12 +21,12 @@
                 <td>{{ product.description }}</td>
                 <td>{% if product.publishedAt %}{{ product.publishedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>
-                    <ul>
+                    <ul style="list-style-type: none;">
                         <li>
-                            <a href="{{ path('product_show', { 'id': product.id }) }}">show</a>
+                            <a href="{{ path('product_show', { 'id': product.id }) }}"> <i class="fa fa-eye"></i>Détail</a>
                         </li>
                         <li>
-                            <a href="{{ path('product_edit', { 'id': product.id }) }}">edit</a>
+                            <a href="{{ path('product_edit', { 'id': product.id }) }}"><i class="fa fa-edit"></i>Modifier</a>
                         </li>
                     </ul>
                 </td>

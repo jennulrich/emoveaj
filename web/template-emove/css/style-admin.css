@@ -1,6 +1,10 @@
 .margin0{
     margin-bottom:0;
 }
+.admin-add{
+    margin-top: 20px;
+    text-align: right;
+}
 div.content a{
     color: #B3272D !important;
 }
@@ -14,13 +18,16 @@ ul.puce-none li a{
 td.sorting_1 a{
     color: #B3272D;
 }
-i.fa-eye, i.fa-edit{
+i.fa-eye, i.fa-edit, i.fa-trash, i.fa-arrow-left{
     margin-right:5px;
 }
 .page-item.active .page-link{
     color: white !important;
-    background-color: #B3266E !important;
-    border-color: #B3266E !important;
+    background-color: #B3272D !important;
+    border-color: #B3272D !important;
+}
+table#product{
+    background-color: white;
 }
 div#product_paginate ul.pagination a{
     outline: none !important;
@@ -28,3 +35,80 @@ div#product_paginate ul.pagination a{
 .page-link:hover{
     box-shadow: pink !important;
 }
+button.add{
+    background-color: #B3272D;
+    color: white;
+}
+button.return{
+    color: white;
+    background-color: #343A40;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+input.delete{
+    background-color: #B3272D;
+    border-color: #B3272D;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+#btn-edit{
+    background-color: white;
+    border-color: #B3272D;
+    color: white;
+    padding: 9px 27px;
+    border-radius: 6px;
+}
+table#table-show-product td{
+    padding-left:15px;
+}
+
+/** Formulaire Modif Product **/
+input#appbundle_product_label, input#appbundle_product_reference, textarea#appbundle_product_description{
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    box-shadow: inset 0 0 0 transparent;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+select#appbundle_product_publishedAt_date_month, select#appbundle_product_publishedAt_date_day, select#appbundle_product_publishedAt_date_year{
+    display: block;
+    width: 20%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    box-shadow: inset 0 0 0 transparent;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+select#appbundle_product_publishedAt_time_hour, select#appbundle_product_publishedAt_time_minute{
+    display: block;
+    width: 15%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    box-shadow: inset 0 0 0 transparent;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+div#appbundle_product_publishedAt_date, div#appbundle_product_publishedAt_time{
+    display: flex;
+}
+/** Fin Formulaire Modif Product **/

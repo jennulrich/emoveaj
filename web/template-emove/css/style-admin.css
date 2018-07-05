@@ -1,7 +1,9 @@
 .margin0{
     margin-bottom:0;
 }
-
+div.content a{
+    color: #B3272D !important;
+}
 .puce-none{
     list-style-type: none;
     padding-left: 0;
@@ -11,4 +13,18 @@ ul.puce-none li a{
 }
 td.sorting_1 a{
     color: #B3272D;
+}
+i.fa-eye, i.fa-edit{
+    margin-right:5px;
+}
+.page-item.active .page-link{
+    color: white !important;
+    background-color: #B3266E !important;
+    border-color: #B3266E !important;
+}
+div#product_paginate ul.pagination a{
+    outline: none !important;
+}
+.page-link:hover{
+    box-shadow: pink !important;
 }

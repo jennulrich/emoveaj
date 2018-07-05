@@ -38,6 +38,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     {% if app.request.attributes.get('_route') == 'product_index' %} Liste des produits {% endif %}
                     {% if app.request.attributes.get('_route') == 'product_show' %} Détail du produit {% endif %}
                     {% if app.request.attributes.get('_route') == 'product_edit' %} Modification du produit {% endif %}
+                    {% if app.request.attributes.get('_route') == 'product_new' %} Ajout d'un produit {% endif %}
+                    {% if app.request.attributes.get('_route') == 'order_index' %} Liste des commandes{% endif %}
+                    {% if app.request.attributes.get('_route') == 'order_show' %} Détail de la commande{% endif %}
                 </p>
             </li>
         </ul>
@@ -91,17 +94,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <li class="nav-item has-treeview menu-open">
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{ path('product_index') }}" class="nav-link active">
+                                <a href="{{ path('product_index') }}" class="nav-link
+                                {%  if app.request.attributes.get('_route') == 'product_index'
+                                    or app.request.attributes.get('_route') == 'product_show'
+                                    or app.request.attributes.get('_route') == 'product_edit'
+                                    or app.request.attributes.get('_route') == 'product_new'
+                                %}active{% endif %}">
                                     <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Liste des produits</p>
+                                    <p>Produits</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ path('order_index') }}" class="nav-link">
+                                <a href="{{ path('order_index') }}" class="nav-link
+                                    {% if app.request.attributes.get('_route') == 'order_index'
+                                       or app.request.attributes.get('_route') == 'order_show'
+                                    %}active{% endif %}">
                                     <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Commande</p>
+                                    <p>Commandes</p>
                                 </a>
-                            </li>s
+                            </li>
                         </ul>
                     </li>
                 </ul>

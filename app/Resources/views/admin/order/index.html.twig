@@ -1,17 +1,16 @@
 {% extends 'admin/layout-admin.html.twig' %}
 
 {% block content %}
-    <h1>Orders list</h1>
 
-    <table>
+    <table id="order" class="table">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Createdat</th>
-                <th>Comment</th>
-                <th>Ispaid</th>
-                <th>Status</th>
-                <th>Actions</th>
+                <th style="width:5%;">Id</th>
+                <th style="width:15%;">Createdat</th>
+                <th style="width:45%;">Comment</th>
+                <th style="width:10%;">Ispaid</th>
+                <th style="width:10%;">Status</th>
+                <th style="width:15%;">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -23,9 +22,9 @@
                 <td>{% if order.isPaid %}Yes{% else %}No{% endif %}</td>
                 <td>{{ order.status }}</td>
                 <td>
-                    <ul>
+                    <ul class="puce-none">
                         <li>
-                            <a href="{{ path('order_show', { 'id': order.id }) }}">show</a>
+                            <a href="{{ path('order_show', { 'id': order.id }) }}"><i class="fa fa-eye"></i>Détail</a>
                         </li>
                     </ul>
                 </td>
@@ -33,6 +32,15 @@
         {% endfor %}
         </tbody>
     </table>
-
-    
+{% endblock %}
+{% block javascripts %}
+    <script>
+        $(document).ready( function () {
+            $('#order').DataTable({
+                "language": {
+                    "search": "Recherche:"
+                }
+            });
+        } );
+    </script>
 {% endblock %}

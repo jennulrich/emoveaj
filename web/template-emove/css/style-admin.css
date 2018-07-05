@@ -6,3 +6,9 @@
     list-style-type: none;
     padding-left: 0;
 }
+ul.puce-none li a{
+    color: #B3272D;
+}
+td.sorting_1 a{
+    color: #B3272D;
+}

@@ -1,39 +1,14 @@
 .margin0{
     margin-bottom:0;
 }
-.admin-add{
-    margin-top: 20px;
-    text-align: right;
-}
 div.content a{
     color: #B3272D !important;
 }
-.puce-none{
-    list-style-type: none;
-    padding-left: 0;
-}
-ul.puce-none li a{
-    color: #B3272D;
-}
-td.sorting_1 a{
-    color: #B3272D;
-}
-i.fa-eye, i.fa-edit, i.fa-trash, i.fa-arrow-left{
-    margin-right:5px;
-}
-.page-item.active .page-link{
-    color: white !important;
-    background-color: #B3272D !important;
-    border-color: #B3272D !important;
-}
-table#product{
-    background-color: white;
-}
-div#product_paginate ul.pagination a{
-    outline: none !important;
-}
-.page-link:hover{
-    box-shadow: pink !important;
+/** Bouton add, delete, edit, return **/
+.admin-add{
+    margin-top: 20px;
+    padding-right: 17px !important;
+    text-align: right;
 }
 button.add{
     background-color: #B3272D;
@@ -60,9 +35,36 @@ input.delete{
     padding: 9px 27px;
     border-radius: 6px;
 }
-table#table-show-product td{
+/** Fin bouton **/
+/** css tableau **/
+.puce-none{
+    list-style-type: none;
+    padding-left: 0;
+}
+td.sorting_1 a{
+    color: #B3272D;
+}
+i.fa-eye, i.fa-edit, i.fa-trash, i.fa-arrow-left{
+    margin-right:5px;
+}
+.page-item.active .page-link{
+    color: white !important;
+    background-color: #B3272D !important;
+    border-color: #B3272D !important;
+}
+table#product, table#order{
+    background-color: white;
+}
+div#margin-table{
+    padding:0 17px !important;
+}
+div#product_paginate ul.pagination a{
+    outline: none !important;
+}
+table#table-show td{
     padding-left:15px;
 }
+/** Fin css tableau **/
 
 /** Formulaire Modif Product **/
 input#appbundle_product_label, input#appbundle_product_reference, textarea#appbundle_product_description{

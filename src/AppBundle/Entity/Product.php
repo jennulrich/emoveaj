@@ -44,6 +44,38 @@ class Product
     private $description;
 
     /**
+     * @var Category
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="products")
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $category;
+
+    /**
+     * Product constructor.
+     */
+    public function __construct()
+    {
+        $this->variants = new ArrayCollection();
+    }
+
+    /**
+     * @return Category
+     */
+    public function getCategory(): Category
+    {
+        return $this->category;
+    }
+
+    /**
+     * @param Category $category
+     * return Product
+     */
+    public function setCategory(Category $category): void
+    {
+        $this->category = $category;
+    }
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="published_at", type="datetime")
@@ -63,15 +95,6 @@ class Product
     {
         return $this->cartProducts;
     }
-
-    /**
-     * @param ArrayCollection $cartProducts
-     */
-    public function setCartProducts(ArrayCollection $cartProducts): void
-    {
-        $this->cartProducts = $cartProducts;
-    }
-
 
     /**
      * Get id

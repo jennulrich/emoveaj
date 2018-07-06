@@ -106,14 +106,14 @@ class ProductController extends Controller
      */
     public function deleteAction(Request $request, Product $product)
     {
-        $form = $this->createDeleteForm($product);
-        $form->handleRequest($request);
+        //$form = $this->createDeleteForm($product);
+        //$form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        //if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($product);
             $em->flush();
-        }
+        //}
 
         return $this->redirectToRoute('product_index');
     }

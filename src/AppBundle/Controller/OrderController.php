@@ -32,7 +32,7 @@ class OrderController extends Controller
     {
         $orders = $this->orderManager->getList();
 
-        return $this->render('order/index.html.twig', array(
+        return $this->render('admin/order/index.html.twig', array(
             'orders' => $orders,
         ));
     }
@@ -47,7 +47,7 @@ class OrderController extends Controller
     {
         $order = $this->orderManager->get($id);
 
-        return $this->render('order/show.html.twig', array(
+        return $this->render('admin/order/show.html.twig', array(
             'order' => $order,
         ));
     }

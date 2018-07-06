@@ -1,0 +1,41 @@
+{% extends 'admin/layout-admin.html.twig' %}
+
+{% block content %}
+
+    <a href="{{ path('product_index') }}"><button type="button" class="btn return"><i class="fa fa-arrow-left"></i>Retour à la liste</button></a>
+    <table id="table-show" class="card">
+        <tbody class="card-body">
+            <tr>
+                <th>Id</th>
+                <td>{{ product.id }}</td>
+            </tr>
+            <tr>
+                <th>Label</th>
+                <td>{{ product.label }}</td>
+            </tr>
+            <tr>
+                <th>Reference</th>
+                <td>{{ product.reference }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ product.description }}</td>
+            </tr>
+            <tr>
+                <th>Publishedat</th>
+                <td>{% if product.publishedAt %}{{ product.publishedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+        <div class="row">
+            <div class="col-md-2">
+                <button type="button" id="btn-edit" class="btn btn-light"><a href="{{ path('product_edit', { 'id': product.id }) }}" class="card-link">Modifier</a></button>
+            </div>
+            <div class="col-md-2">
+                {{ form_start(delete_form) }}
+                <input type="submit" value="Supprimer" class="delete">
+                {{ form_end(delete_form) }}
+            </div>
+        </div>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'admin/layout-admin.html.twig' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12 admin-add">
+            <a href="{{ path('product_new') }}"><button type="button" class="btn add"><i class="fa fa-plus"></i> Ajouter un produit</button></a>
+        </div>
+    </div>
+    <div class="row" id="margin-table">
+        <table id="product" class="table">
+            <thead>
+                <tr>
+                    <th style="width:5%;">Id</th>
+                    <th style="width:15%;">Label</th>
+                    <th style="width:15%;">Reference</th>
+                    <th style="width:35%;">Description</th>
+                    <th style="width:15%;">Publishedat</th>
+                    <th style="width:15%;">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for product in products %}
+                <tr>
+                    <td><a href="{{ path('product_show', { 'id': product.id }) }}">{{ product.id }}</a></td>
+                    <td>{{ product.label }}</td>
+                    <td>{{ product.reference }}</td>
+                    <td>{{ product.description }}</td>
+                    <td>{% if product.publishedAt %}{{ product.publishedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+                    <td>
+                        <ul class="puce-none">
+                            <li>
+                                <a href="{{ path('product_show', { 'id': product.id }) }}"> <i class="fa fa-eye"></i>Détail</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('product_edit', { 'id': product.id }) }}"><i class="fa fa-edit"></i>Modifier</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('product_delete', { 'id': product.id}) }}"><i class="fa fa-trash"></i>Supprimer</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
+{% block javascripts %}
+    <script>
+        $(document).ready( function () {
+            $('#product').DataTable({
+                "language": {
+                    "search": "Recherche:"
+                }
+            });
+        } );
+    </script>
+{% endblock %}

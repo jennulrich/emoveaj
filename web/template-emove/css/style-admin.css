@@ -1,25 +1,39 @@
+/******************************* GENERAL *******************************/
+.action {
+    color: #B3272D;
+}
+
 .margin0{
     margin-bottom:0;
 }
-div.content a{
-    color: #B3272D !important;
+
+.h2-car-list h2 {
+    margin-bottom: 0;
 }
+
 /** Bouton add, delete, edit, return **/
 .admin-add{
     margin-top: 20px;
-    padding-right: 17px !important;
     text-align: right;
 }
-button.add{
+
+.add{
     background-color: #B3272D;
     color: white;
 }
-button.return{
+
+.back-add{
     color: white;
     background-color: #343A40;
     margin-top: 15px;
     margin-bottom: 15px;
 }
+
+.return{
+    color: white;
+    background-color: #343A40;
+}
+
 input.delete{
     background-color: #B3272D;
     border-color: #B3272D;
@@ -29,11 +43,11 @@ input.delete{
     cursor: pointer;
 }
 #btn-edit{
-    background-color: white;
     border-color: #B3272D;
-    color: white;
-    padding: 9px 27px;
-    border-radius: 6px;
+}
+
+#btn-edit a{
+    color: #B3272D;
 }
 /** Fin bouton **/
 /** css tableau **/
@@ -114,3 +128,23 @@ div#appbundle_product_publishedAt_date, div#appbundle_product_publishedAt_time{
     display: flex;
 }
 /** Fin Formulaire Modif Product **/
+
+
+/******************************* DATATABLE CAR LIST *******************************/
+.dataTables_filter label, .dataTables_length label {
+    display: inline-flex;
+}
+
+#car_filter label {
+    float: right;
+}
+
+#car_filter label input {
+    margin-left: 10px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+
+select.form-control-sm:not([size]):not([multiple]) {
+    margin: 0 10px;
+}

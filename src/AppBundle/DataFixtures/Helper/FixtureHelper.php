@@ -8,6 +8,8 @@ use Faker\Factory as Faker;
 
 class FixtureHelper extends Fixture
 {
+    const NB_CAR = 20;
+
     /**
      * @var \Faker\Generator
      */

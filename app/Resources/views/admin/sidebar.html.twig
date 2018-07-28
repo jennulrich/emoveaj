@@ -1,0 +1,89 @@
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Logo -->
+    <a href="#" class="brand-link">
+        <img src="{{ asset('template-emove/img/emovelogo.png') }}" alt="logo Emove" class="brand-image img-circle elevation-3"
+             style="opacity: .8">
+        <span class="brand-text font-weight-light">E-move</span>
+    </a>
+    <!-- End Logo -->
+
+    <div class="sidebar">
+        <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <!-- Add icons to the links using the .nav-icon class
+                     with font-awesome or any other icon font library -->
+                <li class="nav-item has-treeview menu-open">
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ path('admin_cars') }}" class="nav-link
+                                {%  if app.request.attributes.get('_route') == 'admin_cars'
+                                or app.request.attributes.get('_route') == 'admin_add_car'
+                                or app.request.attributes.get('_route') == 'admin_view_car'
+                                or app.request.attributes.get('_route') == 'admin_edit_car'
+                            %}active{% endif %}">
+                                <i class="fa fa-car nav-icon"></i>
+                                <p>Voitures</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ path('admin_scooters') }}" class="nav-link
+                                    {% if app.request.attributes.get('_route') == 'admin_scooters'
+                                or app.request.attributes.get('_route') == 'admin_add_scooter'
+                                or app.request.attributes.get('_route') == 'admin_view_scooter'
+                                or app.request.attributes.get('_route') == 'admin_edit_scooter'
+                            %}active{% endif %}">
+                                <i class="fa fa-motorcycle nav-icon"></i>
+                                <p>Scooters</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fa fa-star nav-icon"></i>
+                                <p>Marques</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fa fa-cog nav-icon"></i>
+                                <p>Modèles</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fa fa-certificate nav-icon"></i>
+                                <p>Gammes</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fa fa-image nav-icon"></i>
+                                <p>Galerie photo</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fa fa-users nav-icon"></i>
+                                <p>Clients</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link
+                                    {% if app.request.attributes.get('_route') == 'order_index'
+                                or app.request.attributes.get('_route') == 'order_show'
+                            %}active{% endif %}">
+                                <i class="fa fa-calendar nav-icon"></i>
+                                <p>Réservations</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fa fa-envelope nav-icon"></i>
+                                <p>Messagerie</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside>

@@ -1,15 +1,12 @@
+{% spaceless %}
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>Admin</title>
+    <title>{% block tite 'Admin E-Move' %}</title>
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{{ asset('template-emove/font-awesome/css/font-awesome.min.css') }}">
@@ -23,151 +20,47 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 
 </head>
-<body class="hold-transition sidebar-mini">
-<div class="wrapper">
+<body class="hold-transition sidebar-mini" style="background-color: #f4f6f9;">
+    <div class="wrapper">
 
-    <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom">
-        <!-- Left navbar links -->
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
-            </li>
-            <li class="nav-item d-none d-sm-inline-block">
-                <p class="nav-link margin0">
-                    {% if app.request.attributes.get('_route') == 'product_index' %} Liste des produits {% endif %}
-                    {% if app.request.attributes.get('_route') == 'product_show' %} Détail du produit {% endif %}
-                    {% if app.request.attributes.get('_route') == 'product_edit' %} Modification du produit {% endif %}
-                    {% if app.request.attributes.get('_route') == 'product_new' %} Ajout d'un produit {% endif %}
-                    {% if app.request.attributes.get('_route') == 'order_index' %} Liste des commandes{% endif %}
-                    {% if app.request.attributes.get('_route') == 'order_show' %} Détail de la commande{% endif %}
-                </p>
-            </li>
-        </ul>
+        {% include 'admin/header.html.twig' %}
 
-        <!-- Right navbar links -->
-        <ul class="navbar-nav ml-auto">
-            <!-- Messages Dropdown Menu -->
-            <li class="nav-item dropdown">
-                <a class="nav-link" data-toggle="dropdown" href="#">
-                    <i class="fa fa-comments-o"></i>
-                    <span class="badge badge-danger navbar-badge">3</span>
-                </a>
-            </li>
-            <!-- Notifications Dropdown Menu -->
-            <li class="nav-item dropdown">
-                <a class="nav-link" data-toggle="dropdown" href="#">
-                    <i class="fa fa-bell-o"></i>
-                    <span class="badge badge-warning navbar-badge">15</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-    <!-- /.navbar -->
+        {% include 'admin/sidebar.html.twig' %}
 
-    <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4">
-        <!-- Brand Logo -->
-        <a href="#" class="brand-link">
-            <img src="{{ asset('template-emove/img/emovelogo.png') }}" alt="logo Emove" class="brand-image img-circle elevation-3"
-                 style="opacity: .8">
-            <span class="brand-text font-weight-light">E-move</span>
-        </a>
-
-        <!-- Sidebar -->
-        <div class="sidebar">
-            <!-- Sidebar user panel (optional) -->
-            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                <div class="image">
-                    <img src="{{ asset('template-emove/img/user.jpg') }}" class="img-circle elevation-2" alt="User Image">
-                </div>
-                <div class="info">
-                    <a href="#" class="d-block">User Name Co</a>
+        <!-- Div de contenu -->
+        <div class="content-wrapper">
+            <div class="content">
+                <div class="container-fluid">
+                    {% block content '' %}
                 </div>
             </div>
-
-            <!-- Sidebar Menu -->
-            <nav class="mt-2">
-                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                    <!-- Add icons to the links using the .nav-icon class
-                         with font-awesome or any other icon font library -->
-                    <li class="nav-item has-treeview menu-open">
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{ path('product_index') }}" class="nav-link
-                                {%  if app.request.attributes.get('_route') == 'product_index'
-                                    or app.request.attributes.get('_route') == 'product_show'
-                                    or app.request.attributes.get('_route') == 'product_edit'
-                                    or app.request.attributes.get('_route') == 'product_new'
-                                %}active{% endif %}">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Produits</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{ path('order_index') }}" class="nav-link
-                                    {% if app.request.attributes.get('_route') == 'order_index'
-                                       or app.request.attributes.get('_route') == 'order_show'
-                                    %}active{% endif %}">
-                                    <i class="fa fa-circle-o nav-icon"></i>
-                                    <p>Commandes</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-            <!-- /.sidebar-menu -->
         </div>
-        <!-- /.sidebar -->
-    </aside>
+        <!-- End Div de contenu -->
 
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-        <!-- Main content -->
-        <div class="content">
-            <div class="container-fluid">
-                {% block content"" %}
-            </div><!-- /.container-fluid -->
-        </div>
-        <!-- /.content -->
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+            <div class="p-3">
+                <h5>Title</h5>
+                <p>Sidebar content</p>
+            </div>
+        </aside>
+        <!-- /.control-sidebar -->
+
+        {% include 'admin/footer.html.twig' %}
+
     </div>
-    <!-- /.content-wrapper -->
 
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-        <!-- Control sidebar content goes here -->
-        <div class="p-3">
-            <h5>Title</h5>
-            <p>Sidebar content</p>
-        </div>
-    </aside>
-    <!-- /.control-sidebar -->
+    <!-- jQuery -->
+    <script src="{{ asset('template-emove/js/jquery.min.js') }}"></script>
+    <!-- AdminLTE App -->
+    <script src="{{ asset('template-emove/js/adminlte.js') }}"></script>
+    <!-- Bootstrap 4 -->
+    <script src="{{ asset('template-emove/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- Datatable -->
+    <script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
-    <!-- Main Footer -->
-    <footer class="main-footer">
-        <!-- To the right -->
-        <div class="float-right d-none d-sm-inline">
-            Anything you want
-        </div>
-        <!-- Default to the left -->
-        <strong>Copyright &copy; 2017-2018 </strong> A&J Las connasses.
-    </footer>
-</div>
-<!-- ./wrapper -->
-
-<!-- REQUIRED SCRIPTS -->
-
-<!-- jQuery -->
-<script src="{{ asset('template-emove/js/jquery.min.js') }}"></script>
-<!-- AdminLTE App -->
-<script src="{{ asset('template-emove/js/adminlte.js') }}"></script>
-<!-- Bootstrap 4 -->
-<script src="{{ asset('template-emove/js/bootstrap.bundle.min.js') }}"></script>
-<!-- Datatable -->
-<script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-
-{% block javascripts '' %}
+    {% block javascripts '' %}
 </body>
 </html>
+{% endspaceless %}

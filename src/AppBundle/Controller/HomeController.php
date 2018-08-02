@@ -15,7 +15,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
  * Home controller.
  *
- * @Route("home")
+ * @Route("front/home")
  */
 class HomeController extends Controller
 {

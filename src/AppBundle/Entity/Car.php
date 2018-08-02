@@ -31,9 +31,30 @@ class Car
     /**
      * @var string
      *
+     * @ORM\Column(name="matriculation", type="string", length=255)
+     */
+    private $matriculation;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="kilometers", type="integer")
+     */
+    private $kilometers;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="color", type="string", length=255)
      */
     private $color;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="serial_number", type="string", length=255)
+     */
+    private $serialNumber;
 
     /**
      * Get id
@@ -55,6 +76,30 @@ class Car
     public function setModel($model)
     {
         $this->model = $model;
+
+        return $this;
+    }
+
+    /**
+     * Get matriculation
+     *
+     * @return string
+     */
+    public function getMatriculation()
+    {
+        return $this->matriculation;
+    }
+
+    /**
+     * Set matriculation
+     *
+     * @param string $matriculation
+     *
+     * @return Car
+     */
+    public function setMatriculation($matriculation)
+    {
+        $this->matriculation = $matriculation;
 
         return $this;
     }
@@ -92,5 +137,52 @@ class Car
     {
         return $this->color;
     }
-}
 
+    /**
+     * Get serialNumber
+     *
+     * @return string
+     */
+    public function getSerialNumber()
+    {
+        return $this->serialNumber;
+    }
+
+    /**
+     * Set serialNumber
+     *
+     * @param string $serialNumber
+     *
+     * @return Car
+     */
+    public function setSerialNumber($serialNumber)
+    {
+        $this->serialNumber = $serialNumber;
+
+        return $this;
+    }
+
+    /**
+     * Set kilometers
+     *
+     * @param integer $kilometers
+     *
+     * @return Car
+     */
+    public function setKilometers($kilometers)
+    {
+        $this->kilometers = $kilometers;
+
+        return $this;
+    }
+
+    /**
+     * Get kilometers
+     *
+     * @return integer
+     */
+    public function getKilometers()
+    {
+        return $this->kilometers;
+    }
+}

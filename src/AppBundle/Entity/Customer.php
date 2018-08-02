@@ -36,6 +36,13 @@ class Customer
     private $firstName;
 
     /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="birth_date", type="datetime", length=255)
+     */
+    private $birthDate;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="address", type="string", length=255)
@@ -55,6 +62,13 @@ class Customer
      * @ORM\Column(name="mail", type="string", length=255)
      */
     private $mail;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="drive_licence_nb", type="string", length=255)
+     */
+    private $driveLicenceNb;
 
 
     /**
@@ -113,6 +127,22 @@ class Customer
     public function getFirstName()
     {
         return $this->firstName;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getBirthDate(): \DateTime
+    {
+        return $this->birthDate;
+    }
+
+    /**
+     * @param \DateTime $birthDate
+     */
+    public function setBirthDate(\DateTime $birthDate): void
+    {
+        $this->birthDate = $birthDate;
     }
 
     /**
@@ -186,5 +216,20 @@ class Customer
     {
         return $this->mail;
     }
-}
 
+    /**
+     * @return string
+     */
+    public function getDriveLicenceNb(): string
+    {
+        return $this->driveLicenceNb;
+    }
+
+    /**
+     * @param string $driveLicenceNb
+     */
+    public function setDriveLicenceNb(string $driveLicenceNb): void
+    {
+        $this->driveLicenceNb = $driveLicenceNb;
+    }
+}

@@ -1,0 +1,79 @@
+{% extends 'admin/layout-admin.html.twig' %}
+
+{% block content %}
+    <div class="row" style="margin-bottom: 15px">
+        <div class="col-md-6 h2-car-list" style="margin-top: 20px">
+            <h2>Liste des scooters</h2>
+        </div>
+        <div class="col-md-6 admin-add">
+            <a href="{{ path('admin_add_scooter') }}"><button type="button" class="btn add"><i class="fa fa-plus"></i> Ajouter un Scooter</button></a>
+        </div>
+    </div>
+    <div class="card" style="padding: 15px; margin-bottom: 30px">
+        <div class="row" id="margin-table">
+            <div class="col-md-12">
+                <table id="scooter" class="table table-bordered table-striped" width="100%" style="margin-top: 15px">
+                    <thead>
+                    <tr>
+                        <th>Modèle</th>
+                        <th>Couleur</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for scooter in scooters %}
+                        <tr>
+                            <td style="vertical-align: middle">{{ scooter.model }}</td>
+                            <td style="vertical-align: middle">{{ scooter.color }}</td>
+                            <td>
+                                <ul class="puce-none mb-0">
+                                    <li>
+                                        <a href="{{ path('admin_view_scooter', { 'id': scooter.id }) }}" class="action"> <i class="fa fa-eye"></i>Détail</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('admin_edit_scooter', { 'id': scooter.id }) }}" class="action"><i class="fa fa-edit"></i>Modifier</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('admin_delete_scooter', { 'id': scooter.id}) }}" class="action" data-toggle="modal" data-target="#{{ scooter.id }}"><i class="fa fa-trash"></i>Supprimer</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- Modal de confirmation de suppression -->
+    {% for scooter in scooters %}
+        <div class="modal fade" id="{{ scooter.id }}" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <span>Êtes-vous sûr de vouloir supprimer cette news ?</span>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="{{ path('admin_delete_scooter', {"id":scooter.id}) }}" class="btn btn-fill btn-info text-uppercase btn-sm">Supprimer</a>
+                        <button type="button" class="btn btn-fill btn-danger btn-sm text-uppercase" data-dismiss="modal">Annuler</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    <!-- End Modal de confirmation de suppression -->
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        $(document).ready( function () {
+            $('#scooter').DataTable({
+                "language": {
+                    "search": "Recherche :"
+                },
+                "bLengthChange": false,
+                "info": false
+            });
+        } );
+    </script>
+{% endblock %}

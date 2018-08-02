@@ -129,7 +129,6 @@ div#appbundle_product_publishedAt_date, div#appbundle_product_publishedAt_time{
 }
 /** Fin Formulaire Modif Product **/
 
-
 /******************************* DATATABLE CAR LIST *******************************/
 .dataTables_filter label, .dataTables_length label {
     display: inline-flex;
@@ -138,8 +137,16 @@ div#appbundle_product_publishedAt_date, div#appbundle_product_publishedAt_time{
 #car_filter label {
     float: right;
 }
+#scooter_filter label {
+    float: right;
+}
 
 #car_filter label input {
+    margin-left: 10px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+}
+#scooter_filter label input {
     margin-left: 10px;
     border: 1px solid lightgray;
     border-radius: 3px;

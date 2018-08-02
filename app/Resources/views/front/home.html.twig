@@ -26,21 +26,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--[if lt IE 9]>
     <script src="{{ asset('template-emove/js/html5shiv.min.js') }}"></script>
-    <script src="{{ asset('template-emove/js/respond.min.js'}}"></script>
+    <script src="{{ asset('template-emove/js/respond.min.js') }}"></script>
     <![endif]-->
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="{{ asset('template-emove/css/bootstrap.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('template-emove/font-awesome/font-awesome.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="css/flaticon/css/flaticon.min.css">
-    <link rel="stylesheet" type="text/css" href="css/owl.carousel.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-select.min.css">
-    <link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
-    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="plugins/rangeslider/rangeslider.css">
-    <link rel="stylesheet" type="text/css" href="page-error-404.html">
-    <link rel="stylesheet" type="text/css" href="css/style.min.css">
-    <link rel="stylesheet" type="text/css" href="css/templete.css">
-    <link class="skin" rel="stylesheet" type="text/css" href="css/skin/skin-1.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('template-emove/css/flaticon.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('template-emove/css/owl.carousel.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('template-emove/css/bootstrap-select.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('template-emove/css/magnific-popup.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('template-emove/css/animate.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('template-emove/css/style.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('template-emove/css/templete.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('template-emove/plugins/rangeslider/rangeslider.css') }}">
+    <!--<link rel="stylesheet" type="text/css" href="page-error-404.html">-->
+    <link rel="stylesheet" type="text/css" href="{{ asset('template-emove/css/skin-1.css') }}">
     <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900%7COpen+Sans:300,400,600,700,800%7CRaleway:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
@@ -55,9 +55,9 @@
         gtag('config', 'UA-120204426-2');
     </script>
     <!-- Google Analytic Code --><!-- Revolution Slider Css -->
-    <link rel="stylesheet" type="text/css" href="plugins/revolution/v5.4.3/css/settings.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('template-emove/plugins/revolution/css/settings.css') }}">
     <!-- Revolution Navigation Style -->
-    <link rel="stylesheet" type="text/css" href="plugins/revolution/v5.4.3/css/navigation.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('template-emove/plugins/revolution/css/navigation.css') }}">
 </head>
 <body id="bg">
 
@@ -70,7 +70,7 @@
                 <div class="row">
                     <div class="dlab-topbar-left">
                         <ul>
-                            <li><a href="page-faq.html" >Une question ?</a></li>
+                            <li><a href="#" >Une question ?</a></li>
                         </ul>
                     </div>
                     <div class="dlab-topbar-right topbar-social">
@@ -78,10 +78,10 @@
                             <li>
                                 <a href="javascript:void(0);"><i class="fa fa-envelope-o"></i> support@emove.com</a>
                             </li>
-                            <li><a href="index.html#" class="site-button-link facebook hover"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="index.html#" class="site-button-link google-plus hover"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="index.html#" class="site-button-link twitter hover"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="index.html#" class="site-button-link linkedin hover"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#" class="site-button-link facebook hover"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" class="site-button-link google-plus hover"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#" class="site-button-link twitter hover"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" class="site-button-link linkedin hover"><i class="fa fa-linkedin"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -93,7 +93,7 @@
                 <div class="container clearfix">
                     <!-- website logo -->
                     <div class="logo-header mostion">
-                        <a href="index.html"><img src="images/emovelogo.png" class="logo" alt=""></a>
+                        <a href="#"><img src="{{ asset('template-emove/img/emovelogo.png') }}" class="logo" alt=""></a>
                     </div>
                     <!-- nav toggle button -->
                     <button data-target=".header-nav" data-toggle="collapse" type="button" class="navbar-toggle collapsed" aria-expanded="false" >
@@ -115,55 +115,55 @@
                     <!-- main nav -->
                     <div class="header-nav navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li class="active has-mega-menu demos"> <a href="index.html">Accueil</a></li>
+                            <li class="active has-mega-menu demos"> <a href="#">Accueil</a></li>
                             <li><a href="javascript:;">Voitures<i class="fa fa-chevron-down"></i></a>
                                 <ul class="sub-menu">
                                     <li> <a href="javascript:;">Search Cars <i class="fa fa-angle-right"></i></a>
                                         <ul class="sub-menu">
-                                            <li><a href="new-car-search.html">Search Car</a></li>
-                                            <li><a href="new-car-search-result-list.html">Search Result List</a></li>
-                                            <li><a href="new-car-search-result-column.html">Search Result Column</a></li>
+                                            <li><a href="#">Search Car</a></li>
+                                            <li><a href="#">Search Result List</a></li>
+                                            <li><a href="#">Search Result Column</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="new-car-latest.html">Latest Cars</a></li>
-                                    <li><a href="new-car-popular.html">Popular Cars</a></li>
-                                    <li><a href="new-car-upcoming.html">Upcoming Cars</a></li>
+                                    <li><a href="#">Latest Cars</a></li>
+                                    <li><a href="#">Popular Cars</a></li>
+                                    <li><a href="#">Upcoming Cars</a></li>
                                     <li> <a href="javascript:;">Dealers & Service Centers <i class="fa fa-angle-right"></i></a>
                                         <ul class="sub-menu">
-                                            <li><a href="car-dealers.html">Car Dealers</a></li>
-                                            <li><a href="car-service-center.html">Service Center</a></li>
+                                            <li><a href="#">Car Dealers</a></li>
+                                            <li><a href="#">Service Center</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="on-road-price.html">On Road Price</a></li>
+                                    <li><a href="#">On Road Price</a></li>
                                 </ul>
                             </li>
                             <li><a href="javascript:;">Scooters<i class="fa fa-chevron-down"></i></a>
                                 <ul class="sub-menu">
                                     <li> <a href="javascript:;">In My City <i class="fa fa-angle-right"></i></a>
                                         <ul class="sub-menu">
-                                            <li><a href="used-car-search-result.html">New York City</a></li>
-                                            <li><a href="used-car-search-result.html">Chicago</a></li>
-                                            <li><a href="used-car-search-result.html">Los Angeles</a></li>
-                                            <li><a href="used-car-search-result.html">Boston</a></li>
-                                            <li><a href="used-car-search-result.html">San Francisco</a></li>
-                                            <li><a href="used-car-search-result.html">Washington</a></li>
-                                            <li><a href="used-car-search-result.html">Seattle</a></li>
-                                            <li><a href="used-car-search-result.html">Philadelphia</a></li>
-                                            <li><a href="used-car-search-result.html">Austin</a></li>
-                                            <li><a href="used-car-search-result.html">Detroit</a></li>
+                                            <li><a href="#">New York City</a></li>
+                                            <li><a href="#">Chicago</a></li>
+                                            <li><a href="#">Los Angeles</a></li>
+                                            <li><a href="#">Boston</a></li>
+                                            <li><a href="#">San Francisco</a></li>
+                                            <li><a href="#">Washington</a></li>
+                                            <li><a href="#">Seattle</a></li>
+                                            <li><a href="#">Philadelphia</a></li>
+                                            <li><a href="#">Austin</a></li>
+                                            <li><a href="#">Detroit</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="javascript:;">Search Car <i class="fa fa-angle-right"></i></a>
                                         <ul class="sub-menu">
-                                            <li><a href="used-car-search.html">Search Car</a></li>
-                                            <li><a href="used-car-search-result.html">Search Car Result</a></li>
-                                            <li><a href="used-car-details.html">Used Car Detail</a></li>
+                                            <li><a href="#">Search Car</a></li>
+                                            <li><a href="#">Search Car Result</a></li>
+                                            <li><a href="#">Used Car Detail</a></li>
                                         </ul>
 
                                     </li>
-                                    <li><a href="used-car-details.html">Used Car Detail</a></li>
-                                    <li><a href="used-car-sell.html">Sell Your Car</a></li>
-                                    <li><a href="used-car-valuation.html">Car Valuation</a></li>
+                                    <li><a href="#">Used Car Detail</a></li>
+                                    <li><a href="#">Sell Your Car</a></li>
+                                    <li><a href="#">Car Valuation</a></li>
 
                                 </ul>
                             </li>
@@ -191,7 +191,7 @@
                                 <!-- SLIDE 1 -->
                                 <li data-index="rs-6" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="revolution/assets/100x50_3176d-road-bg.jpg"  data-rotate="0"  data-savepresentation="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                                     <!-- MAIN IMAGE -->
-                                    <img src="images/main-slider/slide1.jpg"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+                                    <img src="{{ asset('template-emove/img/slide1.jpg') }}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
                                     <!-- LAYERS -->
                                     <!-- LAYER NR. 1 -->
                                     <div class="tp-caption   tp-resizeme"
@@ -207,14 +207,14 @@
                                          data-start="1200"
                                          data-responsive_offset="on"
                                          style="z-index: 11;">
-                                        <img src="images/car2.png" alt="" data-ww="auto" data-hh="auto" data-no-retina>
+                                        <img src="{{ asset('template-emove/img/car2.png') }}" alt="" data-ww="auto" data-hh="auto" data-no-retina>
                                     </div>
                                 </li>
                                 <!-- SLIDE 2 -->
                                 <!-- SLIDE  -->
                                 <li data-index="rs-5" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="default"  data-thumb="revolution/assets/100x50_3176d-road-bg.jpg"  data-rotate="0"  data-savepresentation="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                                     <!-- MAIN IMAGE -->
-                                    <img src="images/main-slider/slide2.jpg"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+                                    <img src="{{ asset('template-emove/img/slide2.jpg') }}"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
                                     <!-- LAYERS -->
                                     <!-- LAYER NR. 1 -->
                                     <div class="tp-caption   tp-resizeme"
@@ -230,7 +230,7 @@
                                          data-start="1200"
                                          data-responsive_offset="on"
                                          style="z-index: 11;">
-                                        <img src="images/car3.png" alt="" data-ww="auto" data-hh="auto" data-no-retina>
+                                        <img src="{{ asset('template-emove/img/car3.png') }}" alt="" data-ww="auto" data-hh="auto" data-no-retina>
                                     </div>
                                 </li>
 
@@ -322,7 +322,7 @@
                                         <button class="site-button button-lg btn-block" type="submit">RECHERCHER</button>
                                     </div>
                                     <div class="input-group text-center">
-                                        <a class="site-button-link text-uppercase" href="new-car-search.html">recherche avancée <i class="fa fa-angle-right"></i></a>
+                                        <a class="site-button-link text-uppercase" href="#">recherche avancée <i class="fa fa-angle-right"></i></a>
                                     </div>
                                 </div>
                                 <!-- USED CAR -->
@@ -391,7 +391,7 @@
                                         <button class="site-button button-lg btn-block" type="submit" onclick="window.location.href='sed-car-search.html'">RECHERCHER</button>
                                     </div>
                                     <div class="input-group text-center">
-                                        <a class="site-button-link text-uppercase" href="new-car-search.html">recherche avancée <i class="fa fa-angle-right"></i></a>
+                                        <a class="site-button-link text-uppercase" href="#">recherche avancée <i class="fa fa-angle-right"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -404,7 +404,7 @@
         <!-- Slider END -->
 
         <!-- About Us -->
-        <div class="section-full about-us bg-white content-inner-2" style="background-image: url('images/background/about-us.jpg'); background-position:bottom; background-repeat:no-repeat; background-size:100%;">
+        <div class="section-full about-us bg-white content-inner-2" style="background-image: url('{{ asset('template-emove/img/background/about-us.jpg') }}'); background-position:bottom; background-repeat:no-repeat; background-size:100%;">
             <div class="container">
                 <div class="section-head text-center head-1">
                     <span class="text-primary">Bienvenue sur E Move</span>
@@ -425,7 +425,7 @@
                                 </div>
                             </div>
                             <div class="icon-box-btn text-center">
-                                <a href="index.html#" class="site-button btn-block">Voir plus</a>
+                                <a href="#" class="site-button btn-block">Voir plus</a>
                             </div>
                         </div>
                     </div>
@@ -441,7 +441,7 @@
                                 </div>
                             </div>
                             <div class="icon-box-btn text-center">
-                                <a href="index.html#" class="site-button btn-block">voir plus</a>
+                                <a href="#" class="site-button btn-block">voir plus</a>
                             </div>
                         </div>
                     </div>
@@ -457,7 +457,7 @@
                                 </div>
                             </div>
                             <div class="icon-box-btn text-center">
-                                <a href="index.html#" class="site-button btn-block">voir plus</a>
+                                <a href="#" class="site-button btn-block">voir plus</a>
                             </div>
                         </div>
                     </div>
@@ -473,7 +473,7 @@
                                 </div>
                             </div>
                             <div class="icon-box-btn text-center">
-                                <a href="index.html#" class="site-button btn-block">voir plus</a>
+                                <a href="#" class="site-button btn-block">voir plus</a>
                             </div>
                         </div>
                     </div>
@@ -491,8 +491,8 @@
                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                                 <div class="media media-info">
                                     <div class="media-left">
-                                        <a href="index.html#">
-                                            <img class="media-object" src="images/testimonials/pic2.jpg" alt="">
+                                        <a href="#">
+                                            <img class="media-object" src="{{ asset('template-emove/img/testimonials/pic2.jpg') }}" alt="">
                                         </a>
                                     </div>
                                     <div class="media-body p-l15">
@@ -501,13 +501,13 @@
                                     </div>
                                 </div>
                                 <div class="m-t30">
-                                    <a href="index.html#" class="site-button">Voir plus</a>
+                                    <a href="#" class="site-button">Voir plus</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-7">
                             <div class="about-side-img wow fadeInRight" data-wow-duration="1.50s" data-wow-delay="0.50s">
-                                <img src="images/car.png" alt="">
+                                <img src="{{ asset('template-emove/img/car.png') }}" alt="">
                             </div>
                         </div>
                     </div>
@@ -521,9 +521,9 @@
                 <div class="section-head">
                     <h3 class="h3 text-uppercase">à la une</h3>
                     <ul class="nav theme-tabs">
-                        <li role="presentation" class="active"><a data-toggle="tab"  aria-controls="upcoming"  href="index.html#upcoming">PROCHAINEMENT</a></li>
-                        <li role="presentation" ><a data-toggle="tab"  aria-controls="popular" href="index.html#popular">POPULAIRES</a></li>
-                        <li role="presentation" ><a data-toggle="tab"  aria-controls="latest" href="index.html#latest">NOUVEAUX VEHICULES</a></li>
+                        <li role="presentation" class="active"><a data-toggle="tab"  aria-controls="upcoming"  href="#upcoming">PROCHAINEMENT</a></li>
+                        <li role="presentation" ><a data-toggle="tab"  aria-controls="popular" href="#popular">POPULAIRES</a></li>
+                        <li role="presentation" ><a data-toggle="tab"  aria-controls="latest" href="#latest">NOUVEAUX VEHICULES</a></li>
                     </ul>
                 </div>
                 <div class="section-content ">
@@ -536,10 +536,10 @@
                                         <div class="item">
                                             <div class="dlab-feed-list">
                                                 <div class="dlab-media">
-                                                    <a href="new-car-upcoming.html"><img src="images/our-work/work/pic1.jpg" alt=""></a>
+                                                    <a href="#"><img src="{{ asset('template-emove/img/our-work/work/pic1.jpg') }}" alt=""></a>
                                                 </div>
                                                 <div class="dlab-info">
-                                                    <h4 class="dlab-title"><a href="new-car-upcoming.html">Hyundai santa fe sport </a></h4>
+                                                    <h4 class="dlab-title"><a href="#">Hyundai santa fe sport </a></h4>
                                                     <div class="dlab-separator bg-black"></div>
                                                     <p class="dlab-price"><span class="text-primary">À partir de 26€/jour</span></p>
                                                 </div>
@@ -555,10 +555,10 @@
                                         <div class="item">
                                             <div class="dlab-feed-list">
                                                 <div class="dlab-media">
-                                                    <a href="new-car-upcoming.html"><img src="images/our-work/work/pic2.jpg" alt=""></a>
+                                                    <a href="#"><img src="{{ asset('template-emove/img/our-work/work/pic2.jpg') }}" alt=""></a>
                                                 </div>
                                                 <div class="dlab-info">
-                                                    <h4 class="dlab-title"><a href="new-car-upcoming.html">Hyundai santa fe sport </a></h4>
+                                                    <h4 class="dlab-title"><a href="#">Hyundai santa fe sport </a></h4>
                                                     <div class="dlab-separator bg-black"></div>
                                                     <p class="dlab-price"><span class="text-primary">À partir de 31€/jour</span></p>
                                                 </div>
@@ -574,10 +574,10 @@
                                         <div class="item">
                                             <div class="dlab-feed-list">
                                                 <div class="dlab-media">
-                                                    <a href="new-car-upcoming.html"><img src="images/our-work/work/pic3.jpg" alt=""></a>
+                                                    <a href="#"><img src="{{ asset('template-emove/img/our-work/work/pic3.jpg') }}" alt=""></a>
                                                 </div>
                                                 <div class="dlab-info">
-                                                    <h4 class="dlab-title"><a href="new-car-upcoming.html">Hyundai santa fe sport </a></h4>
+                                                    <h4 class="dlab-title"><a href="#">Hyundai santa fe sport </a></h4>
                                                     <div class="dlab-separator bg-black"></div>
                                                     <p class="dlab-price"><span class="text-primary">À partir de 48.03€/jour</span></p>
                                                 </div>
@@ -593,10 +593,10 @@
                                         <div class="item">
                                             <div class="dlab-feed-list">
                                                 <div class="dlab-media">
-                                                    <a href="new-car-upcoming.html"><img src="images/our-work/work/pic4.jpg" alt=""></a>
+                                                    <a href="#"><img src="{{ asset('template-emove/img/our-work/work/pic4.jpg') }}" alt=""></a>
                                                 </div>
                                                 <div class="dlab-info">
-                                                    <h4 class="dlab-title"><a href="new-car-upcoming.html">Hyundai santa fe sport </a></h4>
+                                                    <h4 class="dlab-title"><a href="#">Hyundai santa fe sport </a></h4>
                                                     <div class="dlab-separator bg-black"></div>
                                                     <p class="dlab-price"><span class="text-primary">À partir de 3€/mois</span></p>
                                                 </div>
@@ -616,10 +616,10 @@
                                         <div class="item">
                                             <div class="dlab-feed-list">
                                                 <div class="dlab-media">
-                                                    <a href="new-car-popular.html"><img src="images/our-work/work/pic3.jpg" alt=""></a>
+                                                    <a href="#"><img src="{{ asset('template-emove/img/our-work/work/pic3.jpg') }}" alt=""></a>
                                                 </div>
                                                 <div class="dlab-info">
-                                                    <h4 class="dlab-title"><a href="new-car-popular.html">Hyundai santa fe sport </a></h4>
+                                                    <h4 class="dlab-title"><a href="#">Hyundai santa fe sport </a></h4>
                                                     <div class="dlab-separator bg-black"></div>
                                                     <p class="dlab-price"><del>$40,152</del> <span class="text-primary">$26,598</span></p>
                                                 </div>
@@ -635,10 +635,10 @@
                                         <div class="item">
                                             <div class="dlab-feed-list">
                                                 <div class="dlab-media">
-                                                    <a href="new-car-popular.html"><img src="images/our-work/work/pic4.jpg" alt=""></a>
+                                                    <a href="#"><img src="{{ asset('template-emove/img/our-work/work/pic4.jpg') }}" alt=""></a>
                                                 </div>
                                                 <div class="dlab-info">
-                                                    <h4 class="dlab-title"><a href="new-car-popular.html">Hyundai santa fe sport </a></h4>
+                                                    <h4 class="dlab-title"><a href="#">Hyundai santa fe sport </a></h4>
                                                     <div class="dlab-separator bg-black"></div>
                                                     <p class="dlab-price"><del>$40,152</del> <span class="text-primary">$26,598</span></p>
                                                 </div>
@@ -654,10 +654,10 @@
                                         <div class="item">
                                             <div class="dlab-feed-list">
                                                 <div class="dlab-media">
-                                                    <a href="new-car-popular.html"><img src="images/our-work/work/pic1.jpg" alt=""></a>
+                                                    <a href="#"><img src="{{ asset('template-emove/img/our-work/work/pic1.jpg') }}" alt=""></a>
                                                 </div>
                                                 <div class="dlab-info">
-                                                    <h4 class="dlab-title"><a href="new-car-popular.html">Hyundai santa fe sport </a></h4>
+                                                    <h4 class="dlab-title"><a href="#">Hyundai santa fe sport </a></h4>
                                                     <div class="dlab-separator bg-black"></div>
                                                     <p class="dlab-price"><del>$40,152</del> <span class="text-primary">$26,598</span></p>
                                                 </div>
@@ -673,10 +673,10 @@
                                         <div class="item">
                                             <div class="dlab-feed-list">
                                                 <div class="dlab-media">
-                                                    <a href="new-car-popular.html"><img src="images/our-work/work/pic2.jpg" alt=""></a>
+                                                    <a href="#"><img src="{{ asset('template-emove/img/our-work/work/pic2.jpg') }}" alt=""></a>
                                                 </div>
                                                 <div class="dlab-info">
-                                                    <h4 class="dlab-title"><a href="new-car-popular.html">Hyundai santa fe sport </a></h4>
+                                                    <h4 class="dlab-title"><a href="#">Hyundai santa fe sport </a></h4>
                                                     <div class="dlab-separator bg-black"></div>
                                                     <p class="dlab-price"><del>$40,152</del> <span class="text-primary">$26,598</span></p>
                                                 </div>
@@ -696,10 +696,10 @@
                                         <div class="item">
                                             <div class="dlab-feed-list">
                                                 <div class="dlab-media">
-                                                    <a href="new-car-latest.html"><img src="images/our-work/work/pic2.jpg" alt=""></a>
+                                                    <a href="#"><img src="{{ asset('template-emove/img/our-work/work/pic2.jpg') }}" alt=""></a>
                                                 </div>
                                                 <div class="dlab-info">
-                                                    <h4 class="dlab-title"><a href="new-car-latest.html">Hyundai santa fe sport </a></h4>
+                                                    <h4 class="dlab-title"><a href="#">Hyundai santa fe sport </a></h4>
                                                     <div class="dlab-separator bg-black"></div>
                                                     <p class="dlab-price"><del>$40,152</del> <span class="text-primary">$26,598</span></p>
                                                 </div>
@@ -715,10 +715,10 @@
                                         <div class="item">
                                             <div class="dlab-feed-list">
                                                 <div class="dlab-media">
-                                                    <a href="new-car-latest.html"><img src="images/our-work/work/pic3.jpg" alt=""></a>
+                                                    <a href="#"><img src="{{ asset('template-emove/img/our-work/work/pic3.jpg') }}" alt=""></a>
                                                 </div>
                                                 <div class="dlab-info">
-                                                    <h4 class="dlab-title"><a href="new-car-latest.html">Hyundai santa fe sport </a></h4>
+                                                    <h4 class="dlab-title"><a href="#">Hyundai santa fe sport </a></h4>
                                                     <div class="dlab-separator bg-black"></div>
                                                     <p class="dlab-price"><del>$40,152</del> <span class="text-primary">$26,598</span></p>
                                                 </div>
@@ -734,10 +734,10 @@
                                         <div class="item">
                                             <div class="dlab-feed-list">
                                                 <div class="dlab-media">
-                                                    <a href="new-car-latest.html"><img src="images/our-work/work/pic1.jpg" alt=""></a>
+                                                    <a href="#"><img src="{{ asset('template-emove/img/our-work/work/pic1.jpg') }}" alt=""></a>
                                                 </div>
                                                 <div class="dlab-info">
-                                                    <h4 class="dlab-title"><a href="new-car-latest.html">Hyundai santa fe sport </a></h4>
+                                                    <h4 class="dlab-title"><a href="#">Hyundai santa fe sport </a></h4>
                                                     <div class="dlab-separator bg-black"></div>
                                                     <p class="dlab-price"><del>$40,152</del> <span class="text-primary">$26,598</span></p>
                                                 </div>
@@ -754,10 +754,10 @@
                                         <div class="item">
                                             <div class="dlab-feed-list">
                                                 <div class="dlab-media">
-                                                    <a href="new-car-latest.html"><img src="images/our-work/work/pic4.jpg" alt=""></a>
+                                                    <a href="#"><img src="{{ asset('template-emove/img/our-work/work/pic4.jpg') }}" alt=""></a>
                                                 </div>
                                                 <div class="dlab-info">
-                                                    <h4 class="dlab-title"><a href="new-car-latest.html">Hyundai santa fe sport </a></h4>
+                                                    <h4 class="dlab-title"><a href="#">Hyundai santa fe sport </a></h4>
                                                     <div class="dlab-separator bg-black"></div>
                                                     <p class="dlab-price"><del>$40,152</del> <span class="text-primary">$26,598</span></p>
                                                 </div>
@@ -799,7 +799,7 @@
                                 </div>
                                 <div class="testimonial-detail clearfix">
                                     <div class="testimonial-box">
-                                        <div class="testimonial-pic radius shadow"><img src="images/testimonials/pic1.jpg" alt="" width="100" height="100"></div>
+                                        <div class="testimonial-pic radius shadow"><img src="{{ asset('template-emove/img/testimonials/pic1.jpg') }}" alt="" width="100" height="100"></div>
                                         <strong class="testimonial-name">John Doe</strong>
                                         <span class="text-white">Car Dealer</span>
                                     </div>
@@ -813,7 +813,7 @@
                                 </div>
                                 <div class="testimonial-detail clearfix">
                                     <div class="testimonial-box">
-                                        <div class="testimonial-pic radius shadow"><img src="images/testimonials/pic2.jpg" alt="" width="100" height="100"></div>
+                                        <div class="testimonial-pic radius shadow"><img src="{{ asset('template-emove/img/testimonials/pic2.jpg') }}" alt="" width="100" height="100"></div>
                                         <strong class="testimonial-name">John Doe</strong>
                                         <span class="text-white">Car Dealer</span>
                                     </div>
@@ -827,7 +827,7 @@
                                 </div>
                                 <div class="testimonial-detail clearfix">
                                     <div class="testimonial-box">
-                                        <div class="testimonial-pic radius shadow"><img src="images/testimonials/pic3.jpg" alt="" width="100" height="100"></div>
+                                        <div class="testimonial-pic radius shadow"><img src="{{ asset('template-emove/img/testimonials/pic3.jpg') }}" alt="" width="100" height="100"></div>
                                         <strong class="testimonial-name">John Doe</strong>
                                         <span class="text-white">Car Dealer</span>
                                     </div>
@@ -847,32 +847,32 @@
                     <div class="client-logo-carousel owl-carousel mfp-gallery gallery owl-btn-center-lr">
                         <div class="item">
                             <div class="ow-client-logo">
-                                <div class="client-logo"><a href="index.html#"><img src="images/client-logo/logo1.jpg" alt=""></a></div>
+                                <div class="client-logo"><a href="#"><img src="{{ asset('template-emove/img/client-logo/logo1.jpg') }}" alt=""></a></div>
                             </div>
                         </div>
                         <div class="item">
                             <div class="ow-client-logo">
-                                <div class="client-logo"> <a href="index.html#"><img src="images/client-logo/logo2.jpg" alt=""></a> </div>
+                                <div class="client-logo"> <a href="#"><img src="{{ asset('template-emove/img/client-logo/logo2.jpg') }}" alt=""></a> </div>
                             </div>
                         </div>
                         <div class="item">
                             <div class="ow-client-logo">
-                                <div class="client-logo"> <a href="index.html#"><img src="images/client-logo/logo3.jpg" alt=""></a> </div>
+                                <div class="client-logo"> <a href="#"><img src="{{ asset('template-emove/img/client-logo/logo3.jpg') }}" alt=""></a> </div>
                             </div>
                         </div>
                         <div class="item">
                             <div class="ow-client-logo">
-                                <div class="client-logo"> <a href="index.html#"><img src="images/client-logo/logo4.jpg" alt=""></a> </div>
+                                <div class="client-logo"> <a href="#"><img src="{{ asset('template-emove/img/client-logo/logo4.jpg') }}" alt=""></a> </div>
                             </div>
                         </div>
                         <div class="item">
                             <div class="ow-client-logo">
-                                <div class="client-logo"> <a href="index.html#"><img src="images/client-logo/logo5.jpg" alt=""></a> </div>
+                                <div class="client-logo"> <a href="#"><img src="{{ asset('template-emove/img/client-logo/logo5.jpg') }}" alt=""></a> </div>
                             </div>
                         </div>
                         <div class="item">
                             <div class="ow-client-logo">
-                                <div class="client-logo"> <a href="index.html#"><img src="images/client-logo/logo2.jpg" alt=""></a> </div>
+                                <div class="client-logo"> <a href="#"><img src="{{ asset('template-emove/img/client-logo/logo1.jpg') }}" alt=""></a> </div>
                             </div>
                         </div>
                     </div>
@@ -889,7 +889,7 @@
                 <div class="row">
                     <div class="col-md-3 col-sm-6 col-xs-6 footer-col-4">
                         <div class="widget widget_about">
-                            <div class="logo-footer"><img src="images/emovelogo.png" alt=""></div>
+                            <div class="logo-footer"><img src="{{ asset('template-emove/img/emovelogo.png') }}" alt=""></div>
                             <p class="m-tb20"><strong>EMove</strong> is simply dummy text of the print ing and in type setting industry. Lorem Ipsum has bee the industry's standard...</p>
 
                             <ul class="dlab-contact-info">
@@ -903,12 +903,12 @@
                             <h4 class="m-b15 text-uppercase">Liens utiles</h4>
                             <div class="dlab-separator bg-primary"></div>
                             <ul>
-                                <li><a href="new-car-latest.html">Latest Cars</a></li>
-                                <li><a href="new-car-upcoming.html">Upcoming Cars</a></li>
-                                <li><a href="used-car-search.html">Search Used Car</a></li>
-                                <li><a href="used-car-sell.html">Car Sell</a></li>
-                                <li><a href="compare-car.html">Compare Car</a></li>
-                                <li><a href="car-review.html">Car Review</a></li>
+                                <li><a href="#">Latest Cars</a></li>
+                                <li><a href="#">Upcoming Cars</a></li>
+                                <li><a href="#">Search Used Car</a></li>
+                                <li><a href="#">Car Sell</a></li>
+                                <li><a href="#">Compare Car</a></li>
+                                <li><a href="#">Car Review</a></li>
                             </ul>
                         </div>
                     </div>
@@ -918,10 +918,10 @@
                             <div class="dlab-separator bg-primary"></div>
                             <div class="widget-post-bx">
                                 <div class="widget-post clearfix">
-                                    <div class="dlab-post-media"> <img src="images/blog/recent-blog/pic1.jpg" alt="" width="200" height="143"> </div>
+                                    <div class="dlab-post-media"> <img src="{{ asset('template-emove/img/blog/recent-blog/pic1.jpg') }}" alt="" width="200" height="143"> </div>
                                     <div class="dlab-post-info">
                                         <div class="dlab-post-header">
-                                            <h5><a href="blog-single.html">Time to change...</a></h5>
+                                            <h5><a href="#">Time to change...</a></h5>
                                         </div>
                                         <div class="dlab-post-meta">
                                             <ul>
@@ -932,10 +932,10 @@
                                     </div>
                                 </div>
                                 <div class="widget-post clearfix">
-                                    <div class="dlab-post-media"> <img src="images/blog/recent-blog/pic2.jpg" alt="" width="200" height="160"> </div>
+                                    <div class="dlab-post-media"> <img src="{{ asset('template-emove/img/blog/recent-blog/pic2.jpg') }}" alt="" width="200" height="160"> </div>
                                     <div class="dlab-post-info">
                                         <div class="dlab-post-header">
-                                            <h5><a href="blog-single.html">Time to change...</a></h5>
+                                            <h5><a href="#">Time to change...</a></h5>
                                         </div>
                                         <div class="dlab-post-meta">
                                             <ul>
@@ -946,10 +946,10 @@
                                     </div>
                                 </div>
                                 <div class="widget-post clearfix">
-                                    <div class="dlab-post-media"> <img src="images/blog/recent-blog/pic3.jpg" alt="" width="200" height="160"> </div>
+                                    <div class="dlab-post-media"> <img src="{{ asset('template-emove/img/blog/recent-blog/pic3.jpg') }}" alt="" width="200" height="160"> </div>
                                     <div class="dlab-post-info">
                                         <div class="dlab-post-header">
-                                            <h5><a href="blog-single.html">Time to change...</a></h5>
+                                            <h5><a href="#">Time to change...</a></h5>
                                         </div>
                                         <div class="dlab-post-meta">
                                             <ul>
@@ -983,16 +983,16 @@
                 <div class="clearfix">
                     <ul class="full-social-icon clearfix">
                         <li class="fb col-md-3 col-sm-6 col-xs-6 m-b30">
-                            <a href="index.html#"><i class="fa fa-facebook"></i> Share On Facebook </a>
+                            <a href="#"><i class="fa fa-facebook"></i> Share On Facebook </a>
                         </li>
                         <li class="tw col-md-3 col-sm-6 col-xs-6 m-b30">
-                            <a href="index.html#"><i class="fa fa-twitter"></i> Tweet About it </a>
+                            <a href="#"><i class="fa fa-twitter"></i> Tweet About it </a>
                         </li>
                         <li class="gplus col-md-3 col-sm-6 col-xs-6 m-b30">
-                            <a href="index.html#"><i class="fa fa-google-plus"></i> Google Plus | 78+ </a>
+                            <a href="#"><i class="fa fa-google-plus"></i> Google Plus | 78+ </a>
                         </li>
                         <li class="linkd col-md-3 col-sm-6 col-xs-6 m-b30">
-                            <a href="index.html#"><i class="fa fa-linkedin"></i> Linkedin | 21k </a>
+                            <a href="#"><i class="fa fa-linkedin"></i> Linkedin | 21k </a>
                         </li>
                     </ul>
                 </div>
@@ -1004,9 +1004,9 @@
                 <div class="row">
                     <div class="col-md-6 col-sm-6 text-left"> © Copyright 2018 EMove Développé avec <span class="text-primary">♥</span> par <span class="text-primary"> UniKek</span> </div>
                     <div class="col-md-6 col-sm-6 text-right ">
-                        <a href="page-about.html" class="text-uppercase"> à propos</a> |
-                        <a href="page-privacy-policy.html" class="text-uppercase"> Contact</a> |
-                        <a href="page-about.html" class="text-uppercase"> Mentions légales</a>
+                        <a href="#" class="text-uppercase"> à propos</a> |
+                        <a href="#" class="text-uppercase"> Contact</a> |
+                        <a href="#" class="text-uppercase"> Mentions légales</a>
                     </div>
                 </div>
             </div>
@@ -1018,22 +1018,24 @@
     <button class="scroltop fa fa-chevron-up" ></button>
 </div>
 <!-- JavaScript  files ========================================= -->
-<script src="js/combine.js"></script>	<script src="js/wow.js"></script>
+<script src="{{ asset('template-emove/js/combine.js') }}"></script>
+<script src="{{ asset('template-emove/js/wow.js') }}"></script>
 <!-- wow.min js -->
-<script src="js/dz.ajax.js"></script>
+<script src="{{ asset('template-emove/js/dz.ajax.js') }}"></script>
 <!-- revolution JS FILES -->
-<script src="plugins/revolution/v5.4.3/js/jquery.themepunch.tools.min.js"></script>
-<script src="plugins/revolution/v5.4.3/js/jquery.themepunch.revolution.min.js"></script>
+<script src="{{ asset('template-emove/plugins/revolution/v5.4.3/js/jquery.themepunch.tools.min.js') }}"></script>
+<script src="{{ asset('template-emove/plugins/revolution/v5.4.3/js/jquery.themepunch.revolution.min.js') }}"></script>
 <!-- Slider revolution 5.0 Extensions  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
-<script src="plugins/revolution/v5.4.3/js/extensions/revolution.extension.actions.min.js"></script>
-<script src="plugins/revolution/v5.4.3/js/extensions/revolution.extension.carousel.min.js"></script>
-<script src="plugins/revolution/v5.4.3/js/extensions/revolution.extension.kenburn.min.js"></script>
-<script src="plugins/revolution/v5.4.3/js/extensions/revolution.extension.layeranimation.min.js"></script>
-<script src="plugins/revolution/v5.4.3/js/extensions/revolution.extension.migration.min.js"></script>
-<script src="plugins/revolution/v5.4.3/js/extensions/revolution.extension.parallax.min.js"></script>
-<script src="plugins/revolution/v5.4.3/js/extensions/revolution.extension.video.min.js"></script>
-<script src="plugins/revolution/v5.4.3/js/extensions/revolution.extension.slideanims.min.js"></script>
-<script  src="js/rev.slider.js"></script>
+<script src="{{ asset('template-emove/plugins/revolution/v5.4.3/js/extensions/revolution.extension.actions.min.js') }}"></script>
+<script src="{{ asset('template-emove/plugins/revolution/v5.4.3/js/extensions/revolution.extension.carousel.min.js') }}"></script>
+<script src="{{ asset('template-emove/plugins/revolution/v5.4.3/js/extensions/revolution.extension.kenburn.min.js') }}"></script>
+<script src="{{ asset('template-emove/plugins/revolution/v5.4.3/js/extensions/revolution.extension.layeranimation.min.js') }}"></script>
+<script src="{{ asset('template-emove/plugins/revolution/v5.4.3/js/extensions/revolution.extension.migration.min.js') }}"></script>
+<script src="{{ asset('template-emove/plugins/revolution/v5.4.3/js/extensions/revolution.extension.parallax.min.js') }}"></script>
+<script src="{{ asset('template-emove/plugins/revolution/v5.4.3/js/extensions/revolution.extension.video.min.js') }}"></script>
+<script src="{{ asset('template-emove/plugins/revolution/v5.4.3/js/extensions/revolution.extension.slideanims.min.js') }}"></script>
+
+<script src="{{ asset('template-emove/js/rev.slider.js') }}"></script>
 
 <!-- custom fuctions  -->
 <script>

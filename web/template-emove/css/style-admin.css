@@ -155,3 +155,7 @@ div#appbundle_product_publishedAt_date, div#appbundle_product_publishedAt_time{
 select.form-control-sm:not([size]):not([multiple]) {
     margin: 0 10px;
 }
+
+#scooter_paginate, #car_paginate {
+    text-align: center;
+}

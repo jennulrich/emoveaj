@@ -61,7 +61,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ path('admin_users') }}" class="nav-link
+                                {% if app.request.attributes.get('_route') == 'admin_users'
+                                or app.request.attributes.get('_route') == 'admin_add_user'
+                                or app.request.attributes.get('_route') == 'admin_view_user'
+                                or app.request.attributes.get('_route') == 'admin_edit_user'
+                            %}active{% endif %}">
                                 <i class="fa fa-users nav-icon"></i>
                                 <p>Clients</p>
                             </a>

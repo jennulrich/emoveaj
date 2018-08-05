@@ -12,11 +12,14 @@
     <div class="card" style="padding: 15px; margin-bottom: 30px">
         <div class="row" id="margin-table">
             <div class="col-md-12">
-                <table id="scooter" class="table table-bordered table-striped" width="100%" style="margin-top: 15px">
+                <table id="scooter" class="table table-bordered table-striped" width="100%" style="margin-top: 15px; font-size: 11pt;">
                     <thead>
                     <tr>
                         <th>Modèle</th>
+                        <th>Immatriculation</th>
+                        <th>Kilomètres</th>
                         <th>Couleur</th>
+                        <th>N° de série</th>
                         <th>Actions</th>
                     </tr>
                     </thead>
@@ -24,7 +27,10 @@
                     {% for scooter in scooters %}
                         <tr>
                             <td style="vertical-align: middle">{{ scooter.model }}</td>
+                            <td style="vertical-align: middle">{{ scooter.matriculation }}</td>
+                            <td style="vertical-align: middle">{{ scooter.kilometers }} km</td>
                             <td style="vertical-align: middle">{{ scooter.color }}</td>
+                            <td style="vertical-align: middle">{{ scooter.serialNumber }}</td>
                             <td>
                                 <ul class="puce-none mb-0">
                                     <li>
@@ -69,7 +75,7 @@
         $(document).ready( function () {
             $('#scooter').DataTable({
                 "language": {
-                    "search": "Recherche :"
+                    "search": "Recherche : "
                 },
                 "bLengthChange": false,
                 "info": false

@@ -15,7 +15,10 @@ class ScooterType extends AbstractType
     {
         $builder
             ->add('model',TextType::class, array('label' => 'Modèle'))
-            ->add('color', TextType::class, array('label' => 'Couleur'));
+            ->add('matriculation',TextType::class, array('label' => 'Immatriculation'))
+            ->add('kilometers',TextType::class, array('label' => 'Kilomètres'))
+            ->add('color',TextType::class, array('label' => 'Couleur'))
+            ->add('serialNumber', TextType::class, array('label' => 'N° de Série'));
         //->add('image', FileType::class, array(
         //'label' => 'Image',
         //'required' => false,

@@ -7,10 +7,10 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Customer
  *
- * @ORM\Table(name="customer")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\CustomerRepository")
+ * @ORM\Table(name="user")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
  */
-class Customer
+class User
 {
     /**
      * @var int
@@ -86,7 +86,7 @@ class Customer
      *
      * @param string $lastName
      *
-     * @return Customer
+     * @return User
      */
     public function setLastName($lastName)
     {
@@ -110,7 +110,7 @@ class Customer
      *
      * @param string $firstName
      *
-     * @return Customer
+     * @return User
      */
     public function setFirstName($firstName)
     {
@@ -130,27 +130,11 @@ class Customer
     }
 
     /**
-     * @return \DateTime
-     */
-    public function getBirthDate(): \DateTime
-    {
-        return $this->birthDate;
-    }
-
-    /**
-     * @param \DateTime $birthDate
-     */
-    public function setBirthDate(\DateTime $birthDate): void
-    {
-        $this->birthDate = $birthDate;
-    }
-
-    /**
      * Set address
      *
      * @param string $address
      *
-     * @return Customer
+     * @return User
      */
     public function setAddress($address)
     {
@@ -174,7 +158,7 @@ class Customer
      *
      * @param integer $phoneNumber
      *
-     * @return Customer
+     * @return User
      */
     public function setPhoneNumber($phoneNumber)
     {
@@ -198,7 +182,7 @@ class Customer
      *
      * @param string $mail
      *
-     * @return Customer
+     * @return User
      */
     public function setMail($mail)
     {
@@ -218,18 +202,50 @@ class Customer
     }
 
     /**
-     * @return string
+     * Set birthDate
+     *
+     * @param \DateTime $birthDate
+     *
+     * @return User
      */
-    public function getDriveLicenceNb(): string
+    public function setBirthDate($birthDate)
     {
-        return $this->driveLicenceNb;
+        $this->birthDate = $birthDate;
+
+        return $this;
     }
 
     /**
-     * @param string $driveLicenceNb
+     * Get birthDate
+     *
+     * @return \DateTime
      */
-    public function setDriveLicenceNb(string $driveLicenceNb): void
+    public function getBirthDate()
+    {
+        return $this->birthDate;
+    }
+
+    /**
+     * Set driveLicenceNb
+     *
+     * @param string $driveLicenceNb
+     *
+     * @return User
+     */
+    public function setDriveLicenceNb($driveLicenceNb)
     {
         $this->driveLicenceNb = $driveLicenceNb;
+
+        return $this;
+    }
+
+    /**
+     * Get driveLicenceNb
+     *
+     * @return string
+     */
+    public function getDriveLicenceNb()
+    {
+        return $this->driveLicenceNb;
     }
 }

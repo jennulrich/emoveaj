@@ -3,14 +3,15 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
- * Customer
+ * User
  *
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
  */
-class User
+class User implements UserInterface
 {
     /**
      * @var int
@@ -59,9 +60,16 @@ class User
     /**
      * @var string
      *
-     * @ORM\Column(name="mail", type="string", length=255)
+     * @ORM\Column(name="mail", type="string", length=255, unique=true)
      */
     private $mail;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=60)
+     */
+    private $password;
 
     /**
      * @var string
@@ -70,6 +78,21 @@ class User
      */
     private $driveLicenceNb;
 
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="is_admin", type="boolean")
+     */
+    private $isAdmin;
+
+
+    /**
+     * User constructor.
+     */
+    public function __construct()
+    {
+        $this->isAdmin = false;
+    }
 
     /**
      * Get id
@@ -247,5 +270,99 @@ class User
     public function getDriveLicenceNb()
     {
         return $this->driveLicenceNb;
+    }
+
+    public function getRoles()
+    {
+        $roles = ['ROLE_USER'];
+
+        if($this->isAdmin()) {
+            $roles = ['ROLE_ADMIN'];
+        }
+
+        return $roles;
+    }
+
+    /**
+     * Get salt
+     *
+     * @return string
+     */
+    public function getSalt()
+    {
+        return null;
+    }
+
+    public function eraseCredentials()
+    {
+        return;
+    }
+
+    /**
+     * Set isAdmin
+     *
+     * @param boolean $isAdmin
+     *
+     * @return User
+     */
+    public function setIsAdmin($isAdmin)
+    {
+        $this->isAdmin = $isAdmin;
+
+        return $this;
+    }
+
+    /**
+     * Get isAdmin
+     *
+     * @return boolean
+     */
+    public function getIsAdmin()
+    {
+        return $this->isAdmin;
+    }
+
+    /**
+     * Get isAdmin.
+     *
+     * @return bool
+     */
+    public function isAdmin()
+    {
+        return $this->isAdmin;
+    }
+
+    /**
+     * Set password
+     *
+     * @param string $password
+     *
+     * @return User
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    /**
+     * Get password
+     *
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * Returns the username used to authenticate the user.
+     *
+     * @return string The username
+     */
+    public function getUsername()
+    {
+        return $this->mail;
     }
 }

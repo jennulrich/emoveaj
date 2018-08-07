@@ -25,7 +25,7 @@ class UserFixtures extends FixtureHelper
             ->setAddress('456 Avenue de la République, 75015 Paris')
             ->setBirthDate(new \DateTime('20-11-1986'))
             ->setDriveLicenceNb('A465500')
-            ->setPassword('admin');
+            ->setPassword('$2y$10$wqXzPnaqQ81BNnOhZjZKFe53RGTbEXZH9ztybr4shr3B1mnHvHQvq');
 
         $manager->persist($user);
 

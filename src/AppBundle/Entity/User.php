@@ -51,9 +51,9 @@ class User implements UserInterface
     private $address;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="phone_number", type="integer")
+     * @ORM\Column(name="phone_number", type="text", length=20)
      */
     private $phoneNumber;
 

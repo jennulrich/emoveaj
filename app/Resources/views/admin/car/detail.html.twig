@@ -3,7 +3,7 @@
 {% block content %}
     <div class="row" style="margin: 20px 0 15px 0">
         <div class="col-md-6">
-            <h2>{{ car.model }}</h2>
+            <h2>{{ car.model.nameModel }}</h2>
         </div>
         <div class="col-md-6 text-right">
             <a href="{{ path('admin_cars') }}" class="btn return">
@@ -15,7 +15,7 @@
         <tbody class="card-body">
         <tr>
             <th>Modèle</th>
-            <td>{{ car.model }}</td>
+            <td>{{ car.model.nameModel }}</td>
         </tr>
         <tr>
             <th>Couleur</th>

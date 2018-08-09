@@ -22,9 +22,9 @@ class Car
     private $id;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="model", type="string", length=255)
+     * @var Model
+     * @ORM\ManyToOne(targetEntity="Model", inversedBy="cars", cascade={"persist"})
+     * @ORM\JoinColumn(name="model_id", referencedColumnName="id", nullable=false)
      */
     private $model;
 
@@ -67,20 +67,6 @@ class Car
     }
 
     /**
-     * Set model
-     *
-     * @param string $model
-     *
-     * @return Car
-     */
-    public function setModel($model)
-    {
-        $this->model = $model;
-
-        return $this;
-    }
-
-    /**
      * Get matriculation
      *
      * @return string
@@ -102,16 +88,6 @@ class Car
         $this->matriculation = $matriculation;
 
         return $this;
-    }
-
-    /**
-     * Get model
-     *
-     * @return string
-     */
-    public function getModel()
-    {
-        return $this->model;
     }
 
     /**
@@ -184,5 +160,29 @@ class Car
     public function getKilometers()
     {
         return $this->kilometers;
+    }
+
+    /**
+     * Set model
+     *
+     * @param \AppBundle\Entity\Model $model
+     *
+     * @return Car
+     */
+    public function setModel(\AppBundle\Entity\Model $model)
+    {
+        $this->model = $model;
+
+        return $this;
+    }
+
+    /**
+     * Get model
+     *
+     * @return \AppBundle\Entity\Model
+     */
+    public function getModel()
+    {
+        return $this->model;
     }
 }

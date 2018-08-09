@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Car;
+use AppBundle\Entity\Model;
 use AppBundle\Form\CarType;
 use AppBundle\Manager\CarManager;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -48,8 +49,11 @@ class CarController extends Controller
     {
         $cars = $this->carManager->getList();
 
+        $models = new Model();
+
         return $this->render('admin/car/list.html.twig', [
-            "cars" => $cars
+            "cars" => $cars,
+            "models" => $models
         ]);
     }
 

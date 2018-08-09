@@ -18,12 +18,12 @@ class UserFixtures extends FixtureHelper
     {
         $user = new User();
         $user->setMail('admin@test.fr')
-            ->setPhoneNumber(06)
+            ->setPhoneNumber($this->faker->phoneNumber)
             ->setFirstName($this->faker->firstName())
             ->setLastName($this->faker->lastName)
             ->setIsAdmin(true)
-            ->setAddress('456 Avenue de la République, 75015 Paris')
-            ->setBirthDate(new \DateTime('20-11-1986'))
+            ->setAddress($this->faker->address)
+            ->setBirthDate($this->faker->dateTime())
             ->setDriveLicenceNb('A465500')
             ->setPassword('$2y$10$wqXzPnaqQ81BNnOhZjZKFe53RGTbEXZH9ztybr4shr3B1mnHvHQvq');
 
@@ -36,12 +36,12 @@ class UserFixtures extends FixtureHelper
     {
         for ($u = 1; $u <= self::NB_USER; $u++) {
             $user = new User();
-            $user->setLastName('Doe')
-                ->setFirstName('John')
+            $user->setLastName($this->faker->lastName)
+                ->setFirstName($this->faker->firstName())
                 ->setMail($this->faker->email)
-                ->setAddress('456 Avenue de la République, 75015 Paris')
-                ->setPhoneNumber(06)
-                ->setBirthDate(new \DateTime('20-11-1986'))
+                ->setAddress($this->faker->address)
+                ->setPhoneNumber($this->faker->phoneNumber)
+                ->setBirthDate($this->faker->dateTime())
                 ->setDriveLicenceNb('A465500')
                 ->setIsAdmin(false)
                 ->setPassword('test');

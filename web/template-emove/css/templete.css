@@ -111,7 +111,7 @@
 }
 .about-us .dlab-tabs .nav-tabs li.active a{
 	border:0;
-	color;#000;
+	color:#000;
 }
 .about-us .dlab-tabs .nav-tabs li.active a h4,
 .about-us .dlab-tabs .nav-tabs li.active a span{	
@@ -234,7 +234,7 @@
 }
 .dlab-team .dlab-img-overlay6:before,
 .dlab-team .dlab-img-overlay6:after{
-	background-image:url("../page-error-404.html");
+	/*background-image:url("../page-error-404.html");*/
 	background-color:rgba(0,0,0,0);
 	opacity: 0.2;
 }
@@ -1178,7 +1178,7 @@ footer .footer-bottom .fa-heart {
 	transition:all 0.5s;
 }
 .city-box .dlab-move{
-	background-image: url("../images/blog/latest-blog/pic1.jpg");
+	background-image: url("../img/blog/latest-blog/pic1.jpg");
     background-size: cover;
 	position: absolute;
     width: 100%;
@@ -2045,7 +2045,7 @@ input[type="radio"] + label:hover:before{
 	left:0;
 	height:100%;
 	width:270px;
-	background-image:url("../images/background/bg3.jpg");
+	background-image:url("../img/background/bg3.jpg");
 	background-position:center;
 	background-size:cover;
 	top:0;
@@ -2374,7 +2374,7 @@ input[type="radio"] + label:hover:before{
 }
 /* Car Review */
 .review-star-box{
-	background-image: url("../images/review-star.png");
+	background-image: url("../img/review-star.png");
     background-position: center center;
     background-repeat: no-repeat;
     color: #ffffff;
@@ -2536,7 +2536,7 @@ input[type="radio"] + label:hover:before{
     background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.90) 100%);
     background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.90) 100%);
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.90) 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
+    /*filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);*/
 }
 .blog-slider .dlab-post-meta ul li{
 	font-size: 12px;

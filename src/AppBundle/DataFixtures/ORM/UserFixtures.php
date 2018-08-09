@@ -18,7 +18,8 @@ class UserFixtures extends FixtureHelper
     {
         $user = new User();
         $user->setMail('admin@test.fr')
-            ->setPhoneNumber(06)
+            //->setPhoneNumber($this->faker->phoneNumber)
+            ->setPhoneNumber(01)
             ->setFirstName($this->faker->firstName())
             ->setLastName($this->faker->lastName)
             ->setIsAdmin(true)

@@ -30,7 +30,7 @@
     <![endif]-->
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="{{ asset('template-emove/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('template-emove/font-awesome/font-awesome.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('template-emove/font-awesome/css/font-awesome.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('template-emove/css/flaticon.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('template-emove/css/owl.carousel.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('template-emove/css/bootstrap-select.min.css') }}">
@@ -55,9 +55,9 @@
         gtag('config', 'UA-120204426-2');
     </script>
     <!-- Google Analytic Code --><!-- Revolution Slider Css -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('template-emove/plugins/revolution/css/settings.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('template-emove/plugins/revolution/v5.4.3/css/settings.css') }}">
     <!-- Revolution Navigation Style -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('template-emove/plugins/revolution/css/navigation.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('template-emove/plugins/revolution/v5.4.3/css/navigation.css') }}">
 </head>
 <body id="bg">
 
@@ -93,7 +93,7 @@
                 <div class="container clearfix">
                     <!-- website logo -->
                     <div class="logo-header mostion">
-                        <a href="#"><img src="{{ asset('template-emove/img/emovelogo.png') }}" class="logo" alt=""></a>
+                        <a href="#"><img src="{{ asset('et) }}" class="logo" alt="logo" style="height: 65px;"></a>
                     </div>
                     <!-- nav toggle button -->
                     <button data-target=".header-nav" data-toggle="collapse" type="button" class="navbar-toggle collapsed" aria-expanded="false" >
@@ -404,7 +404,7 @@
         <!-- Slider END -->
 
         <!-- About Us -->
-        <div class="section-full about-us bg-white content-inner-2" style="background-image: url('../img/background/about-us.jpg'); background-position:bottom; background-repeat:no-repeat; background-size:100%;">
+        <div class="section-full about-us bg-white content-inner-2" style="background-image: url({{ asset('template-emove/img/background/about-us.jpg') }}); background-position:bottom; background-repeat:no-repeat; background-size:100%;">
             <div class="container">
                 <div class="section-head text-center head-1">
                     <span class="text-primary">Bienvenue sur E Move</span>
@@ -414,7 +414,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-3 col-sm-6  col-xs-6">
-                        <div class="dlab-box-bg m-b30 box-hover" style="background-image: url('../img/our-work/work/pic1.jpg')">
+                        <div class="dlab-box-bg m-b30 box-hover" style="background-image: url({{ asset('template-emove/img/our-work/work/pic1.jpg') }})">
                             <div class="icon-bx-wraper center p-lr20 p-tb30">
                                 <div class="text-primary m-b20">
                                     <span class="icon-cell"><i class="glyph-icon flaticon-steering-wheel"></i></span>
@@ -430,7 +430,7 @@
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 col-xs-6">
-                        <div class="dlab-box-bg m-b30 box-hover" style="background-image: url('images/our-work/work/pic2.jpg')">
+                        <div class="dlab-box-bg m-b30 box-hover" style="background-image: url({{ asset('template-emove/img/our-work/work/pic2.jpg') }})">
                             <div class="icon-bx-wraper center p-lr20 p-tb30">
                                 <div class="text-primary m-b20">
                                     <span class="icon-cell"><i class="glyph-icon flaticon-speech-bubble"></i></span>
@@ -446,7 +446,7 @@
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 col-xs-6">
-                        <div class="dlab-box-bg m-b30 box-hover active" style="background-image: url('images/our-work/work/pic3.jpg')">
+                        <div class="dlab-box-bg m-b30 box-hover active" style="background-image: url({{ asset('template-emove/img/our-work/work/pic3.jpg') }})">
                             <div class="icon-bx-wraper center p-lr20 p-tb30">
                                 <div class="text-primary m-b20">
                                     <span class="icon-cell"><i class="glyph-icon flaticon-mechanic"></i></span>
@@ -462,7 +462,7 @@
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6 col-xs-6">
-                        <div class="dlab-box-bg m-b30 box-hover" style="background-image: url('images/our-work/work/pic4.jpg')">
+                        <div class="dlab-box-bg m-b30 box-hover" style="background-image: url({{ asset('template-emove/img/our-work/work/pic4.jpg') }})">
                             <div class="icon-bx-wraper center p-lr20 p-tb30">
                                 <div class="text-primary m-b20">
                                     <span class="icon-cell"><i class="glyph-icon flaticon-list"></i></span>
@@ -782,7 +782,7 @@
 
 
         <!-- Testimonial -->
-        <div class="section-full content-inner bg-img-fix overlay-primary-dark" style="background-image: url('images/background/bg3.jpg');">
+        <div class="section-full content-inner bg-img-fix overlay-primary-dark" style="background-image: url({{ asset('template-emove//img/background/bg3.jpg') }})">
             <div class="container">
                 <div class="section-head text-center head-1 text-white">
                     <h3 class="h3 text-uppercase">Témoignages</h3>

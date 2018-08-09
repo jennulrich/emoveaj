@@ -50,12 +50,17 @@ class Model
      */
     private $autonomie;
 
-
     /**
      * @var ArrayCollection
      * @ORM\OneToMany(targetEntity="Car", mappedBy="model", cascade={"remove", "persist"})
      */
     private $cars;
+
+    /**
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity="Scooter", mappedBy="model", cascade={"remove", "persist"})
+     */
+    private $scooters;
 
 
     /**
@@ -204,5 +209,41 @@ class Model
     public function getCars()
     {
         return $this->cars;
+    }
+
+    
+
+    /**
+     * Add scooter
+     *
+     * @param \AppBundle\Entity\Scooter $scooter
+     *
+     * @return Model
+     */
+    public function addScooter(\AppBundle\Entity\Scooter $scooter)
+    {
+        $this->scooters[] = $scooter;
+
+        return $this;
+    }
+
+    /**
+     * Remove scooter
+     *
+     * @param \AppBundle\Entity\Scooter $scooter
+     */
+    public function removeScooter(\AppBundle\Entity\Scooter $scooter)
+    {
+        $this->scooters->removeElement($scooter);
+    }
+
+    /**
+     * Get scooters
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getScooters()
+    {
+        return $this->scooters;
     }
 }

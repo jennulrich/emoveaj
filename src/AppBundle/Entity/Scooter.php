@@ -22,9 +22,9 @@ class Scooter
     private $id;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="model", type="string", length=255)
+     * @var Model
+     * @ORM\ManyToOne(targetEntity="Model", inversedBy="scooters", cascade={"persist"})
+     * @ORM\JoinColumn(name="model_id", referencedColumnName="id", nullable=false)
      */
     private $model;
 
@@ -65,30 +65,6 @@ class Scooter
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set model
-     *
-     * @param string $model
-     *
-     * @return Scooter
-     */
-    public function setModel($model)
-    {
-        $this->model = $model;
-
-        return $this;
-    }
-
-    /**
-     * Get model
-     *
-     * @return string
-     */
-    public function getModel()
-    {
-        return $this->model;
     }
 
     /**
@@ -185,5 +161,29 @@ class Scooter
     public function getSerialNumber()
     {
         return $this->serialNumber;
+    }
+
+    /**
+     * Set model
+     *
+     * @param \AppBundle\Entity\Model $model
+     *
+     * @return Scooter
+     */
+    public function setModel(\AppBundle\Entity\Model $model)
+    {
+        $this->model = $model;
+
+        return $this;
+    }
+
+    /**
+     * Get model
+     *
+     * @return \AppBundle\Entity\Model
+     */
+    public function getModel()
+    {
+        return $this->model;
     }
 }

@@ -2,7 +2,7 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\Model;
+use AppBundle\Entity\CarModel;
 use AppBundle\Form\ModelType;
 use AppBundle\Manager\ModelManager;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -59,7 +59,7 @@ class ModelController extends Controller
      */
     public function addAction(Request $request): Response
     {
-        $model = new Model();
+        $model = new CarModel();
 
         $form = $this->createForm(ModelType::class, $model);
         $form->handleRequest($request);
@@ -107,7 +107,7 @@ class ModelController extends Controller
      * @Route("/{id}/delete", name="admin_delete_model", requirements={"id"="\d+"})
      * @return Response
      */
-    public function DeleteAction(Model $model): Response
+    public function DeleteAction(CarModel $model): Response
     {
         $this->modelManager->remove($model);
 

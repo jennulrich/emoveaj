@@ -3,38 +3,39 @@
 namespace AppBundle\DataFixtures\ORM;
 
 use AppBundle\DataFixtures\Helper\FixtureHelper;
-use AppBundle\Entity\Model;
 use AppBundle\Entity\Scooter;
 use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
-class ScooterFixtures extends FixtureHelper
+class ScooterFixtures extends FixtureHelper implements DependentFixtureInterface
 {
     public function load(ObjectManager $manager)
     {
-        for ($s = 1; $s <= self::NB_SCOOTER; $s++) {
-            $model = new Model();
-            $model
-                ->setNameModel('Modele ' . $s)
-                ->setBrand('Marque ' . $s)
-                ->setGamme('Gamme ' . $s)
-                ->setAutonomie('500 km');
-            //$this->setReference('car-model-' . $m, $model);
-            //$this->setReference("model-" . $m, $model);
+        // 5 modèles en base
+        for ($i=1; $i<=5; $i++) {
+            $model = $this->getReference("scooter-model-".$i);
+            // 10 scooters du même modèle
+            for ($j=1; $j<=self::NB_SCOOTER; $j++) {
+                $scooter = new Scooter();
+                $scooter->setModel($model);
+                $scooter->setMatriculation('A465500');
+                $scooter->setColor('Couleur');
+                $scooter->setKilometers($this->faker->numberBetween(100, 2000));
+                $scooter->setReference('REFSCOOT-100' . $this->faker->numberBetween(100, 500));
+                $scooter->setSerialNumber($this->faker->numberBetween(3100057, 21090057));
 
-            $manager->persist($model);
-            //$this->setReference("model-".$c."-".$m, $model);
 
-            $scooter = new Scooter();
-            $scooter
-                ->setMatriculation('Immat ' . $s)
-                ->setKilometers(10000)
-                ->setSerialNumber('A465500')
-                ->setColor('Couleur ' . $s)
-                ->setModel($model);
-
-            //$this->setReference('model' . $m . '-' . $c, $car);
-            $manager->persist($scooter);
+                $manager->persist($scooter);
+                $this->setReference("scooter-".$i."-".$j, $scooter);
+            }
         }
         $manager->flush();
+    }
+
+    public function getDependencies()
+    {
+        return array(
+            ScooterModelFixtures::class,
+        );
     }
 }

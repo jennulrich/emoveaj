@@ -11,8 +11,10 @@ class BrandFixtures extends FixtureHelper
     public function load(ObjectManager $manager)
     {
         $brands = [ "Audi", "BMW", "Citroën", "Chevrolet", "Fiat", "Ford", "Kia",
-                    "Mercedes", "Mitsubishi", "Nissan", "Opel", "Peugeot", "Renault",
-                    "Seat", "Smart", "Toyota", "Volkswagen" ];
+        "Mercedes", "Mitsubishi", "Nissan", "Opel", "Peugeot", "Renault",
+        "Seat", "Smart", "Toyota", "Volkswagen" ];
+
+        $i = 1;
 
         foreach ($brands as $brand) {
             $brandInfo = new Brand();
@@ -21,6 +23,9 @@ class BrandFixtures extends FixtureHelper
                 ->setName($brand);
 
             $manager->persist($brandInfo);
+            $this->setReference("brand-model-" . $i, $brandInfo);
+            $i++;
+
         }
         $manager->flush();
     }

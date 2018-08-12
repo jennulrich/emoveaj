@@ -8,8 +8,8 @@ use Faker\Factory as Faker;
 
 class FixtureHelper extends Fixture
 {
-    const NB_CAR = 20;
-    const NB_SCOOTER = 20;
+    const NB_CAR = 10;
+    const NB_SCOOTER = 10;
     const NB_MODEL = 5;
     const NB_USER = 20;
 

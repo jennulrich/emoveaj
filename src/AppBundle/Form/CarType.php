@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-use AppBundle\Entity\Model;
+use AppBundle\Entity\CarModel;
 
 class CarType extends AbstractType
 {
@@ -15,7 +15,7 @@ class CarType extends AbstractType
         $builder
             // TODO : Jenn => Voir pour mettre le choice_label en input
             ->add('model', EntityType::class, array(
-                'class' => Model::class,
+                'class' => CarModel::class,
                 'choice_label' => 'nameModel',
                 'label' => 'Modèle'
             ))

@@ -4,37 +4,37 @@ namespace AppBundle\DataFixtures\ORM;
 
 use AppBundle\DataFixtures\Helper\FixtureHelper;
 use AppBundle\Entity\Car;
-use AppBundle\Entity\Model;
 use Doctrine\Common\Persistence\ObjectManager;
+use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 
-class CarFixtures extends FixtureHelper
+class CarFixtures extends FixtureHelper implements DependentFixtureInterface
 {
     public function load(ObjectManager $manager)
     {
-        for ($c = 1; $c <= self::NB_CAR; $c++) {
-                $model = new Model();
-                $model
-                    ->setNameModel('Modele ' . $c)
-                    ->setBrand('Marque ' . $c)
-                    ->setGamme('Gamme ' . $c)
-                    ->setAutonomie('500 km');
-                //$this->setReference('car-model-' . $m, $model);
-                //$this->setReference("model-" . $m, $model);
+        // 5 modèles en base
+        for ($i=1; $i<=5; $i++) {
+            $model = $this->getReference("car-model-".$i);
+            // 10 voitures du même modèle
+            for ($j=1; $j<=self::NB_CAR; $j++) {
+                $car = new Car();
+                $car->setModel($model);
+                $car->setMatriculation('A465500');
+                $car->setColor('Couleur');
+                $car->setKilometers($this->faker->numberBetween(2000, 15000));
+                $car->setReference('REFCAR-000' . $this->faker->numberBetween(100, 500));
+                $car->setSerialNumber($this->faker->numberBetween(3100057, 21090057));
 
-                $manager->persist($model);
-                //$this->setReference("model-".$c."-".$m, $model);
-
-            $car = new Car();
-            $car
-                ->setMatriculation('Immat ' . $c)
-                ->setKilometers(10000)
-                ->setSerialNumber('A465500')
-                ->setColor('Couleur ' . $c)
-                ->setModel($model);
-
-            //$this->setReference('model' . $m . '-' . $c, $car);
-            $manager->persist($car);
+                $manager->persist($car);
+                $this->setReference("voiture-".$i."-".$j, $car);
+            }
         }
         $manager->flush();
+    }
+
+    public function getDependencies()
+    {
+        return array(
+            CarModelFixtures::class,
+        );
     }
 }

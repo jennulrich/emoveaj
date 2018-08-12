@@ -22,11 +22,11 @@ class Scooter
     private $id;
 
     /**
-     * @var Model
-     * @ORM\ManyToOne(targetEntity="Model", inversedBy="scooters", cascade={"persist"})
-     * @ORM\JoinColumn(name="model_id", referencedColumnName="id", nullable=false)
+     * @var string
+     *
+     * @ORM\Column(name="reference", type="string", length=255)
      */
-    private $model;
+    private $reference;
 
     /**
      * @var string
@@ -52,9 +52,15 @@ class Scooter
     /**
      * @var string
      *
-     * @ORM\Column(name="serial_number", type="string", length=255)
+     * @ORM\Column(name="serialNumber", type="string", length=255)
      */
     private $serialNumber;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="ScooterModel", inversedBy="scooters", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $model;
 
 
     /**
@@ -68,27 +74,27 @@ class Scooter
     }
 
     /**
-     * Set color
+     * Set reference
      *
-     * @param string $color
+     * @param string $reference
      *
      * @return Scooter
      */
-    public function setColor($color)
+    public function setReference($reference)
     {
-        $this->color = $color;
+        $this->reference = $reference;
 
         return $this;
     }
 
     /**
-     * Get color
+     * Get reference
      *
      * @return string
      */
-    public function getColor()
+    public function getReference()
     {
-        return $this->color;
+        return $this->reference;
     }
 
     /**
@@ -132,11 +138,35 @@ class Scooter
     /**
      * Get kilometers
      *
-     * @return integer
+     * @return int
      */
     public function getKilometers()
     {
         return $this->kilometers;
+    }
+
+    /**
+     * Set color
+     *
+     * @param string $color
+     *
+     * @return Scooter
+     */
+    public function setColor($color)
+    {
+        $this->color = $color;
+
+        return $this;
+    }
+
+    /**
+     * Get color
+     *
+     * @return string
+     */
+    public function getColor()
+    {
+        return $this->color;
     }
 
     /**
@@ -164,13 +194,10 @@ class Scooter
     }
 
     /**
-     * Set model
-     *
-     * @param \AppBundle\Entity\Model $model
-     *
-     * @return Scooter
+     * @param mixed $model
+     * @return string
      */
-    public function setModel(\AppBundle\Entity\Model $model)
+    public function setModel($model)
     {
         $this->model = $model;
 
@@ -178,9 +205,7 @@ class Scooter
     }
 
     /**
-     * Get model
-     *
-     * @return \AppBundle\Entity\Model
+     * @return string
      */
     public function getModel()
     {

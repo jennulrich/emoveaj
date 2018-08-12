@@ -6,12 +6,12 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Model
+ * CarModel
  *
- * @ORM\Table(name="model")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\ModelRepository")
+ * @ORM\Table(name="car_model")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\CarModelRepository")
  */
-class Model
+class CarModel
 {
     /**
      * @var int
@@ -32,13 +32,6 @@ class Model
     /**
      * @var string
      *
-     * @ORM\Column(name="brand", type="string", length=255, nullable=true)
-     */
-    private $brand;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="gamme", type="string", length=255, nullable=true)
      */
     private $gamme;
@@ -51,16 +44,15 @@ class Model
     private $autonomie;
 
     /**
-     * @var ArrayCollection
      * @ORM\OneToMany(targetEntity="Car", mappedBy="model", cascade={"remove", "persist"})
      */
     private $cars;
 
     /**
-     * @var ArrayCollection
-     * @ORM\OneToMany(targetEntity="Scooter", mappedBy="model", cascade={"remove", "persist"})
+     * @ORM\ManyToOne(targetEntity="Brand", inversedBy="carModels", cascade={"persist" ,"remove"})
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $scooters;
+    private $brand;
 
 
     /**
@@ -74,59 +66,11 @@ class Model
     }
 
     /**
-     * Set brand
-     *
-     * @param string $brand
-     *
-     * @return Model
-     */
-    public function setBrand($brand)
-    {
-        $this->brand = $brand;
-
-        return $this;
-    }
-
-    /**
-     * Get brand
-     *
-     * @return string
-     */
-    public function getBrand()
-    {
-        return $this->brand;
-    }
-
-    /**
-     * Set gamme
-     *
-     * @param string $gamme
-     *
-     * @return Model
-     */
-    public function setGamme($gamme)
-    {
-        $this->gamme = $gamme;
-
-        return $this;
-    }
-
-    /**
-     * Get gamme
-     *
-     * @return string
-     */
-    public function getGamme()
-    {
-        return $this->gamme;
-    }
-
-    /**
      * Set autonomie
      *
      * @param string $autonomie
      *
-     * @return Model
+     * @return CarModel
      */
     public function setAutonomie($autonomie)
     {
@@ -150,7 +94,7 @@ class Model
      *
      * @param string $nameModel
      *
-     * @return Model
+     * @return CarModel
      */
     public function setNameModel($nameModel)
     {
@@ -169,6 +113,7 @@ class Model
         return $this->nameModel;
     }
 
+    
     /**
      * Constructor
      */
@@ -182,7 +127,7 @@ class Model
      *
      * @param \AppBundle\Entity\Car $car
      *
-     * @return Model
+     * @return CarModel
      */
     public function addCar(\AppBundle\Entity\Car $car)
     {
@@ -211,39 +156,46 @@ class Model
         return $this->cars;
     }
 
-    
-
     /**
-     * Add scooter
-     *
-     * @param \AppBundle\Entity\Scooter $scooter
-     *
-     * @return Model
+     * @param mixed $brand
+     * @return string
      */
-    public function addScooter(\AppBundle\Entity\Scooter $scooter)
+    public function setBrand($brand)
     {
-        $this->scooters[] = $scooter;
+        $this->brand = $brand;
 
         return $this;
     }
 
     /**
-     * Remove scooter
-     *
-     * @param \AppBundle\Entity\Scooter $scooter
+     * @return string
      */
-    public function removeScooter(\AppBundle\Entity\Scooter $scooter)
+    public function getBrand()
     {
-        $this->scooters->removeElement($scooter);
+        return $this->brand;
     }
 
     /**
-     * Get scooters
+     * Set gamme
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @param string $gamme
+     *
+     * @return CarModel
      */
-    public function getScooters()
+    public function setGamme($gamme)
     {
-        return $this->scooters;
+        $this->gamme = $gamme;
+
+        return $this;
+    }
+
+    /**
+     * Get gamme
+     *
+     * @return string
+     */
+    public function getGamme()
+    {
+        return $this->gamme;
     }
 }

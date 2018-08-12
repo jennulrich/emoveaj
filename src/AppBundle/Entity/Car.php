@@ -22,9 +22,15 @@ class Car
     private $id;
 
     /**
-     * @var Model
-     * @ORM\ManyToOne(targetEntity="Model", inversedBy="cars", cascade={"persist"})
-     * @ORM\JoinColumn(name="model_id", referencedColumnName="id", nullable=false)
+     * @var string
+     *
+     * @ORM\Column(name="reference", type="string", length=255)
+     */
+    private $reference;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="CarModel", inversedBy="cars", cascade={"persist" ,"remove"})
+     * @ORM\JoinColumn(nullable=false)
      */
     private $model;
 
@@ -163,23 +169,42 @@ class Car
     }
 
     /**
-     * Set model
+     * Set reference
      *
-     * @param \AppBundle\Entity\Model $model
+     * @param string $reference
      *
      * @return Car
      */
-    public function setModel(\AppBundle\Entity\Model $model)
+    public function setReference($reference)
     {
-        $this->model = $model;
+        $this->reference = $reference;
 
         return $this;
     }
 
     /**
-     * Get model
+     * Get reference
      *
-     * @return \AppBundle\Entity\Model
+     * @return string
+     */
+    public function getReference()
+    {
+        return $this->reference;
+    }
+
+    /**
+     * @param mixed $car_model
+     * @return string
+     */
+    public function setModel($car_model)
+    {
+        $this->model = $car_model;
+
+        return $this;
+    }
+
+    /**
+     * @return string
      */
     public function getModel()
     {

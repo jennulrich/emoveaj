@@ -6,7 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-use AppBundle\Entity\Model;
+use AppBundle\Entity\ScooterModel;
 
 class ScooterType extends AbstractType
 {
@@ -14,7 +14,7 @@ class ScooterType extends AbstractType
     {
         $builder
             ->add('model', EntityType::class, array(
-                'class' => Model::class,
+                'class' => ScooterModel::class,
                 'choice_label' => 'nameModel',
                 'label' => 'Modèle'
             ))

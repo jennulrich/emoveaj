@@ -2,8 +2,8 @@
 
 namespace AppBundle\Manager;
 
-use AppBundle\Entity\Model;
-use AppBundle\Repository\ModelRepository;
+use AppBundle\Entity\CarModel;
+use AppBundle\Repository\CarModelRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
@@ -12,13 +12,13 @@ class ModelManager
     /** @var EntityManagerInterface */
     private $entityManager;
 
-    /** @var ModelRepository */
+    /** @var CarModelRepository */
     private $modelRepository;
 
     public function __construct(EntityManagerInterface $entityManager)
     {
         $this->entityManager = $entityManager;
-        $this->modelRepository = $this->entityManager->getRepository(Model::class);
+        $this->modelRepository = $this->entityManager->getRepository(CarModel::class);
     }
 
     public function getList(): array
@@ -26,22 +26,22 @@ class ModelManager
         return $this->modelRepository->findAll();
     }
 
-    public function get(int $id): Model
+    public function get(int $id): CarModel
     {
-        /** @var $model Model */
+        /** @var $model CarModel */
         $model = $this->modelRepository->find($id);
         $this->checkModel($model);
 
         return $model;
     }
 
-    public function save(Model $model)
+    public function save(CarModel $model)
     {
         $this->entityManager->persist($model);
         $this->entityManager->flush();
     }
 
-    public function remove(?Model $model)
+    public function remove(?CarModel $model)
     {
         if(!$model) {
             return;
@@ -51,7 +51,7 @@ class ModelManager
         $this->entityManager->flush();
     }
 
-    private function checkModel(?Model $model)
+    private function checkModel(?CarModel $model)
     {
         if (!$model) {
             throw new NotFoundHttpException('Model not found.');

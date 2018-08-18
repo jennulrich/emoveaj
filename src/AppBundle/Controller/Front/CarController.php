@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 /**
  * Car controller.
  *
- * @Route("car")
+ * @Route("front/car")
  */
 class CarController extends Controller
 {

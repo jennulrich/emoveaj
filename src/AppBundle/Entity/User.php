@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
@@ -63,6 +64,12 @@ class User implements UserInterface
      * @ORM\Column(name="mail", type="string", length=255, unique=true)
      */
     private $mail;
+
+    /**
+     * @Assert\NotBlank()
+     * @Assert\Length(max=4096)
+     */
+    private $plainPassword;
 
     /**
      * @var string
@@ -272,6 +279,9 @@ class User implements UserInterface
         return $this->driveLicenceNb;
     }
 
+    /**
+     * @return array
+     */
     public function getRoles()
     {
         $roles = ['ROLE_USER'];
@@ -295,6 +305,8 @@ class User implements UserInterface
 
     public function eraseCredentials()
     {
+        //$this->plainPassword = null;
+
         return;
     }
 
@@ -364,5 +376,15 @@ class User implements UserInterface
     public function getUsername()
     {
         return $this->mail;
+    }
+
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
+
+    public function setPlainPassword($password)
+    {
+        $this->plainPassword = $password;
     }
 }

@@ -1,0 +1,65 @@
+{% extends 'front/layout-registration.html.twig' %}
+
+{% block content %}
+
+    <style>
+
+    </style>
+
+    <div class="register-logo">
+        <b>Inscription à </b>E-Move
+    </div>
+
+    <div class="card" style="padding: 30px 15px">
+        <div class="card-body register-card-body">
+            {{ form_start(form) }}
+                <div class="form-group has-feedback first_name col-md-12">
+                    {{ form_row(form.firstName) }}
+                </div>
+                <div class="form-group has-feedback last_name col-md-12">
+                    {{ form_row(form.lastName) }}
+                </div>
+                <div class="form-group has-feedback drive_licence col-md-12">
+                    {{ form_row(form.driveLicenceNb) }}
+                </div>
+                <div class="form-group has-feedback mail col-md-12">
+                    {{ form_row(form.mail) }}
+                </div>
+                <div class="form-group has-feedback birth col-md-12">
+                    {{ form_row(form.birthDate) }}
+                </div>
+                <div class="form-group has-feedback address col-md-12">
+                    {{ form_row(form.address) }}
+                </div>
+                <div class="form-group has-feedback phone col-md-12">
+                    {{ form_row(form.phoneNumber) }}
+                </div>
+                <div class="form-group has-feedback password col-md-12">
+                    {{ form_row(form.plainPassword.first) }}
+                </div>
+                <div class="form-group has-feedback password_two col-md-12">
+                    {{ form_row(form.plainPassword.second) }}
+                </div>
+
+                <div class="">
+                    <div class="col-8">
+                        <div class="checkbox icheck">
+                            <label>
+                                <input type="checkbox"> I agree to the <a href="#" class="text-danger">terms</a>
+                            </label>
+                        </div>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-4 float-right">
+                        <button type="submit" style="border-radius: 3px" class="btn btn-danger btn-block btn-flat">Inscription</button>
+                    </div>
+                    <!-- /.col -->
+                </div>
+            {{ form_end(form) }}
+            <div class="col-md-12">
+                <a href="#" class="text-center text-danger">Déjà inscrit ?</a>
+            </div>
+        </div>
+        <!-- /.form-box -->
+    </div><!-- /.card -->
+{% endblock %}

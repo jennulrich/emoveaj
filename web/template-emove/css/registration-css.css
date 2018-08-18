@@ -1,0 +1,36 @@
+.register-box {
+    width: 600px;
+    margin: 7% auto;
+}
+
+.first_name label, .last_name label, .drive_licence label, .mail label,
+.address label, .phone label, .password label, .password_two label, .birth label {
+    width: 30%;
+}
+
+.first_name input, .last_name input, .drive_licence input, .mail input,
+.address input, .phone input, .password input, .password_two input {
+    width: 70%;
+    border-radius: 3px;
+    border: 1px solid lightgrey;
+    padding: 5px 5px;
+}
+
+#user_birthDate_time {
+    display: none;
+}
+
+#user_birthDate_date_month, #user_birthDate_date_day {
+    margin-right: 10px;
+}
+
+#user_plainPassword_second {
+    position: relative;
+    top: -10px;
+}
+
+.register-page {
+    background: url("../img/background/leaf2.png");
+    background-size: cover;
+    opacity: 0.9;
+}

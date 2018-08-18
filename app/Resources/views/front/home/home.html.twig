@@ -66,7 +66,7 @@
             <!-- Form -->
             <div class="form-slide">
                 <div class="container">
-                    <form class="search-car" action="new-car-search-result-list.html" method="post">
+                    <form class="search-car" action="" method="post">
                         <div class="form-head">
                             <h2>Rechercher une location</h2>
                         </div>
@@ -93,24 +93,17 @@
                                         <div class="input-group">
                                             <select class="form-control">
                                                 <option style="display: none">Prix</option>
-                                                <option>1 Lakh - 5 Lakh</option>
-                                                <option>5 Lakh - 10 Lakh</option>
-                                                <option>10 Lakh - 20 Lakh</option>
-                                                <option>20 Lakh - 50 Lakh</option>
-                                                <option>50 Lakh - 1 Crore</option>
-                                                <option>Above 1 Crore</option>
+                                                {% for car in cars %}
+                                                <option>{{ car.price }} €</option>
+                                                {% endfor %}
                                             </select>
                                         </div>
                                         <div class="input-group">
                                             <select class="form-control">
                                                 <option style="display: none">Type de voiture</option>
-                                                <option>Berline</option>
-                                                <option>Citadine</option>
-                                                <option>4x4</option>
-                                                <option>Familliale</option>
-                                                <option>Cabriolet</option>
-                                                <option>Pickup</option>
-                                                <option>Camionnette</option>
+                                                {% for model in models %}
+                                                <option>{{ model.gamme }}</option>
+                                                {% endfor %}
                                             </select>
                                         </div>
                                         <div class="input-group">
@@ -125,17 +118,17 @@
                                         <div class="input-group">
                                             <select class="form-control">
                                                 <option>MARQUE</option>
-                                                <option>Hatchback</option>
-                                                <option>Sedans</option>
-                                                <option>MUV</option>
+                                                {% for brand in brands %}
+                                                <option>{{ brand.name }}</option>
+                                                {% endfor %}
                                             </select>
                                         </div>
                                         <div class="input-group">
                                             <select class="form-control">
                                                 <option class="text-uppercase">modèle</option>
-                                                <option>Hatchback</option>
-                                                <option>Sedans</option>
-                                                <option>MUV</option>
+                                                {% for model in models %}
+                                                <option>{{ model.nameModel }}</option>
+                                                {% endfor %}
                                             </select>
                                         </div>
                                     </div>

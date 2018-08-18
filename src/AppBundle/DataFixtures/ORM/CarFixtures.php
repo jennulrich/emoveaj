@@ -22,6 +22,7 @@ class CarFixtures extends FixtureHelper implements DependentFixtureInterface
                 $car->setColor('Couleur');
                 $car->setKilometers($this->faker->numberBetween(2000, 15000));
                 $car->setReference('REFCAR-000' . $this->faker->numberBetween(100, 500));
+                $car->setPrice($this->faker->numberBetween(19, 500));
                 $car->setSerialNumber($this->faker->numberBetween(3100057, 21090057));
 
                 $manager->persist($car);

@@ -13,6 +13,7 @@ class CarType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('reference', TextType::class, array('label' => 'Référence'))
             // TODO : Jenn => Voir pour mettre le choice_label en input
             ->add('model', EntityType::class, array(
                 'class' => CarModel::class,
@@ -22,7 +23,8 @@ class CarType extends AbstractType
             ->add('matriculation', TextType::class, array('label' => 'Immatriculation'))
             ->add('kilometers', TextType::class, array('label' => 'KM'))
             ->add('color', TextType::class, array('label' => 'Couleur'))
-            ->add('serialNumber', TextType::class, array('label' => 'N° de Série'));
+            ->add('serialNumber', TextType::class, array('label' => 'N° de Série'))
+            ->add('price', TextType::class, array('label' => 'Prix'));
             //->add('image', FileType::class, array(
                 //'label' => 'Image',
                 //'required' => false,

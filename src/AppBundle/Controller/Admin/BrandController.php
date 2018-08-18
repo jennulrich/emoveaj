@@ -77,7 +77,7 @@ class BrandController extends Controller
     }
 
     /**
-     * @Route("/{id}/edit", name="admin_edit_car", requirements={"id"="\d+"})
+     * @Route("/{id}/edit", name="admin_edit_brand", requirements={"id"="\d+"})
      * @param $id int
      * @param Request $request
      * @return Response

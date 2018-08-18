@@ -1,0 +1,35 @@
+{% extends 'admin/layout-admin.html.twig' %}
+
+{% block content %}
+    <div class="row" style="margin: 20px 0 15px 0">
+        <div class="col-md-6">
+            <h2>Marque N° {{ brand.id }}</h2>
+        </div>
+        <div class="col-md-6 text-right">
+            <a href="{{ path('admin_brands') }}" class="btn return">
+                <i class="fa fa-arrow-left"></i>Retour à la liste
+            </a>
+        </div>
+    </div>
+    <table id="table-show" class="card">
+        <tbody class="card-body">
+        <tr>
+            <th>Identifiant</th>
+            <td>{{ brand.id }}</td>
+        </tr>
+        <tr>
+            <th>Nom</th>
+            <td>{{ brand.name }}</td>
+        </tr>
+        <tr>
+            <th>
+                <div class="row">
+                    <div class="col-md-2">
+                        <button style="margin-top: 20px" type="button" id="btn-edit" class="btn btn-light"><a href="{{ path('admin_edit_brand', { 'id': brand.id }) }}" class="card-link">Modifier</a></button>
+                    </div>
+                </div>
+            </th>
+        </tr>
+        </tbody>
+    </table>
+{% endblock %}

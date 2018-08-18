@@ -37,7 +37,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ path('admin_brands') }}" class="nav-link
+                                {% if app.request.attributes.get('_route') == 'admin_brands'
+                                or app.request.attributes.get('_route') == 'admin_add_brand'
+                                or app.request.attributes.get('_route') == 'admin_view_brand'
+                                or app.request.attributes.get('_route') == 'admin_edit_brand'
+                            %}active{% endif %}">
                                 <i class="fa fa-star nav-icon"></i>
                                 <p>Marques</p>
                             </a>
@@ -46,12 +51,6 @@
                             <a href="#" class="nav-link">
                                 <i class="fa fa-cog nav-icon"></i>
                                 <p>Modèles</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="fa fa-certificate nav-icon"></i>
-                                <p>Gammes</p>
                             </a>
                         </li>
                         <li class="nav-item">

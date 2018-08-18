@@ -7,7 +7,6 @@ use AppBundle\Manager\BrandManager;
 use AppBundle\Manager\CarManager;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Home controller.

@@ -25,6 +25,6 @@ class AboutusController extends Controller
      */
     public function AboutusAction()
     {
-        return $this->render('front/aboutus.html.twig');
+        return $this->render('front/about/aboutus.html.twig');
     }
 }

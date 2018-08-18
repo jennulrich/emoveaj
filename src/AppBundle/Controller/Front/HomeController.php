@@ -18,6 +18,6 @@ class HomeController extends Controller
      */
     public function HomeAction()
     {
-        return $this->render('front/home.html.twig');
+        return $this->render('front/home/home.html.twig');
     }
 }

@@ -1,0 +1,112 @@
+<header class="site-header header-transparent">
+    <div class="top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="dlab-topbar-left">
+                    <ul>
+                        <li><a href="#" >Une question ?</a></li>
+                    </ul>
+                </div>
+                <div class="dlab-topbar-right topbar-social">
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0);"><i class="fa fa-envelope-o"></i> support@emove.com</a>
+                        </li>
+                        <li><a href="#" class="site-button-link facebook hover"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#" class="site-button-link google-plus hover"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#" class="site-button-link twitter hover"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#" class="site-button-link linkedin hover"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- main header -->
+    <div class="sticky-header main-bar-wraper">
+        <div class="main-bar clearfix ">
+            <div class="container clearfix">
+                <!-- website logo -->
+                <div class="logo-header mostion">
+                    <a href="#"><img src="{{ asset('template-emove/img/emovelogo.png') }}" class="logo" alt="logo" style="height: 65px;"></a>
+                </div>
+                <!-- nav toggle button -->
+                <button data-target=".header-nav" data-toggle="collapse" type="button" class="navbar-toggle collapsed" aria-expanded="false" >
+                    <i class="fa fa-bars"></i>
+                </button>
+                <!-- extra nav -->
+                <div class="extra-nav">
+                    <div class="extra-cell">
+                        <button id="quik-search-btn" type="button" class="site-button-link"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+                <!-- Quik search -->
+                <div class="dlab-quik-search bg-primary ">
+                    <form action="#">
+                        <input name="search" value="" type="text" class="form-control" placeholder="Type to search">
+                        <span id="quik-search-remove"><i class="fa fa-close"></i></span>
+                    </form>
+                </div>
+                <!-- main nav -->
+                <div class="header-nav navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active has-mega-menu demos"> <a href="#">Accueil</a></li>
+                        <li><a href="javascript:;">Voitures<i class="fa fa-chevron-down"></i></a>
+                            <ul class="sub-menu">
+                                <li> <a href="javascript:;">Search Cars <i class="fa fa-angle-right"></i></a>
+                                    <ul class="sub-menu">
+                                        <li><a href="#">Search Car</a></li>
+                                        <li><a href="#">Search Result List</a></li>
+                                        <li><a href="#">Search Result Column</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Latest Cars</a></li>
+                                <li><a href="#">Popular Cars</a></li>
+                                <li><a href="#">Upcoming Cars</a></li>
+                                <li> <a href="javascript:;">Dealers & Service Centers <i class="fa fa-angle-right"></i></a>
+                                    <ul class="sub-menu">
+                                        <li><a href="#">Car Dealers</a></li>
+                                        <li><a href="#">Service Center</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">On Road Price</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="javascript:;">Scooters<i class="fa fa-chevron-down"></i></a>
+                            <ul class="sub-menu">
+                                <li> <a href="javascript:;">In My City <i class="fa fa-angle-right"></i></a>
+                                    <ul class="sub-menu">
+                                        <li><a href="#">New York City</a></li>
+                                        <li><a href="#">Chicago</a></li>
+                                        <li><a href="#">Los Angeles</a></li>
+                                        <li><a href="#">Boston</a></li>
+                                        <li><a href="#">San Francisco</a></li>
+                                        <li><a href="#">Washington</a></li>
+                                        <li><a href="#">Seattle</a></li>
+                                        <li><a href="#">Philadelphia</a></li>
+                                        <li><a href="#">Austin</a></li>
+                                        <li><a href="#">Detroit</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="javascript:;">Search Car <i class="fa fa-angle-right"></i></a>
+                                    <ul class="sub-menu">
+                                        <li><a href="#">Search Car</a></li>
+                                        <li><a href="#">Search Car Result</a></li>
+                                        <li><a href="#">Used Car Detail</a></li>
+                                    </ul>
+
+                                </li>
+                                <li><a href="#">Used Car Detail</a></li>
+                                <li><a href="#">Sell Your Car</a></li>
+                                <li><a href="#">Car Valuation</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="has-mega-menu "> <a href="{{ path('aboutus') }}">À Propos</a>
+
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

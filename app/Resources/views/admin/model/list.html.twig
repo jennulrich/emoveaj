@@ -1,0 +1,48 @@
+{% extends 'admin/layout-admin.html.twig' %}
+
+{% block content %}
+    <div class="row" style="margin-bottom: 15px">
+        <div class="col-md-6 h2-car-list" style="margin-top: 20px">
+            <h2>Liste des modèles</h2>
+        </div>
+        <div class="col-md-6 admin-add">
+            <a href="{{ path('admin_add_model') }}"><button type="button" class="btn add"><i class="fa fa-plus"></i> Ajouter un modèle</button></a>
+        </div>
+    </div>
+    <div class="card" style="padding: 15px; margin-bottom: 30px">
+        <div class="row" id="margin-table">
+            <div class="col-md-12">
+                <table id="model" class="table table-bordered table-striped" width="100%" style="margin-top: 15px; font-size: 11pt">
+                    <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Gamme</th>
+                        <th>Autonomie</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for model in models %}
+                        <tr>
+                            <td style="vertical-align: middle">{{ model.nameModel }}</td>
+                            <td style="vertical-align: middle">{{ model.gamme }}</td>
+                            <td style="vertical-align: middle">{{ model.autonomie }}</td>
+                            <td>
+                                <ul class="puce-none mb-0">
+                                    <li>
+                                        <a href="{{ path('admin_view_model', { 'id': model.id }) }}" class="action"> <i class="fa fa-eye"></i>Détail</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('admin_edit_model', { 'id': model.id }) }}" class="action"><i class="fa fa-edit"></i>Modifier</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('admin_delete_model', { 'id': model.id}) }}" class="action" data-toggle="modal" data-target="#{{ model.id }}"><i class="fa fa-trash"></i>Supprimer</a>
+                                    </li>
+                                </ul>
+                            </td>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>

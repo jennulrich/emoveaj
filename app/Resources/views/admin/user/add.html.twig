@@ -1,0 +1,32 @@
+{% extends 'admin/layout-admin.html.twig' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-6" style="margin-top: 20px; margin-bottom: 15px">
+            <h2>Ajouter un utilisateur</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card" style="padding: 15px">
+                <div class="form container-fluid">
+                    {{ form_start(form) }}
+                    {{ form_errors(form) }}
+                    <div class="add-title">
+                        {{ form_row(form.name) }}
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button type="submit" class="btn add text-uppercase" id="add-button">Ajouter</button>
+                            <a href="{{ path('admin_brands') }}" class="btn back-add text-uppercase">annuler</a>
+                        </div>
+                    </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

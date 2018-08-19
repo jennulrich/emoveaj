@@ -24,7 +24,8 @@ class HomeController extends Controller
     /** @var BrandManager */
     private $brandManager;
 
-    public function __construct(ModelManager $modelManager, CarManager $carManager, BrandManager $brandManager)
+    public function __construct(ModelManager $modelManager, CarManager $carManager,
+                                BrandManager $brandManager)
     {
         $this->modelManager = $modelManager;
         $this->carManager = $carManager;

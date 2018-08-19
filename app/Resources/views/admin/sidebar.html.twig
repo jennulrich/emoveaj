@@ -48,11 +48,11 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ path('admin_models') }}" class="nav-link
-                                {% if app.request.attributes.get('_route') == 'admin_models'
-                                or app.request.attributes.get('_route') == 'admin_add_model'
-                                or app.request.attributes.get('_route') == 'admin_view_model'
-                                or app.request.attributes.get('_route') == 'admin_edit_model'
+                            <a href="{{ path('admin_car_models') }}" class="nav-link
+                                {% if app.request.attributes.get('_route') == 'admin_car_models'
+                                or app.request.attributes.get('_route') == 'admin_add_car_model'
+                                or app.request.attributes.get('_route') == 'admin_view_car_model'
+                                or app.request.attributes.get('_route') == 'admin_edit_car_model'
                             %}active{% endif %}">
                                 <i class="fa fa-cog nav-icon"></i>
                                 <p>Modèles</p>

@@ -11,11 +11,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * Model controller.
+ * CarModel controller.
  *
- * @Route("admin/model")
+ * @Route("admin/car-model")
  */
-class ModelController extends Controller
+class CarModelController extends Controller
 {
     /** @var ModelManager */
     private $modelManager;
@@ -26,7 +26,7 @@ class ModelController extends Controller
     }
 
     /**
-     * @Route("/{id}", name="admin_view_model", requirements={"id"="\d+"})
+     * @Route("/{id}", name="admin_view_car_model", requirements={"id"="\d+"})
      * @param $id int
      * @return Response
      */
@@ -34,26 +34,26 @@ class ModelController extends Controller
     {
         $model = $this->modelManager->get($id);
 
-        return $this->render('admin/model/detail.html.twig', [
+        return $this->render('admin/carModel/detail.html.twig', [
             "model" => $model
         ]);
     }
 
     /**
-     * @Route("/", name="admin_models")
+     * @Route("/", name="admin_car_models")
      * @return Response
      */
     public function listAction(): Response
     {
         $models = $this->modelManager->getList();
 
-        return $this->render('admin/model/list.html.twig', [
+        return $this->render('admin/carModel/list.html.twig', [
             "models" => $models
         ]);
     }
 
     /**
-     * @Route("/add", name="admin_add_model")
+     * @Route("/add", name="admin_add_car_model")
      * @return Response
      * @param Request $request
      */
@@ -67,17 +67,17 @@ class ModelController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $this->modelManager->save($model);
 
-            return $this->redirectToRoute('admin_models');
+            return $this->redirectToRoute('admin_car_models');
         }
 
-        return $this->render('admin/model/add.html.twig', [
+        return $this->render('admin/carModel/add.html.twig', [
             "form" => $form->createView(),
             "model" => $model
         ]);
     }
 
     /**
-     * @Route("/{id}/edit", name="admin_edit_model", requirements={"id"="\d+"})
+     * @Route("/{id}/edit", name="admin_edit_car_model", requirements={"id"="\d+"})
      * @param $id int
      * @param Request $request
      * @return Response
@@ -92,25 +92,25 @@ class ModelController extends Controller
         if($form->isSubmitted() && $form->isValid()) {
             $this->modelManager->save($model);
 
-            return $this->redirectToRoute('admin_view_model', [
+            return $this->redirectToRoute('admin_view_car_model', [
                 "id"=>$model->getId(),
             ]);
         }
 
-        return $this->render('admin/model/edit.html.twig', [
+        return $this->render('admin/carModel/edit.html.twig', [
             'form' => $form->createView(),
             'model' => $model
         ]);
     }
 
     /**
-     * @Route("/{id}/delete", name="admin_delete_model", requirements={"id"="\d+"})
+     * @Route("/{id}/delete", name="admin_delete_car_model", requirements={"id"="\d+"})
      * @return Response
      */
     public function DeleteAction(CarModel $model): Response
     {
         $this->modelManager->remove($model);
 
-        return $this->redirectToRoute('admin_models');
+        return $this->redirectToRoute('admin_car_models');
     }
 }

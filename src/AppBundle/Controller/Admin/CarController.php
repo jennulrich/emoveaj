@@ -10,6 +10,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\HttpFoundation\File\File;
+use AppBundle\Service\ImageUploader;
 
 /**
  * Car controller.
@@ -62,7 +65,7 @@ class CarController extends Controller
      * @return Response
      * @param Request $request
      */
-    public function addAction(Request $request): Response
+    public function addAction(Request $request, ImageUploader $imageUploader): Response
     {
         $car = new Car();
 
@@ -70,6 +73,21 @@ class CarController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            /** @var UploadedFile $image */
+            $image = $car->getImage();
+
+            $imageName = $this->generateUniqueFileName().'.'.$image->guessExtension();
+            //$imageName = $imageUploader->upload($image);
+
+            $image->move(
+                $this->getParameter('images_directory'),
+                $imageName
+            );
+
+            //$car->setImage(new File($this->getParameter('images_directory').'/'.$car->getImage()));
+            $car->setImage($imageName);
+
             $this->carManager->save($car);
 
             return $this->redirectToRoute('admin_cars');
@@ -79,6 +97,14 @@ class CarController extends Controller
             "form" => $form->createView(),
             "car" => $car
         ]);
+    }
+
+    /**
+     * @return string
+     */
+    private function generateUniqueFileName()
+    {
+        return md5(uniqid());
     }
 
     /**

@@ -13,6 +13,8 @@
         <div class="col-md-12">
             <div class="card" style="padding: 15px">
                 <div class="form container-fluid">
+                    {{ form_start(form) }}
+                    {{ form_errors(form) }}
                     <div class="add-title">
                         {{ form_row(form.lastName) }}
                     </div>
@@ -28,9 +30,15 @@
                     <div class="add-title">
                         {{ form_row(form.mail) }}
                     </div>
+                    <div class="add-title">
+                        {{ form_row(form.birthDate) }}
+                    </div>
+                    <div class="add-title">
+                        {{ form_row(form.driveLicenceNb) }}
+                    </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <button type="submit" class="btn add text-uppercase" id="add-button">Modifier</button>
+                            <button type="submit" class="btn add text-uppercase btnEdit" id="add-button">Modifier</button>
                             <a href="{{ path('admin_users') }}" class="btn back-add text-uppercase">annuler</a>
                         </div>
                     </div>

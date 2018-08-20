@@ -1,6 +1,16 @@
 {% extends 'admin/layout-admin.html.twig' %}
 
 {% block content %}
+    <style>
+        .add-title div label {
+            width: 17%;
+        }
+
+        .add-title div input {
+            width: 50%;
+            padding-left: 5px;
+        }
+    </style>
     <div class="row">
         <div class="col-md-6" style="margin-top: 20px; margin-bottom: 15px">
             <h2>Modifier une voiture</h2>
@@ -24,9 +34,21 @@
                     <div class="add-title">
                         {{ form_row(form.price) }}
                     </div>
+                    <div class="add-title">
+                        {{ form_row(form.reference) }}
+                    </div>
+                    <div class="add-title">
+                        {{ form_row(form.matriculation) }}
+                    </div>
+                    <div class="add-title">
+                        {{ form_row(form.kilometers) }}
+                    </div>
+                    <div class="add-title">
+                        {{ form_row(form.serialNumber) }}
+                    </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <button type="submit" class="btn add text-uppercase" id="add-button">Modifier</button>
+                            <button type="submit" class="btn add text-uppercase btnEdit" id="add-button">Modifier</button>
                             <a href="{{ path('admin_cars') }}" class="btn back-add text-uppercase">annuler</a>
                         </div>
                     </div>

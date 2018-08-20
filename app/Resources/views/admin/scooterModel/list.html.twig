@@ -6,14 +6,43 @@
             <h2>Liste des modèles de scooters</h2>
         </div>
         <div class="col-md-6 admin-add">
-            <a href="{{ path('admin_add_car_model') }}"><button type="button" class="btn add"><i class="fa fa-plus"></i> Ajouter un modèle scooter</button></a>
+            <a href="{{ path('admin_add_scooter_model') }}"><button type="button" class="btn add"><i class="fa fa-plus"></i> Ajouter un modèle scooter</button></a>
         </div>
     </div>
     <div class="card" style="padding: 15px; margin-bottom: 30px">
         <div class="row" id="margin-table">
             <div class="col-md-12">
-                <table id="car" class="table table-bordered table-striped" width="100%" style="margin-top: 15px; font-size: 11pt">
-
+                <table id="scooter" class="table table-bordered table-striped" width="100%" style="margin-top: 15px; font-size: 11pt">
+                    <thead>
+                    <tr>
+                        <th>Modèle</th>
+                        <th>gamme</th>
+                        <th>Autonomie</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for model in models %}
+                        <tr>
+                            <td style="vertical-align: middle">{{ model.nameModel }}</td>
+                            <td style="vertical-align: middle">{{ model.gamme }}</td>
+                            <td style="vertical-align: middle">{{ model.autonomie }}</td>
+                            <td>
+                                <ul class="puce-none mb-0">
+                                    <li>
+                                        <a href="{{ path('admin_view_scooter_model', { 'id': model.id }) }}" class="action"> <i class="fa fa-eye"></i>Détail</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('admin_edit_scooter_model', { 'id': model.id }) }}" class="action"><i class="fa fa-edit"></i>Modifier</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('admin_delete_scooter_model', { 'id': model.id}) }}" class="action" data-toggle="modal" data-target="#{{ model.id }}"><i class="fa fa-trash"></i>Supprimer</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
                 </table>
             </div>
         </div>
@@ -23,7 +52,7 @@
 {% block javascripts %}
     <script>
         $(document).ready( function () {
-            $('#car').DataTable({
+            $('#scooter').DataTable({
                 "language": {
                     "search": "Recherche :"
                 },

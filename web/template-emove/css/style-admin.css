@@ -161,6 +161,9 @@ div.dataTables_paginate a {
     color: #B3272D;
     cursor: pointer;
 }
+select#scooter_model_brand, select#car_model_brand, select#scooter_model{
+    width: 50%;
+}
 /** Fin Formulaire Modif Product **/
 
 /******************************* DATATABLE CAR LIST *******************************/

@@ -2,10 +2,10 @@
 
 {% block content %}
     <div class="row" style="margin: 20px 0 15px 0">
-        <div class="col-md-6">
+        <div class="col-md-6" style="padding-left: 0px;">
             <h2>{{ scooter.model.nameModel }}</h2>
         </div>
-        <div class="col-md-6 text-right">
+        <div class="col-md-6 text-right" style="padding-right: 0px;">
             <a href="{{ path('admin_scooters') }}" class="btn return">
                 <i class="fa fa-arrow-left"></i>Retour à la liste
             </a>
@@ -18,8 +18,28 @@
             <td>{{ scooter.model.nameModel }}</td>
         </tr>
         <tr>
+            <th>Référence</th>
+            <td>{{ scooter.reference }}</td>
+        </tr>
+        <tr>
+            <th>Immatriculation</th>
+            <td>{{ scooter.matriculation }}</td>
+        </tr>
+        <tr>
+            <th>Kilomètres</th>
+            <td>{{ scooter.kilometers }}</td>
+        </tr>
+        <tr>
             <th>Couleur</th>
             <td>{{ scooter.color }}</td>
+        </tr>
+        <tr>
+            <th>Numéro de série</th>
+            <td>{{ scooter.serialNumber }}</td>
+        </tr>
+        <tr>
+            <th>Prix</th>
+            <td>{{ scooter.price }}</td>
         </tr>
         <tr>
             <th>

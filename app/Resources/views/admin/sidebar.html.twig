@@ -26,6 +26,17 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="{{ path('admin_car_models') }}" class="nav-link
+                                {% if app.request.attributes.get('_route') == 'admin_car_models'
+                                or app.request.attributes.get('_route') == 'admin_add_car_model'
+                                or app.request.attributes.get('_route') == 'admin_view_car_model'
+                                or app.request.attributes.get('_route') == 'admin_edit_car_model'
+                            %}active{% endif %}">
+                                <i class="fa fa-cog nav-icon"></i>
+                                <p>Modèles de voitures</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{ path('admin_scooters') }}" class="nav-link
                                     {% if app.request.attributes.get('_route') == 'admin_scooters'
                                 or app.request.attributes.get('_route') == 'admin_add_scooter'
@@ -37,6 +48,17 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="{{ path('admin_scooter_models') }}" class="nav-link
+                                {% if app.request.attributes.get('_route') == 'admin_scooter_models'
+                                or app.request.attributes.get('_route') == 'admin_add_scooter_model'
+                                or app.request.attributes.get('_route') == 'admin_view_scooter_model'
+                                or app.request.attributes.get('_route') == 'admin_edit_scooter_model'
+                            %}active{% endif %}">
+                                <i class="fa fa-cog nav-icon"></i>
+                                <p>Modèles de scooters</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{ path('admin_brands') }}" class="nav-link
                                 {% if app.request.attributes.get('_route') == 'admin_brands'
                                 or app.request.attributes.get('_route') == 'admin_add_brand'
@@ -45,17 +67,6 @@
                             %}active{% endif %}">
                                 <i class="fa fa-star nav-icon"></i>
                                 <p>Marques</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ path('admin_car_models') }}" class="nav-link
-                                {% if app.request.attributes.get('_route') == 'admin_car_models'
-                                or app.request.attributes.get('_route') == 'admin_add_car_model'
-                                or app.request.attributes.get('_route') == 'admin_view_car_model'
-                                or app.request.attributes.get('_route') == 'admin_edit_car_model'
-                            %}active{% endif %}">
-                                <i class="fa fa-cog nav-icon"></i>
-                                <p>Modèles</p>
                             </a>
                         </li>
                         <li class="nav-item">

@@ -62,6 +62,13 @@ class Scooter
      */
     private $model;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="price", type="string", length=255)
+     */
+    private $price;
+
 
     /**
      * Get id
@@ -210,5 +217,29 @@ class Scooter
     public function getModel()
     {
         return $this->model;
+    }
+
+    /**
+     * Set price
+     *
+     * @param string $price
+     *
+     * @return Scooter
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    /**
+     * Get price
+     *
+     * @return string
+     */
+    public function getPrice()
+    {
+        return $this->price;
     }
 }

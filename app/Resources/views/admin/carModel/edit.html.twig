@@ -25,6 +25,9 @@
                     {{ form_start(form) }}
                     {{ form_errors(form) }}
                     <div class="add-title">
+                        {{ form_row(form.brand) }}
+                    </div>
+                    <div class="add-title">
                         {{ form_row(form.name_model) }}
                     </div>
                     <div class="add-title">
@@ -32,9 +35,6 @@
                     </div>
                     <div class="add-title">
                         {{ form_row(form.gamme) }}
-                    </div>
-                    <div class="add-title">
-                        {{ form_row(form.brand) }}
                     </div>
                     <div class="row">
                         <div class="col-md-6">

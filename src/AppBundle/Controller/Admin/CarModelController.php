@@ -3,7 +3,7 @@
 namespace AppBundle\Controller\Admin;
 
 use AppBundle\Entity\CarModel;
-use AppBundle\Form\ModelType;
+use AppBundle\Form\CarModelType;
 use AppBundle\Manager\ModelManager;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -61,7 +61,7 @@ class CarModelController extends Controller
     {
         $model = new CarModel();
 
-        $form = $this->createForm(ModelType::class, $model);
+        $form = $this->createForm(CarModelType::class, $model);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -78,15 +78,12 @@ class CarModelController extends Controller
 
     /**
      * @Route("/{id}/edit", name="admin_edit_car_model", requirements={"id"="\d+"})
-     * @param $id int
-     * @param Request $request
-     * @return Response
      */
-    public function editAction(int $id, Request $request): Response
+    public function editAction(int $id, Request $request)
     {
         $model = $this->modelManager->get($id);
 
-        $form = $this->createForm(ModelType::class, $model);
+        $form = $this->createForm(CarModelType::class, $model);
 
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()) {

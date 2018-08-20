@@ -15,6 +15,7 @@
                 <table id="car" class="table table-bordered table-striped" width="100%" style="margin-top: 15px; font-size: 11pt">
                     <thead>
                     <tr>
+                        <th>Marque</th>
                         <th>Modèle</th>
                         <th>gamme</th>
                         <th>Autonomie</th>
@@ -24,6 +25,7 @@
                     <tbody>
                     {% for model in models %}
                         <tr>
+                            <td style="vertical-align: middle">{{ model.brand.name }}</td>
                             <td style="vertical-align: middle">{{ model.nameModel }}</td>
                             <td style="vertical-align: middle">{{ model.gamme }}</td>
                             <td style="vertical-align: middle">{{ model.autonomie }}</td>

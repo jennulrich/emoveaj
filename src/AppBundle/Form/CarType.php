@@ -21,7 +21,7 @@ class CarType extends AbstractType
                 'label' => 'Modèle'
             ))
             ->add('matriculation', TextType::class, array('label' => 'Immatriculation'))
-            ->add('kilometers', TextType::class, array('label' => 'KM'))
+            ->add('kilometers', TextType::class, array('label' => 'Kilomètre'))
             ->add('color', TextType::class, array('label' => 'Couleur'))
             ->add('serialNumber', TextType::class, array('label' => 'N° de Série'))
             ->add('price', TextType::class, array('label' => 'Prix'));

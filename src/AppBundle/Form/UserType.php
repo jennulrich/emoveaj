@@ -25,12 +25,12 @@ class UserType extends AbstractType
             ->add('address', TextType::class, array('label' => 'Adresse'))
             ->add('mail', EmailType::class, array('label' => 'Email'))
             ->add('phoneNumber', TextType::class, array('label' => 'Téléphone'))
-            ->add('driveLicenceNb', TextType::class, array('label' => 'N° de Permis'))
-            ->add('plainPassword', RepeatedType::class, array(
-                'type' => PasswordType::class,
-                'first_options'  => array('label' => 'Mot de passe'),
-                'second_options' => array('label' => 'Confirmation du mot de passe'),
-            ));
+            ->add('driveLicenceNb', TextType::class, array('label' => 'N° de Permis'));
+            //->add('plainPassword', RepeatedType::class, array(
+            //    'type' => PasswordType::class,
+            //    'first_options'  => array('label' => 'Mot de passe'),
+            //    'second_options' => array('label' => 'Confirmation du mot de passe'),
+            //));
         //->add('image', FileType::class, array(
         //'label' => 'Image',
         //'required' => false,

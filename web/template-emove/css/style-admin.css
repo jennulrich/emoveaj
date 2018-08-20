@@ -127,6 +127,40 @@ select#appbundle_product_publishedAt_time_hour, select#appbundle_product_publish
 div#appbundle_product_publishedAt_date, div#appbundle_product_publishedAt_time{
     display: flex;
 }
+
+.add-title div label {
+    width: 15%;
+}
+
+.add-title div input {
+    width: 50%;
+}
+button.btnEdit {
+    margin-right: 10px;
+}
+div#user_birthDate_time{
+    display: none;
+}
+div#user_birthDate_date{
+    display: inline-block;
+}
+div#user_birthDate{
+    display: inline-block;
+}
+a.paginate_button{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+a.previous {
+    margin-right: 15px;
+}
+a.next {
+    margin-left: 15px;
+}
+div.dataTables_paginate a {
+    color: #B3272D;
+    cursor: pointer;
+}
 /** Fin Formulaire Modif Product **/
 
 /******************************* DATATABLE CAR LIST *******************************/

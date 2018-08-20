@@ -3,7 +3,7 @@
 {% block content %}
     <div class="row">
         <div class="col-md-6" style="margin-top: 20px; margin-bottom: 15px">
-            <h2>Modifier une voiture</h2>
+            <h2>Modifier un scooter</h2>
         </div>
     </div>
     <div class="row">
@@ -21,9 +21,18 @@
                     <div class="add-title">
                         {{ form_row(form.color) }}
                     </div>
+                    <div class="add-title">
+                        {{ form_row(form.matriculation) }}
+                    </div>
+                    <div class="add-title">
+                        {{ form_row(form.kilometers) }}
+                    </div>
+                    <div class="add-title">
+                        {{ form_row(form.serialNumber) }}
+                    </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <button type="submit" class="btn add text-uppercase" id="add-button">Modifier</button>
+                            <button type="submit" class="btn add text-uppercase btnEdit" id="add-button">Modifier</button>
                             <a href="{{ path('admin_scooters') }}" class="btn back-add text-uppercase">annuler</a>
                         </div>
                     </div>

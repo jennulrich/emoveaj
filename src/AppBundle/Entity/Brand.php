@@ -32,8 +32,12 @@ class Brand
     /**
      * @ORM\OneToMany(targetEntity="CarModel", mappedBy="brand", cascade={"remove", "persist"})
      */
-    private $models;
+    private $carModel;
 
+    /**
+     * @ORM\OneToMany(targetEntity="ScooterModel", mappedBy="brand", cascade={"remove", "persist"})
+     */
+    private $scooterModel;
     
     /**
      * Get id
@@ -69,45 +73,81 @@ class Brand
         return $this->name;
     }
 
+    
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->models = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->carModel = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->scooterModel = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
-     * Add model
+     * Add carModel
      *
-     * @param \AppBundle\Entity\CarModel $model
+     * @param \AppBundle\Entity\CarModel $carModel
      *
      * @return Brand
      */
-    public function addModel(\AppBundle\Entity\CarModel $model)
+    public function addCarModel(\AppBundle\Entity\CarModel $carModel)
     {
-        $this->models[] = $model;
+        $this->carModel[] = $carModel;
 
         return $this;
     }
 
     /**
-     * Remove model
+     * Remove carModel
      *
-     * @param \AppBundle\Entity\CarModel $model
+     * @param \AppBundle\Entity\CarModel $carModel
      */
-    public function removeModel(\AppBundle\Entity\CarModel $model)
+    public function removeCarModel(\AppBundle\Entity\CarModel $carModel)
     {
-        $this->models->removeElement($model);
+        $this->carModel->removeElement($carModel);
     }
 
     /**
-     * Get models
+     * Get carModel
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getModels()
+    public function getCarModel()
     {
-        return $this->models;
+        return $this->carModel;
+    }
+
+    /**
+     * Add scooterModel
+     *
+     * @param \AppBundle\Entity\ScooterModel $scooterModel
+     *
+     * @return Brand
+     */
+    public function addScooterModel(\AppBundle\Entity\ScooterModel $scooterModel)
+    {
+        $this->scooterModel[] = $scooterModel;
+
+        return $this;
+    }
+
+    /**
+     * Remove scooterModel
+     *
+     * @param \AppBundle\Entity\ScooterModel $scooterModel
+     */
+    public function removeScooterModel(\AppBundle\Entity\ScooterModel $scooterModel)
+    {
+        $this->scooterModel->removeElement($scooterModel);
+    }
+
+    /**
+     * Get scooterModel
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getScooterModel()
+    {
+        return $this->scooterModel;
     }
 }

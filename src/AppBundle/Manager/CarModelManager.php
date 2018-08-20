@@ -7,7 +7,7 @@ use AppBundle\Repository\CarModelRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
-class ModelManager
+class CarModelManager
 {
     /** @var EntityManagerInterface */
     private $entityManager;
@@ -30,7 +30,7 @@ class ModelManager
     {
         /** @var $model CarModel */
         $model = $this->modelRepository->find($id);
-        $this->checkModel($model);
+        $this->checkCarModel($model);
 
         return $model;
     }
@@ -51,7 +51,7 @@ class ModelManager
         $this->entityManager->flush();
     }
 
-    private function checkModel(?CarModel $model)
+    private function checkCarModel(?CarModel $model)
     {
         if (!$model) {
             throw new NotFoundHttpException('Model not found.');

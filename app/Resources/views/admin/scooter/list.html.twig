@@ -16,10 +16,12 @@
                     <thead>
                     <tr>
                         <th>Modèle</th>
+                        <th>Référence</th>
                         <th>Immatriculation</th>
                         <th>Kilomètres</th>
                         <th>Couleur</th>
                         <th>N° de série</th>
+                        <th>Prix</th>
                         <th>Actions</th>
                     </tr>
                     </thead>
@@ -27,10 +29,12 @@
                     {% for scooter in scooters %}
                         <tr>
                             <td style="vertical-align: middle">{{ scooter.model.nameModel }}</td>
+                            <td style="vertical-align: middle">{{ scooter.reference }}</td>
                             <td style="vertical-align: middle">{{ scooter.matriculation }}</td>
                             <td style="vertical-align: middle">{{ scooter.kilometers }} km</td>
                             <td style="vertical-align: middle">{{ scooter.color }}</td>
                             <td style="vertical-align: middle">{{ scooter.serialNumber }}</td>
+                            <td style="vertical-align: middle">{{ scooter.price }} €</td>
                             <td>
                                 <ul class="puce-none mb-0">
                                     <li>

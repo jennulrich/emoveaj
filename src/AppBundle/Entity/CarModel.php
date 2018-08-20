@@ -49,7 +49,7 @@ class CarModel
     private $cars;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Brand", inversedBy="carModels", cascade={"persist" ,"remove"})
+     * @ORM\ManyToOne(targetEntity="Brand", inversedBy="carModel", cascade={"persist" ,"remove"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $brand;

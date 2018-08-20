@@ -2,7 +2,7 @@
 
 namespace AppBundle\Controller\Front;
 
-use AppBundle\Manager\ModelManager;
+use AppBundle\Manager\CarModelManager;
 use AppBundle\Manager\BrandManager;
 use AppBundle\Manager\CarManager;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -15,7 +15,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
  */
 class HomeController extends Controller
 {
-    /** @var ModelManager */
+    /** @var CarModelManager */
     private $modelManager;
 
     /** @var CarManager */
@@ -24,7 +24,7 @@ class HomeController extends Controller
     /** @var BrandManager */
     private $brandManager;
 
-    public function __construct(ModelManager $modelManager, CarManager $carManager,
+    public function __construct(CarModelManager $modelManager, CarManager $carManager,
                                 BrandManager $brandManager)
     {
         $this->modelManager = $modelManager;

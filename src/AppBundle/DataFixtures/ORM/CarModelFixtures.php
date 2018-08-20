@@ -39,7 +39,7 @@ class CarModelFixtures extends FixtureHelper
             $modelInfo = new CarModel();
             $modelInfo->setNameModel($model['name_model']);
             $modelInfo->setGamme("CITADINE");
-            $modelInfo->setBrand($this->getReference("brand-model-" . $i));
+            $modelInfo->setBrand($this->getReference("brand-carModel-" . $i));
             $modelInfo->setAutonomie($model['autonomie']);
 
             $manager->persist($modelInfo);

@@ -13,6 +13,7 @@ class ScooterType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('reference', TextType::class, array('label' => 'Référence'))
             ->add('model', EntityType::class, array(
                 'class' => ScooterModel::class,
                 'choice_label' => 'nameModel',
@@ -21,7 +22,8 @@ class ScooterType extends AbstractType
             ->add('matriculation',TextType::class, array('label' => 'Immatriculation'))
             ->add('kilometers',TextType::class, array('label' => 'Kilomètres'))
             ->add('color',TextType::class, array('label' => 'Couleur'))
-            ->add('serialNumber', TextType::class, array('label' => 'N° de Série'));
+            ->add('serialNumber', TextType::class, array('label' => 'N° de Série'))
+            ->add('price', TextType::class, array('label' => 'Prix'));
         //->add('image', FileType::class, array(
         //'label' => 'Image',
         //'required' => false,

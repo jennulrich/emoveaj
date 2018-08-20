@@ -47,6 +47,23 @@
             </div>
         </div>
     </div>
+    <!-- Modal de confirmation de suppression -->
+    {% for model in models %}
+        <div class="modal fade" id="{{ model.id }}" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <span>Êtes-vous sûr de vouloir supprimer ce modèle de scooter?</span>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="{{ path('admin_delete_scooter_model', {"id":model.id}) }}" class="btn btn-fill btn-info text-uppercase btn-sm">Supprimer</a>
+                        <button type="button" class="btn btn-fill btn-danger btn-sm text-uppercase" data-dismiss="modal">Annuler</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    <!-- End Modal de confirmation de suppression -->
 {% endblock %}
 
 {% block javascripts %}

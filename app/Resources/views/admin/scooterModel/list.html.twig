@@ -1,0 +1,35 @@
+{% extends 'admin/layout-admin.html.twig' %}
+
+{% block content %}
+    <div class="row" style="margin-bottom: 15px">
+        <div class="col-md-6 h2-car-list" style="margin-top: 20px">
+            <h2>Liste des modèles de scooters</h2>
+        </div>
+        <div class="col-md-6 admin-add">
+            <a href="{{ path('admin_add_car_model') }}"><button type="button" class="btn add"><i class="fa fa-plus"></i> Ajouter un modèle scooter</button></a>
+        </div>
+    </div>
+    <div class="card" style="padding: 15px; margin-bottom: 30px">
+        <div class="row" id="margin-table">
+            <div class="col-md-12">
+                <table id="car" class="table table-bordered table-striped" width="100%" style="margin-top: 15px; font-size: 11pt">
+
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        $(document).ready( function () {
+            $('#car').DataTable({
+                "language": {
+                    "search": "Recherche :"
+                },
+                "bLengthChange": false,
+                "info": false
+            });
+        } );
+    </script>
+{% endblock %}

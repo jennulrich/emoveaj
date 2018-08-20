@@ -4,7 +4,7 @@ namespace AppBundle\Controller\Admin;
 
 use AppBundle\Entity\ScooterModel;
 use AppBundle\Form\ScooterModelType;
-use AppBundle\Manager\CarModelManager;
+use AppBundle\Manager\ScooterModelManager;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,10 +17,10 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class ScooterModelController extends Controller
 {
-    /** @var CarModelManager */
+    /** @var ScooterModelManager */
     private $modelManager;
 
-    public function __construct(CarModelManager $modelManager)
+    public function __construct(ScooterModelManager $modelManager)
     {
         $this->modelManager = $modelManager;
     }

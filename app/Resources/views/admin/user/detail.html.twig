@@ -2,10 +2,10 @@
 
 {% block content %}
     <div class="row" style="margin: 20px 0 15px 0">
-        <div class="col-md-6">
+        <div class="col-md-6" style="padding-left: 0;">
             <h2>{{ user.lastName }} {{ user.firstName }}</h2>
         </div>
-        <div class="col-md-6 text-right">
+        <div class="col-md-6 text-right" style="padding-right: 0;">
             <a href="{{ path('admin_users') }}" class="btn return">
                 <i class="fa fa-arrow-left"></i>Retour à la liste
             </a>
@@ -18,20 +18,28 @@
             <td>{{ user.lastName }}</td>
         </tr>
         <tr>
-            <th>Prènom</th>
+            <th>Prénom</th>
             <td>{{ user.firstName }}</td>
+        </tr>
+        <tr>
+            <th>Date de naissance</th>
+            <td>{{ user.birthDate|date('d-m-Y') }}</td>
         </tr>
         <tr>
             <th>Adresse</th>
             <td>{{ user.address }}</td>
         </tr>
         <tr>
-            <th>Numéro de téléphone</th>
+            <th>N° de téléphone</th>
             <td>{{ user.phoneNumber }}</td>
         </tr>
         <tr>
             <th>Email</th>
             <td>{{ user.mail }}</td>
+        </tr>
+        <tr>
+            <th>N° de Permis</th>
+            <td>{{ user.driveLicenceNb }}</td>
         </tr>
         <tr>
             <th>

@@ -2,10 +2,10 @@
 
 {% block content %}
     <div class="row" style="margin: 20px 0 15px 0">
-        <div class="col-md-6">
+        <div class="col-md-6" style="padding-left: 0;">
             <h2>{{ car.model.nameModel }}</h2>
         </div>
-        <div class="col-md-6 text-right">
+        <div class="col-md-6 text-right" style="padding-right: 0;">
             <a href="{{ path('admin_cars') }}" class="btn return">
                 <i class="fa fa-arrow-left"></i>Retour à la liste
             </a>
@@ -18,8 +18,24 @@
             <td>{{ car.model.nameModel }}</td>
         </tr>
         <tr>
+            <th>Référence</th>
+            <td>{{ car.reference }}</td>
+        </tr>
+        <tr>
+            <th>Immatriculation</th>
+            <td>{{ car.matriculation }}</td>
+        </tr>
+        <tr>
+            <th>Kilomètre</th>
+            <td>{{ car.kilometers }}</td>
+        </tr>
+        <tr>
             <th>Couleur</th>
             <td>{{ car.color }}</td>
+        </tr>
+        <tr>
+            <th>N° de série</th>
+            <td>{{ car.serialNumber }}</td>
         </tr>
         <tr>
             <th>Prix</th>

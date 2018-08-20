@@ -13,47 +13,47 @@ class CarModelManager
     private $entityManager;
 
     /** @var CarModelRepository */
-    private $modelRepository;
+    private $carModelRepository;
 
     public function __construct(EntityManagerInterface $entityManager)
     {
         $this->entityManager = $entityManager;
-        $this->modelRepository = $this->entityManager->getRepository(CarModel::class);
+        $this->carModelRepository = $this->entityManager->getRepository(CarModel::class);
     }
 
     public function getList(): array
     {
-        return $this->modelRepository->findAll();
+        return $this->carModelRepository->findAll();
     }
 
     public function get(int $id): CarModel
     {
-        /** @var $model CarModel */
-        $model = $this->modelRepository->find($id);
-        $this->checkCarModel($model);
+        /** @var $carModel CarModel */
+        $carModel = $this->carModelRepository->find($id);
+        $this->checkCarModel($carModel);
 
-        return $model;
+        return $carModel;
     }
 
-    public function save(CarModel $model)
+    public function save(CarModel $carModel)
     {
-        $this->entityManager->persist($model);
+        $this->entityManager->persist($carModel);
         $this->entityManager->flush();
     }
 
-    public function remove(?CarModel $model)
+    public function remove(?CarModel $carModel)
     {
-        if(!$model) {
+        if(!$carModel) {
             return;
         }
 
-        $this->entityManager->remove($model);
+        $this->entityManager->remove($carModel);
         $this->entityManager->flush();
     }
 
-    private function checkCarModel(?CarModel $model)
+    private function checkCarModel(?CarModel $carModel)
     {
-        if (!$model) {
+        if (!$carModel) {
             throw new NotFoundHttpException('Model not found.');
         }
     }

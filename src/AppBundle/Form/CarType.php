@@ -2,11 +2,14 @@
 
 namespace AppBundle\Form;
 
+use AppBundle\Entity\Car;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use AppBundle\Form\Type\FileType;
 use AppBundle\Entity\CarModel;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class CarType extends AbstractType
 {
@@ -24,13 +27,19 @@ class CarType extends AbstractType
             ->add('kilometers', TextType::class, array('label' => 'Kilomètre'))
             ->add('color', TextType::class, array('label' => 'Couleur'))
             ->add('serialNumber', TextType::class, array('label' => 'N° de Série'))
-            ->add('price', TextType::class, array('label' => 'Prix'));
+            ->add('price', TextType::class, array('label' => 'Prix'))
+            ->add('image', FileType::class, array('label' => 'Image (jpeg, png, jpg)'));
             //->add('image', FileType::class, array(
                 //'label' => 'Image',
                 //'required' => false,
                 //'data_class' => null
             //))
-        //->add('image', FileType::class, array('label' => 'Image (.jpeg)'))
-        //->add('video', FileType::class, array('label' => 'Video (.mp4)'));
+    }
+
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults(array(
+            'data_class' => Car::class,
+        ));
     }
 }

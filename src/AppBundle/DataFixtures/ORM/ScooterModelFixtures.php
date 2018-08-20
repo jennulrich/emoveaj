@@ -45,7 +45,9 @@ class ScooterModelFixtures extends FixtureHelper
             $scooterModel
                 ->setNameModel($model['name_model'])
                 ->setGamme($model['gamme'])
-                ->setAutonomie($model['autonomie']);
+                ->setAutonomie($model['autonomie'])
+                ->setBrand($this->getReference("brand-scooterModel-" . $i));
+;
 
             $manager->persist($scooterModel);
             $this->setReference("scooter-model-".$i, $scooterModel);

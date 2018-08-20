@@ -3,8 +3,8 @@
 namespace AppBundle\Controller\Admin;
 
 use AppBundle\Entity\ScooterModel;
-use AppBundle\Form\ModelType;
-use AppBundle\Manager\ModelManager;
+use AppBundle\Form\ScooterModelType;
+use AppBundle\Manager\CarModelManager;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,10 +17,10 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class ScooterModelController extends Controller
 {
-    /** @var ModelManager */
+    /** @var CarModelManager */
     private $modelManager;
 
-    public function __construct(ModelManager $modelManager)
+    public function __construct(CarModelManager $modelManager)
     {
         $this->modelManager = $modelManager;
     }
@@ -59,20 +59,20 @@ class ScooterModelController extends Controller
      */
     public function addAction(Request $request): Response
     {
-        $model = new ScooterModel();
+        $scooterModel = new ScooterModel();
 
-        $form = $this->createForm(ModelType::class, $model);
+        $form = $this->createForm(ScooterModelType::class, $scooterModel);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->modelManager->save($model);
+            $this->modelManager->save($scooterModel);
 
             return $this->redirectToRoute('admin_scooter_models');
         }
 
         return $this->render('admin/scooterModel/add.html.twig', [
             "form" => $form->createView(),
-            "model" => $model
+            "scooterModel" => $scooterModel
         ]);
     }
 
@@ -84,22 +84,22 @@ class ScooterModelController extends Controller
      */
     public function editAction(int $id, Request $request): Response
     {
-        $model = $this->modelManager->get($id);
+        $scooterModel = $this->modelManager->get($id);
 
-        $form = $this->createForm(ModelType::class, $model);
+        $form = $this->createForm(ScooterModelType::class, $scooterModel);
 
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()) {
-            $this->modelManager->save($model);
+            $this->modelManager->save($scooterModel);
 
             return $this->redirectToRoute('admin_view_scooter_model', [
-                "id"=>$model->getId(),
+                "id"=>$scooterModel->getId(),
             ]);
         }
 
         return $this->render('admin/scooterModel/edit.html.twig', [
             'form' => $form->createView(),
-            'model' => $model
+            'model' => $scooterModel
         ]);
     }
 
@@ -107,9 +107,9 @@ class ScooterModelController extends Controller
      * @Route("/{id}/delete", name="admin_delete_scooter_model", requirements={"id"="\d+"})
      * @return Response
      */
-    public function DeleteAction(ScooterModel $model): Response
+    public function DeleteAction(ScooterModel $scooterModel): Response
     {
-        $this->modelManager->remove($model);
+        $this->modelManager->remove($scooterModel);
 
         return $this->redirectToRoute('admin_scooter_models');
     }

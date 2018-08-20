@@ -4,6 +4,7 @@ namespace AppBundle\Controller\Admin;
 
 use AppBundle\Entity\Scooter;
 use AppBundle\Form\ScooterType;
+use AppBundle\Entity\ScooterModel;
 use AppBundle\Manager\ScooterManager;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -48,8 +49,11 @@ class ScooterController extends Controller
     {
         $scooters = $this->scooterManager->getList();
 
+        $models = new ScooterModel();
+
         return $this->render('admin/scooter/list.html.twig', [
-            "scooters" => $scooters
+            "scooters" => $scooters,
+            "models" => $models
         ]);
     }
 

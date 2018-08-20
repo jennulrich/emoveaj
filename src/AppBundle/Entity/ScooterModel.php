@@ -48,6 +48,12 @@ class ScooterModel
     private $scooters;
 
     /**
+     * @ORM\ManyToOne(targetEntity="Brand", inversedBy="scooterModel", cascade={"persist" ,"remove"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $brand;
+
+    /**
      * Get id
      *
      * @return int
@@ -169,5 +175,29 @@ class ScooterModel
     public function getScooters()
     {
         return $this->scooters;
+    }
+
+    /**
+     * Set brand
+     *
+     * @param \AppBundle\Entity\Brand $brand
+     *
+     * @return ScooterModel
+     */
+    public function setBrand(\AppBundle\Entity\Brand $brand)
+    {
+        $this->brand = $brand;
+
+        return $this;
+    }
+
+    /**
+     * Get brand
+     *
+     * @return \AppBundle\Entity\Brand
+     */
+    public function getBrand()
+    {
+        return $this->brand;
     }
 }

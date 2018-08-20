@@ -23,7 +23,8 @@ class BrandFixtures extends FixtureHelper
                 ->setName($brand);
 
             $manager->persist($brandInfo);
-            $this->setReference("brand-model-" . $i, $brandInfo);
+            $this->setReference("brand-carModel-" . $i, $brandInfo);
+            $this->setReference("brand-scooterModel-" . $i, $brandInfo);
             $i++;
 
         }

@@ -3,8 +3,8 @@
 namespace AppBundle\Controller\Admin;
 
 use AppBundle\Entity\CarModel;
-use AppBundle\Form\ModelType;
-use AppBundle\Manager\ModelManager;
+use AppBundle\Form\CarModelType;
+use AppBundle\Manager\CarModelManager;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,10 +17,10 @@ use Symfony\Component\HttpFoundation\Response;
  */
 class CarModelController extends Controller
 {
-    /** @var ModelManager */
+    /** @var CarModelManager */
     private $modelManager;
 
-    public function __construct(ModelManager $modelManager)
+    public function __construct(CarModelManager $modelManager)
     {
         $this->modelManager = $modelManager;
     }
@@ -61,7 +61,7 @@ class CarModelController extends Controller
     {
         $model = new CarModel();
 
-        $form = $this->createForm(ModelType::class, $model);
+        $form = $this->createForm(CarModelType::class, $model);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -78,28 +78,25 @@ class CarModelController extends Controller
 
     /**
      * @Route("/{id}/edit", name="admin_edit_car_model", requirements={"id"="\d+"})
-     * @param $id int
-     * @param Request $request
-     * @return Response
      */
-    public function editAction(int $id, Request $request): Response
+    public function editAction(int $id, Request $request)
     {
-        $model = $this->modelManager->get($id);
+        $carModel = $this->modelManager->get($id);
 
-        $form = $this->createForm(ModelType::class, $model);
+        $form = $this->createForm(CarModelType::class, $carModel);
 
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()) {
-            $this->modelManager->save($model);
+            $this->modelManager->save($carModel);
 
             return $this->redirectToRoute('admin_view_car_model', [
-                "id"=>$model->getId(),
+                "id"=>$carModel->getId(),
             ]);
         }
 
         return $this->render('admin/carModel/edit.html.twig', [
             'form' => $form->createView(),
-            'model' => $model
+            'carModel' => $carModel
         ]);
     }
 

@@ -6,7 +6,7 @@
         <div class="dlab-bnr-inr overlay-black-middle bg-car-list">
             <div class="container">
                 <div class="dlab-bnr-inr-entry">
-                    <h1 class="text-white">Nos voitures electriques</h1>
+                    <h1 class="text-white">Nos scooters electriques</h1>
                 </div>
             </div>
         </div>
@@ -16,7 +16,7 @@
             <div class="container">
                 <ul class="list-inline">
                     <li><a href="#">Accueil</a></li>
-                    <li>Nos voitures electriques</li>
+                    <li>Nos scooters electriques</li>
                 </ul>
             </div>
         </div>
@@ -33,7 +33,7 @@
                                     <div class="panel">
                                         <div class="acod-head">
                                             <h5 class="acod-title">
-                                                <a data-toggle="collapse" href="new-car-search-result-column.html#city" class="collapsed">
+                                                <a data-toggle="collapse" href="#" class="collapsed">
                                                     Ville
                                                 </a>
                                             </h5>
@@ -53,7 +53,7 @@
                                     <div class="panel">
                                         <div class="acod-head">
                                             <h5 class="acod-title">
-                                                <a data-toggle="collapse" href="new-car-search-result-column.html#price-range">
+                                                <a data-toggle="collapse" href="#">
                                                     Tranche de prix
                                                 </a>
                                             </h5>
@@ -84,10 +84,10 @@
                                                 <input type="search" id="container-search" value="" class="form-control" placeholder="Recherche...">
                                                 <div class="product-brand" id="searchable-area">
                                                     {% for brand in brands %}
-                                                    <div class="search-content">
-                                                        <input id="{{ brand.id }}" type="checkbox">
-                                                        <label for="{{ brand.id }}" class="search-content-area">{{ brand.name }} </label>
-                                                    </div>
+                                                        <div class="search-content">
+                                                            <input id="{{ brand.id }}" type="checkbox">
+                                                            <label for="{{ brand.id }}" class="search-content-area">{{ brand.name }} </label>
+                                                        </div>
                                                     {% endfor %}
                                                 </div>
                                             </div>
@@ -121,47 +121,47 @@
 
                                     <ul class="nav theme-tabs pull-right">
                                         <li>
-                                            <a href="new-car-search-result-list.html"><i class="fa fa-list"></i></a>
+                                            <a href="#"><i class="fa fa-list"></i></a>
                                         </li>
                                         <li class="active">
-                                            <a href="new-car-search-result-column.html#"><i class="fa fa-th"></i></a>
+                                            <a href="#"><i class="fa fa-th"></i></a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                             <!-- blog grid  -->
                             <div id="masonry" class="dlab-blog-grid-3">
-                                {% for car in cars %}
-                                <div class="post card-container col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                                    <div class="dlab-feed-list m-b30">
-                                        <div class="dlab-media">
-                                            <a href="{{ path('front_view_car', { 'id': car.id }) }}"><img src="#" alt=""></a>
-                                        </div>
-                                        <div class="dlab-info">
-                                            <h4 class="dlab-title"><a href="{{ path('front_view_car', { 'id': car.id }) }}">{{ car.model.nameModel }}</a></h4>
-                                            <div class="dlab-separator bg-black"></div>
-                                            <p class="dlab-price"><span class="text-primary">{{ car.price }} €</span></p>
-                                        </div>
-                                        <div class="icon-box-btn text-center">
-                                            <ul class="clearfix">
-                                                <li>2017</li>
-                                                <li>Manual</li>
-                                                <li>210 hp </li>
-                                            </ul>
+                                {% for scooter in scooters %}
+                                    <div class="post card-container col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                                        <div class="dlab-feed-list m-b30">
+                                            <div class="dlab-media">
+                                                <a href="{{ path('front_view_scooter', { 'id': scooter.id }) }}"><img src="#" alt=""></a>
+                                            </div>
+                                            <div class="dlab-info">
+                                                <h4 class="dlab-title"><a href="{{ path('front_view_scooter', { 'id': scooter.id }) }}">{{ scooter.model.nameModel }}</a></h4>
+                                                <div class="dlab-separator bg-black"></div>
+                                                <p class="dlab-price"><span class="text-primary">{{ scooter.price }} €</span></p>
+                                            </div>
+                                            <div class="icon-box-btn text-center">
+                                                <ul class="clearfix">
+                                                    <li>2017</li>
+                                                    <li>Manual</li>
+                                                    <li>210 hp </li>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
                                 {% endfor %}
                             </div>
                             <!-- blog grid END -->
                             <!-- Pagination  -->
                             <div class="pagination-bx col-lg-12 clearfix ">
                                 <ul class="pagination">
-                                    <li class="previous"><a href="new-car-search-result-column.html#"><i class="fa fa-angle-double-left"></i></a></li>
-                                    <li class="active"><a href="new-car-search-result-column.html#">1</a></li>
-                                    <li><a href="new-car-search-result-column.html#">2</a></li>
-                                    <li><a href="new-car-search-result-column.html#">3</a></li>
-                                    <li class="next"><a href="new-car-search-result-column.html#"><i class="fa fa-angle-double-right"></i></a></li>
+                                    <li class="previous"><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
+                                    <li class="active"><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li class="next"><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
                                 </ul>
                             </div>
                             <!-- Pagination END -->

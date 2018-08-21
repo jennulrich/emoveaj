@@ -15,9 +15,7 @@
                             <a href="javascript:void(0);"><i class="fa fa-envelope-o"></i> support@emove.com</a>
                         </li>
                         <li><a href="#" class="site-button-link facebook hover"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#" class="site-button-link google-plus hover"><i class="fa fa-google-plus"></i></a></li>
                         <li><a href="#" class="site-button-link twitter hover"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#" class="site-button-link linkedin hover"><i class="fa fa-linkedin"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -51,60 +49,20 @@
                 <!-- main nav -->
                 <div class="header-nav navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active has-mega-menu demos"> <a href="{{ path('home') }}">Accueil</a></li>
-                        <li><a href="{{ path('front_cars') }}">Voitures<i class="fa fa-chevron-down"></i></a>
-                            <ul class="sub-menu">
-                                <li> <a href="javascript:;">Search Cars <i class="fa fa-angle-right"></i></a>
-                                    <ul class="sub-menu">
-                                        <li><a href="#">Search Car</a></li>
-                                        <li><a href="#">Search Result List</a></li>
-                                        <li><a href="#">Search Result Column</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Latest Cars</a></li>
-                                <li><a href="#">Popular Cars</a></li>
-                                <li><a href="#">Upcoming Cars</a></li>
-                                <li> <a href="javascript:;">Dealers & Service Centers <i class="fa fa-angle-right"></i></a>
-                                    <ul class="sub-menu">
-                                        <li><a href="#">Car Dealers</a></li>
-                                        <li><a href="#">Service Center</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">On Road Price</a></li>
-                            </ul>
+                        <li class="has-mega-menu {%  if app.request.attributes.get('_route') == 'home' %}active{% endif %}">
+                            <a href="{{ path('home') }}">Accueil</a>
                         </li>
-                        <li><a href="javascript:;">Scooters<i class="fa fa-chevron-down"></i></a>
-                            <ul class="sub-menu">
-                                <li> <a href="javascript:;">In My City <i class="fa fa-angle-right"></i></a>
-                                    <ul class="sub-menu">
-                                        <li><a href="#">New York City</a></li>
-                                        <li><a href="#">Chicago</a></li>
-                                        <li><a href="#">Los Angeles</a></li>
-                                        <li><a href="#">Boston</a></li>
-                                        <li><a href="#">San Francisco</a></li>
-                                        <li><a href="#">Washington</a></li>
-                                        <li><a href="#">Seattle</a></li>
-                                        <li><a href="#">Philadelphia</a></li>
-                                        <li><a href="#">Austin</a></li>
-                                        <li><a href="#">Detroit</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="javascript:;">Search Car <i class="fa fa-angle-right"></i></a>
-                                    <ul class="sub-menu">
-                                        <li><a href="#">Search Car</a></li>
-                                        <li><a href="#">Search Car Result</a></li>
-                                        <li><a href="#">Used Car Detail</a></li>
-                                    </ul>
-
-                                </li>
-                                <li><a href="#">Used Car Detail</a></li>
-                                <li><a href="#">Sell Your Car</a></li>
-                                <li><a href="#">Car Valuation</a></li>
-
-                            </ul>
+                        <li class="has-mega-menu {%  if app.request.attributes.get('_route') == 'front_cars' %}active{% endif %}">
+                            <a href="{{ path('front_cars') }}">Voitures</a>
                         </li>
-                        <li class="has-mega-menu "> <a href="{{ path('aboutus') }}">À Propos</a>
-
+                        <li class="has-mega-menu {%  if app.request.attributes.get('_route') == 'front_scooters' %}active{% endif %}">
+                            <a href="{{ path('front_scooters') }}">Scooters</a>
+                        </li>
+                        <li class="has-mega-menu {%  if app.request.attributes.get('_route') == 'aboutus' %}active{% endif %}">
+                            <a href="{{ path('aboutus') }}">À Propos</a>
+                        </li>
+                        <li class="has-mega-menu {%  if app.request.attributes.get('_route') == 'contact' %}active{% endif %}">
+                            <a href="{{ path('contact') }}">Contact</a>
                         </li>
                     </ul>
                 </div>

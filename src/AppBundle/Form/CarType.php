@@ -17,7 +17,6 @@ class CarType extends AbstractType
     {
         $builder
             ->add('reference', TextType::class, array('label' => 'Référence'))
-            // TODO : Jenn => Voir pour mettre le choice_label en input
             ->add('model', EntityType::class, array(
                 'class' => CarModel::class,
                 'choice_label' => 'nameModel',
@@ -28,12 +27,10 @@ class CarType extends AbstractType
             ->add('color', TextType::class, array('label' => 'Couleur'))
             ->add('serialNumber', TextType::class, array('label' => 'N° de Série'))
             ->add('price', TextType::class, array('label' => 'Prix'))
-            ->add('image', FileType::class, array('label' => 'Image (jpeg, png, jpg)'));
-            //->add('image', FileType::class, array(
-                //'label' => 'Image',
-                //'required' => false,
-                //'data_class' => null
-            //))
+            ->add('image', FileType::class, array(
+                'label' => 'Image (jpeg, png, jpg)',
+                'data_class' => null
+            ));
     }
 
     public function configureOptions(OptionsResolver $resolver)

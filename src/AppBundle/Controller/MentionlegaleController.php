@@ -24,6 +24,6 @@ class MentionlegaleController extends Controller
      */
     public function MentionlegaleAction()
     {
-        return $this->render('front/mentionlegale.html.twig');
+        return $this->render('front/legals/mentionlegale.html.twig');
     }
 }

@@ -161,7 +161,7 @@ div.dataTables_paginate a {
     color: #B3272D;
     cursor: pointer;
 }
-select#scooter_model_brand, select#car_model_brand, select#scooter_model{
+select#scooter_model_brand, select#car_model_brand, select#scooter_model, select#car_model{
     width: 50%;
 }
 /** Fin Formulaire Modif Product **/

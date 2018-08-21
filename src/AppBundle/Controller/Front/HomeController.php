@@ -5,6 +5,7 @@ namespace AppBundle\Controller\Front;
 use AppBundle\Manager\CarModelManager;
 use AppBundle\Manager\BrandManager;
 use AppBundle\Manager\CarManager;
+use AppBundle\Manager\ScooterManager;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -24,12 +25,16 @@ class HomeController extends Controller
     /** @var BrandManager */
     private $brandManager;
 
+    /** @var ScooterManager */
+    private $scooterManager;
+
     public function __construct(CarModelManager $modelManager, CarManager $carManager,
-                                BrandManager $brandManager)
+                                BrandManager $brandManager, ScooterManager $scooterManager)
     {
         $this->modelManager = $modelManager;
         $this->carManager = $carManager;
         $this->brandManager = $brandManager;
+        $this->scooterManager = $scooterManager;
     }
 
     /**
@@ -40,10 +45,12 @@ class HomeController extends Controller
         $models = $this->modelManager->getList();
         $cars = $this->carManager->getList();
         $brands = $this->brandManager->getList();
+        $scooters = $this->scooterManager->getList();
         return $this->render('front/home/home.html.twig', [
             "models" => $models,
             "cars" => $cars,
-            "brands" => $brands
+            "brands" => $brands,
+            "scooters" => $scooters
         ]);
     }
 }

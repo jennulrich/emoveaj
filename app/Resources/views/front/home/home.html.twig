@@ -335,10 +335,6 @@
             <div class="container">
                 <div class="section-head">
                     <h3 class="h3 text-uppercase">à la une</h3>
-                    <ul class="nav theme-tabs">
-                        <li role="presentation" class="active"><a data-toggle="tab"  aria-controls="popular" href="#popular">POPULAIRES</a></li>
-                        <li role="presentation" ><a data-toggle="tab"  aria-controls="latest" href="#latest">NOUVEAUX VEHICULES</a></li>
-                    </ul>
                 </div>
                 <div class="section-content ">
                     <div class="row">
@@ -346,85 +342,59 @@
 
                             <div class="tab-content">
                                 <div id="upcoming"  class="tab-pane active clearfix">
-                                    <h4 class="m-b15 text-uppercase" style="margin-left: 15px;">Voitures élécrtique</h4>
+                                    <h4 class="m-b15 text-uppercase" style="margin-left: 15px;">Voitures électrique</h4>
                                     <div class="dlab-separator bg-primary" style="margin-left: 15px;"></div>
                                     <div class="col-md-12 owl-carousel owl-btn-style-2 quick-look">
-                                        <div class="item">
-                                            <div class="dlab-feed-list">
-                                                <div class="dlab-media">
-                                                    <a href="#"><img src="{{ asset('template-emove/img/our-work/work/pic1.jpg') }}" alt=""></a>
-                                                </div>
-                                                <div class="dlab-info">
-                                                    <h4 class="dlab-title"><a href="#">Hyundai santa fe sport </a></h4>
-                                                    <div class="dlab-separator bg-black"></div>
-                                                    <p class="dlab-price"><span class="text-primary">À partir de 26€/jour</span></p>
-                                                </div>
-                                                <div class="icon-box-btn text-center">
-                                                    <ul class="clearfix">
-                                                        <li>2018</li>
-                                                        <li>Auto</li>
-                                                        <li>210 cv </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="dlab-feed-list">
-                                                <div class="dlab-media">
-                                                    <a href="#"><img src="{{ asset('template-emove/img/our-work/work/pic2.jpg') }}" alt=""></a>
-                                                </div>
-                                                <div class="dlab-info">
-                                                    <h4 class="dlab-title"><a href="#">Hyundai santa fe sport </a></h4>
-                                                    <div class="dlab-separator bg-black"></div>
-                                                    <p class="dlab-price"><span class="text-primary">À partir de 31€/jour</span></p>
-                                                </div>
-                                                <div class="icon-box-btn text-center">
-                                                    <ul class="clearfix">
-                                                        <li>2018</li>
-                                                        <li>Auto</li>
-                                                        <li>210 cv </li>
-                                                    </ul>
+                                        {% for car in cars|sort %}
+                                            <div class="post card-container">
+                                                <div class="dlab-feed-list m-b30">
+                                                    <div class="dlab-media">
+                                                        <a href="{{ path('front_view_car', { 'id': car.id }) }}"><img src="#" alt=""></a>
+                                                    </div>
+                                                    <div class="dlab-info">
+                                                        <img class="img-fluid" src="{{ asset('uploads/images/') }}{{ car.image }}" style="height: 120px; width: auto;display: inline-block;">
+                                                        <h4 class="dlab-title" style="margin-bottom: 10px;margin-top: 10px;"><a href="{{ path('front_view_car', { 'id': car.id }) }}">{{ car.model.nameModel }}</a></h4>
+                                                        <div class="dlab-separator bg-black"></div>
+                                                        <p class="dlab-price"><span class="text-primary">{{ car.price }} €</span></p>
+                                                    </div>
+                                                    <div class="icon-box-btn text-center">
+                                                        <ul class="clearfix">
+                                                            <li>{{ car.kilometers }} km</li>
+                                                            <li>{{ car.color }}</li>
+                                                            <li>Marque</li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="dlab-feed-list">
-                                                <div class="dlab-media">
-                                                    <a href="#"><img src="{{ asset('template-emove/img/our-work/work/pic3.jpg') }}" alt=""></a>
-                                                </div>
-                                                <div class="dlab-info">
-                                                    <h4 class="dlab-title"><a href="#">Hyundai santa fe sport </a></h4>
-                                                    <div class="dlab-separator bg-black"></div>
-                                                    <p class="dlab-price"><span class="text-primary">À partir de 48.03€/jour</span></p>
-                                                </div>
-                                                <div class="icon-box-btn text-center">
-                                                    <ul class="clearfix">
-                                                        <li>2018</li>
-                                                        <li>Auto</li>
-                                                        <li>210 cv </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <div class="dlab-feed-list">
-                                                <div class="dlab-media">
-                                                    <a href="#"><img src="{{ asset('template-emove/img/our-work/work/pic4.jpg') }}" alt=""></a>
-                                                </div>
-                                                <div class="dlab-info">
-                                                    <h4 class="dlab-title"><a href="#">Hyundai santa fe sport </a></h4>
-                                                    <div class="dlab-separator bg-black"></div>
-                                                    <p class="dlab-price"><span class="text-primary">À partir de 3€/mois</span></p>
-                                                </div>
-                                                <div class="icon-box-btn text-center">
-                                                    <ul class="clearfix">
-                                                        <li>1902</li>
-                                                        <li>Auto</li>
-                                                        <li>3 cv </li>
-                                                    </ul>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div id="upcoming"  class="tab-pane active clearfix">
+                                    <h4 class="m-b15 text-uppercase" style="margin-left: 15px;">Scooters électrique</h4>
+                                    <div class="dlab-separator bg-primary" style="margin-left: 15px;"></div>
+                                    <div class="col-md-12 owl-carousel owl-btn-style-2 quick-look">
+                                        {% for scooter in scooters %}
+                                            <div class="post card-container">
+                                                <div class="dlab-feed-list m-b30">
+                                                    <div class="dlab-media">
+                                                        <a href="{{ path('front_view_scooter', { 'id': scooter.id }) }}"><img src="#" alt=""></a>
+                                                    </div>
+                                                    <div class="dlab-info">
+                                                        {# <img class="img-fluid" src="{{ asset('uploads/images/') }}{{ scooter.image }}" style="height: 120px; width: auto;display: inline-block;"> #}
+                                                        <h4 class="dlab-title" style="margin-bottom: 10px;margin-top: 10px;"><a href="{{ path('front_view_scooter', { 'id': scooter.id }) }}">{{ scooter.model.nameModel }}</a></h4>
+                                                        <div class="dlab-separator bg-black"></div>
+                                                        <p class="dlab-price"><span class="text-primary">{{ scooter.price }} €</span></p>
+                                                    </div>
+                                                    <div class="icon-box-btn text-center">
+                                                        <ul class="clearfix">
+                                                            <li>{{ scooter.kilometers }} km</li>
+                                                            <li>{{ scooter.color }}</li>
+                                                            <li>Marque</li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        {% endfor %}
                                     </div>
                                 </div>
                                 <div id="popular"  class="tab-pane clearfix fade">

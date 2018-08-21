@@ -11,6 +11,7 @@ class CarFixtures extends FixtureHelper implements DependentFixtureInterface
 {
     public function load(ObjectManager $manager)
     {
+
         // 5 modèles en base
         for ($i=1; $i<=5; $i++) {
             $model = $this->getReference("car-model-".$i);
@@ -24,6 +25,8 @@ class CarFixtures extends FixtureHelper implements DependentFixtureInterface
                 $car->setReference('REFCAR-000' . $this->faker->numberBetween(100, 500));
                 $car->setPrice($this->faker->numberBetween(19, 500));
                 $car->setSerialNumber($this->faker->numberBetween(3100057, 21090057));
+                $car->setImage($this->faker->image());
+
 
                 $manager->persist($car);
                 $this->setReference("voiture-".$i."-".$j, $car);

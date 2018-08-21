@@ -92,6 +92,11 @@ class User implements UserInterface
      */
     private $isAdmin;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Booking", mappedBy="user", cascade={"remove", "persist"})
+     */
+    private $bookings;
+
 
     /**
      * User constructor.
@@ -99,6 +104,7 @@ class User implements UserInterface
     public function __construct()
     {
         $this->isAdmin = false;
+        $this->bookings = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -386,5 +392,39 @@ class User implements UserInterface
     public function setPlainPassword($password)
     {
         $this->plainPassword = $password;
+    }
+
+    /**
+     * Add booking
+     *
+     * @param \AppBundle\Entity\Booking $booking
+     *
+     * @return User
+     */
+    public function addBooking(\AppBundle\Entity\Booking $booking)
+    {
+        $this->bookings[] = $booking;
+
+        return $this;
+    }
+
+    /**
+     * Remove booking
+     *
+     * @param \AppBundle\Entity\Booking $booking
+     */
+    public function removeBooking(\AppBundle\Entity\Booking $booking)
+    {
+        $this->bookings->removeElement($booking);
+    }
+
+    /**
+     * Get bookings
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getBookings()
+    {
+        return $this->bookings;
     }
 }

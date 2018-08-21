@@ -79,6 +79,12 @@ class Car
     private $price;
 
     /**
+     * @ORM\OneToMany(targetEntity="Booking", mappedBy="car", cascade={"remove", "persist"})
+     */
+    private $bookings;
+
+
+    /**
      * Get id
      *
      * @return int
@@ -273,5 +279,47 @@ class Car
     public function getImage()
     {
         return $this->image;
+    }
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->bookings = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add booking
+     *
+     * @param \AppBundle\Entity\Booking $booking
+     *
+     * @return Car
+     */
+    public function addBooking(\AppBundle\Entity\Booking $booking)
+    {
+        $this->bookings[] = $booking;
+
+        return $this;
+    }
+
+    /**
+     * Remove booking
+     *
+     * @param \AppBundle\Entity\Booking $booking
+     */
+    public function removeBooking(\AppBundle\Entity\Booking $booking)
+    {
+        $this->bookings->removeElement($booking);
+    }
+
+    /**
+     * Get bookings
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getBookings()
+    {
+        return $this->bookings;
     }
 }

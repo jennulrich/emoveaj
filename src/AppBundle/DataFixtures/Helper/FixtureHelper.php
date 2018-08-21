@@ -12,6 +12,7 @@ class FixtureHelper extends Fixture
     const NB_SCOOTER = 10;
     const NB_MODEL = 5;
     const NB_USER = 20;
+    const NB_BOOKING = 10;
 
     /**
      * @var \Faker\Generator

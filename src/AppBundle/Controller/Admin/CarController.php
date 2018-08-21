@@ -78,7 +78,6 @@ class CarController extends Controller
             $image = $car->getImage();
 
             $imageName = $this->generateUniqueFileName().'.'.$image->guessExtension();
-            //$imageName = $imageUploader->upload($image);
 
             $image->move(
                 $this->getParameter('images_directory'),
@@ -109,21 +108,21 @@ class CarController extends Controller
 
     /**
      * @Route("/{id}/edit", name="admin_edit_car", requirements={"id"="\d+"})
+     * @param $id int
+     * @param Request $request
+     * @return Response
      */
     public function editAction(int $id, Request $request)
     {
-        $em=$this->getDoctrine()->getManager();
-        $car = $em->getRepository(Car::class)
-            ->find($id);
-        //$car->setImage(null);
+        $car = $this->carManager->get($id);
+
         $form = $this->createForm(CarType::class, $car);
 
         $form->handleRequest($request);
         if($form->isSubmitted() && $form->isValid()) {
-            $car = $form->getData();
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($car);
-            $em->flush();
+
+            $this->carManager->save($car);
+
             return $this->redirectToRoute('admin_view_car', [
                 "id"=>$car->getId(),
             ]);

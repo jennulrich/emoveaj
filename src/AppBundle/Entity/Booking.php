@@ -22,20 +22,6 @@ class Booking
     private $id;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="car", type="string", length=255)
-     */
-    private $car;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="customer", type="string", length=255)
-     */
-    private $customer;
-
-    /**
      * @var \DateTime
      *
      * @ORM\Column(name="start_at", type="datetime")
@@ -49,6 +35,18 @@ class Booking
      */
     private $endAt;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="Car", inversedBy="bookings", cascade={"persist" ,"remove"})
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $car;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="bookings", cascade={"persist" ,"remove"})
+     * @ORM\JoinColumn(nullable=true)
+     */
+    private $user;
+
 
     /**
      * Get id
@@ -58,54 +56,6 @@ class Booking
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set car
-     *
-     * @param string $car
-     *
-     * @return Booking
-     */
-    public function setCar($car)
-    {
-        $this->car = $car;
-
-        return $this;
-    }
-
-    /**
-     * Get car
-     *
-     * @return string
-     */
-    public function getCar()
-    {
-        return $this->car;
-    }
-
-    /**
-     * Set customer
-     *
-     * @param string $customer
-     *
-     * @return Booking
-     */
-    public function setCustomer($customer)
-    {
-        $this->customer = $customer;
-
-        return $this;
-    }
-
-    /**
-     * Get customer
-     *
-     * @return string
-     */
-    public function getCustomer()
-    {
-        return $this->customer;
     }
 
     /**
@@ -155,5 +105,52 @@ class Booking
     {
         return $this->endAt;
     }
-}
 
+    /**
+     * Set car
+     *
+     * @param \AppBundle\Entity\Car $car
+     *
+     * @return Booking
+     */
+    public function setCar(\AppBundle\Entity\Car $car)
+    {
+        $this->car = $car;
+
+        return $this;
+    }
+
+    /**
+     * Get car
+     *
+     * @return \AppBundle\Entity\Car
+     */
+    public function getCar()
+    {
+        return $this->car;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \AppBundle\Entity\User $user
+     *
+     * @return Booking
+     */
+    public function setUser(\AppBundle\Entity\User $user)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \AppBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+}

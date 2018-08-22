@@ -15,7 +15,7 @@
                 <table id="car" class="table table-bordered table-striped" width="100%" style="margin-top: 15px; font-size: 11pt">
                     <thead>
                     <tr>
-                        <th>Identifiant</th>
+                        <th>Logo</th>
                         <th>Nom</th>
                         <th>Actions</th>
                     </tr>
@@ -23,7 +23,7 @@
                     <tbody>
                     {% for brand in brands %}
                         <tr>
-                            <td style="vertical-align: middle"><img src="{{ brand.image }}" alt=""></td>
+                            <td style="vertical-align: middle"><img class="img-fluid" src="{{ asset('uploads/images/') }}{{ brand.image }}" style="width: 80px;"></td>
                             <td style="vertical-align: middle">{{ brand.name }}</td>
                             <td>
                                 <ul class="puce-none mb-0">

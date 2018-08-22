@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Scooter
@@ -27,6 +28,14 @@ class Scooter
      * @ORM\Column(name="reference", type="string", length=255)
      */
     private $reference;
+
+    /**
+     * @ORM\Column(type="string")
+     *
+     * @Assert\NotBlank(message="Image")
+     * @Assert\File(mimeTypes={ "image/jpeg", "image/png", "image/gif", "image/jpg" })
+     */
+    private $image;
 
     /**
      * @var string
@@ -241,5 +250,29 @@ class Scooter
     public function getPrice()
     {
         return $this->price;
+    }
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     *
+     * @return Scooter
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 }

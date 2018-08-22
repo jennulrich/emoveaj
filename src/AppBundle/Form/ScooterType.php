@@ -6,6 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use AppBundle\Entity\ScooterModel;
 
 class ScooterType extends AbstractType
@@ -23,13 +24,10 @@ class ScooterType extends AbstractType
             ->add('kilometers',TextType::class, array('label' => 'Kilomètres'))
             ->add('color',TextType::class, array('label' => 'Couleur'))
             ->add('serialNumber', TextType::class, array('label' => 'N° de Série'))
-            ->add('price', TextType::class, array('label' => 'Prix'));
-        //->add('image', FileType::class, array(
-        //'label' => 'Image',
-        //'required' => false,
-        //'data_class' => null
-        //))
-        //->add('image', FileType::class, array('label' => 'Image (.jpeg)'))
-        //->add('video', FileType::class, array('label' => 'Video (.mp4)'));
+            ->add('price', TextType::class, array('label' => 'Prix'))
+            ->add('image', FileType::class, array(
+                'label' => 'Image (jpeg, png, jpg)',
+                'data_class' => null
+            ));
     }
 }

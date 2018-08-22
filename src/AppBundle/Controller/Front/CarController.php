@@ -35,11 +35,11 @@ class CarController extends Controller
     public function viewAction(int $id): Response
     {
         $car = $this->carManager->get($id);
-        $brand = $this->brandManager->get($id);
+        //$brand = $this->brandManager->get($id);
 
         return $this->render('front/car/detail.html.twig', [
             "car" => $car,
-            "brand" => $brand
+            //"brand" => $brand
         ]);
     }
 

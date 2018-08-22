@@ -25,6 +25,9 @@ class CarFixtures extends FixtureHelper implements DependentFixtureInterface
                 $car->setPrice($this->faker->numberBetween(19, 500));
                 $car->setSerialNumber($this->faker->numberBetween(3100057, 21090057));
                 $car->setImage($this->faker->imageUrl());
+                $car->setImage2($this->faker->imageUrl());
+                $car->setImage3($this->faker->imageUrl());
+                $car->setImage4($this->faker->imageUrl());
 
                 $manager->persist($car);
                 $this->setReference("voiture-".$i."-".$j, $car);

@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\File\File;
 use Doctrine\ORM\Event\LifecycleEventArgs;
 use Doctrine\ORM\Event\PreUpdateEventArgs;
 use AppBundle\Entity\Car;
+use AppBundle\Entity\Brand;
 use AppBundle\Service\ImageUploader;
 
 class ImageUploadListener
@@ -38,19 +39,16 @@ class ImageUploadListener
 
     private function uploadFile($entity)
     {
-        if (!$entity instanceof Car and !$entity instanceof Scooter) {
+        if (!$entity instanceof Car and !$entity instanceof Scooter and !$entity instanceof Brand) {
             return;
         }
 
         $file = $entity->getImage();
 
-        // only upload new files
         if ($file instanceof UploadedFile) {
             $fileName = $this->uploader->upload($file);
             $entity->setImage($fileName);
         } elseif ($file instanceof File) {
-            // prevents the full file path being saved on updates
-            // as the path is set on the postLoad listener
             $entity->setImage($file->getFilename());
         }
     }
@@ -59,7 +57,7 @@ class ImageUploadListener
     {
         $entity = $args->getEntity();
 
-        if (!$entity instanceof Car and !$entity instanceof Scooter) {
+        if (!$entity instanceof Car and !$entity instanceof Scooter and !$entity instanceof Brand) {
             return;
         }
 

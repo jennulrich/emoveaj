@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * Brand controller.
@@ -65,6 +66,20 @@ class BrandController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            /** @var UploadedFile $image */
+            $image = $brand->getImage();
+
+            $imageName = $this->generateUniqueFileName().'.'.$image->guessExtension();
+            //$imageName = $imageUploader->upload($image);
+
+            $image->move(
+                $this->getParameter('images_directory'),
+                $imageName
+            );
+
+            $brand->setImage($imageName);
+
             $this->brandManager->save($brand);
 
             return $this->redirectToRoute('admin_brands');
@@ -74,6 +89,14 @@ class BrandController extends Controller
             "form" => $form->createView(),
             "brand" => $brand
         ]);
+    }
+
+    /**
+     * @return string
+     */
+    private function generateUniqueFileName()
+    {
+        return md5(uniqid());
     }
 
     /**

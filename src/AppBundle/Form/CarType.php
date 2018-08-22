@@ -28,8 +28,23 @@ class CarType extends AbstractType
             ->add('serialNumber', TextType::class, array('label' => 'N° de Série'))
             ->add('price', TextType::class, array('label' => 'Prix'))
             ->add('image', FileType::class, array(
-                'label' => 'Image (jpeg, png, jpg)',
+                'label' => 'Image à la une',
                 'data_class' => null
+            ))
+            ->add('image2', FileType::class, array(
+                'label' => 'Image 2',
+                'data_class' => null,
+                'required' => false
+            ))
+            ->add('image3', FileType::class, array(
+                'label' => 'Image 3',
+                'data_class' => null,
+                'required' => false
+            ))
+            ->add('image4', FileType::class, array(
+                'label' => 'Image 4',
+                'data_class' => null,
+                'required' => false
             ));
     }
 

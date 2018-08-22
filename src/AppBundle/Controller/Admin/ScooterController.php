@@ -11,6 +11,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * Scooter controller.
@@ -71,6 +72,21 @@ class ScooterController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            /** @var UploadedFile $image */
+            $image = $scooter->getImage();
+
+            $imageName = $this->generateUniqueFileName().'.'.$image->guessExtension();
+            //$imageName = $imageUploader->upload($image);
+
+            $image->move(
+                $this->getParameter('images_directory'),
+                $imageName
+            );
+
+            //$car->setImage(new File($this->getParameter('images_directory').'/'.$car->getImage()));
+            $scooter->setImage($imageName);
+
             $this->scooterManager->save($scooter);
 
             return $this->redirectToRoute('admin_scooters');
@@ -80,6 +96,14 @@ class ScooterController extends Controller
             "form" => $form->createView(),
             "scooter" => $scooter
         ]);
+    }
+
+    /**
+     * @return string
+     */
+    private function generateUniqueFileName()
+    {
+        return md5(uniqid());
     }
 
     /**

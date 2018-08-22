@@ -42,6 +42,10 @@
             <td>{{ scooter.price }}</td>
         </tr>
         <tr>
+            <th>Image à la une</th>
+            <td><img class="img-fluid" src="{{ asset('uploads/images/') }}{{ scooter.image }}" style="width: 50%;"></td>
+        </tr>
+        <tr>
             <th>
                 <div class="row">
                     <div class="col-md-2">
@@ -52,5 +56,4 @@
         </tr>
         </tbody>
     </table>
-
 {% endblock %}

@@ -69,49 +69,40 @@
                         <div class="p-a30 bg-gray clearfix m-b30 ">
                             <h2>Laissez-nous un message</h2>
                             <div class="dzFormMsg"></div>
-                            <form method="post" class="dzForm"> <!--action="script/contact.php"-->
-                                <input type="hidden" value="Contact" name="dzToDo" >
+                            {{form_start(form)}} <!--action="script/contact.php"-->
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <div class="input-group">
-                                                <input name="dzName" type="text" required class="form-control" placeholder="Nom">
+                                                {{ form_row(form.name) }}
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <div class="input-group">
-                                                <input name="dzEmail" type="email" class="form-control" required  placeholder="Email" >
+                                                {{ form_row(form.email) }}
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <div class="input-group">
-                                                <input name="dzOther[Phone]" type="text" required class="form-control" placeholder="Numéro de téléphone">
+                                                {{ form_row(form.phone) }}
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <div class="input-group">
-                                                <input name="dzOther[Subject]" type="text" required class="form-control" placeholder="Sujet">
+                                                {{ form_row(form.subject) }}
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <div class="input-group">
-                                                <textarea name="dzMessage" rows="4" class="form-control" required placeholder="Votre Message..."></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <div class="input-group">
-                                                <div class="g-recaptcha" data-sitekey="6LefsVUUAAAAADBPsLZzsNnETChealv6PYGzv3ZN" data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback"></div>
-                                                <input class="form-control d-none" style="display:none;" data-recaptcha="true" required data-error="Please complete the Captcha">
+                                                {{ form_row(form.message) }}
                                             </div>
                                         </div>
                                     </div>
@@ -119,7 +110,7 @@
                                         <button name="submit" type="submit" value="Submit" class="site-button "> <span>Envoyer</span> </button>
                                     </div>
                                 </div>
-                            </form>
+                            {{form_end(form)}}
                         </div>
                     </div>
                     <!-- Left part END -->

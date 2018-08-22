@@ -19,8 +19,9 @@ class BrandFixtures extends FixtureHelper
         foreach ($brands as $brand) {
             $brandInfo = new Brand();
 
-            $brandInfo
-                ->setName($brand);
+            $brandInfo->setName($brand);
+            $brandInfo->setImage($this->faker->imageUrl());
+
 
             $manager->persist($brandInfo);
             $this->setReference("brand-carModel-" . $i, $brandInfo);

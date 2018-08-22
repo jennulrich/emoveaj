@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Brand
@@ -38,6 +39,15 @@ class Brand
      * @ORM\OneToMany(targetEntity="ScooterModel", mappedBy="brand", cascade={"remove", "persist"})
      */
     private $scooterModel;
+
+    /**
+     * @ORM\Column(type="string")
+     *
+     * @Assert\NotBlank(message="Image")
+     * @Assert\File(mimeTypes={ "image/jpeg", "image/png", "image/gif", "image/jpg" })
+     */
+    private $image;
+
     
     /**
      * Get id
@@ -149,5 +159,29 @@ class Brand
     public function getScooterModel()
     {
         return $this->scooterModel;
+    }
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     *
+     * @return Brand
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 }

@@ -15,13 +15,10 @@ class BrandType extends AbstractType
     {
         $builder
             //->add('id',TextType::class, array('label' => 'ID'))
-            ->add('name', TextType::class, array('label' => 'Marque'));
-        //->add('image', FileType::class, array(
-        //'label' => 'Image',
-        //'required' => false,
-        //'data_class' => null
-        //))
-        //->add('image', FileType::class, array('label' => 'Image (.jpeg)'))
-        //->add('video', FileType::class, array('label' => 'Video (.mp4)'));
+            ->add('name', TextType::class, array('label' => 'Marque'))
+            ->add('image', FileType::class, array(
+                'label' => 'Image (jpeg, png, jpg)',
+                'data_class' => null
+            ));
     }
 }

@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use AppBundle\Service\ImageUploader;
 
 /**
  * Scooter controller.
@@ -64,7 +65,7 @@ class ScooterController extends Controller
      * @return Response
      * @param Request $request
      */
-    public function addAction(Request $request): Response
+    public function addAction(Request $request, ImageUploader $imageUploader): Response
     {
         $scooter = new Scooter();
 
@@ -108,15 +109,10 @@ class ScooterController extends Controller
 
     /**
      * @Route("/{id}/edit", name="admin_edit_scooter", requirements={"id"="\d+"})
-     * @Method({"GET", "POST"})
-     * @param Request $request
-     * @param $id
-     * @return Response
      */
     public function editAction(int $id, Request $request)
     {
         $scooter = $this->scooterManager->get($id);
-        //$scooter->setImage(null);
         $form = $this->createForm(ScooterType::class, $scooter);
 
         $form->handleRequest($request);

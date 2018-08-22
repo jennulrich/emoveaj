@@ -1,6 +1,7 @@
 <?php
 namespace AppBundle\EventListener;
 
+use AppBundle\Entity\Scooter;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\File\File;
 use Doctrine\ORM\Event\LifecycleEventArgs;
@@ -37,7 +38,7 @@ class ImageUploadListener
 
     private function uploadFile($entity)
     {
-        if (!$entity instanceof Car) {
+        if (!$entity instanceof Car and !$entity instanceof Scooter) {
             return;
         }
 
@@ -58,7 +59,7 @@ class ImageUploadListener
     {
         $entity = $args->getEntity();
 
-        if (!$entity instanceof Car) {
+        if (!$entity instanceof Car and !$entity instanceof Scooter) {
             return;
         }
 

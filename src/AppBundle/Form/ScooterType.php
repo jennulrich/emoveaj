@@ -8,6 +8,8 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use AppBundle\Entity\ScooterModel;
+use AppBundle\Entity\Scooter;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ScooterType extends AbstractType
 {
@@ -29,5 +31,12 @@ class ScooterType extends AbstractType
                 'label' => 'Image (jpeg, png, jpg)',
                 'data_class' => null
             ));
+    }
+
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults(array(
+            'data_class' => Scooter::class,
+        ));
     }
 }

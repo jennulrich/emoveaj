@@ -49,10 +49,14 @@
                 <!-- main nav -->
                 <div class="header-nav navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="has-mega-menu {%  if app.request.attributes.get('_route') == 'home' %}active{% endif %}">
+                        <li class="has-mega-menu
+                            {%  if app.request.attributes.get('_route') == 'home' %}active{% endif %}">
                             <a href="{{ path('home') }}">Accueil</a>
                         </li>
-                        <li class="has-mega-menu {%  if app.request.attributes.get('_route') == 'front_cars' %}active{% endif %}">
+                        <li class="has-mega-menu
+                            {%  if app.request.attributes.get('_route') == 'front_cars'
+                                or app.request.attributes.get('_route') == 'front_view_car'
+                            %}active{% endif %}">
                             <a href="{{ path('front_cars') }}">Voitures</a>
                         </li>
                         <li class="has-mega-menu {%  if app.request.attributes.get('_route') == 'front_scooters' %}active{% endif %}">

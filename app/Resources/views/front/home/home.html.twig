@@ -92,10 +92,13 @@
                                     <div  id="budgetDiv" class="new_form_div">
                                         <div class="input-group">
                                             <select class="form-control">
-                                                <option style="display: none">Prix</option>
-                                                {% for car in cars %}
-                                                <option>{{ car.price }} €</option>
-                                                {% endfor %}
+                                                <option>Prix</option>
+                                                <option>10€ - 25€</option>
+                                                <option>25€ - 40€</option>
+                                                <option>40€ - 50€</option>
+                                                <option>50€ - 60€</option>
+                                                <option>60€ - 75€</option>
+                                                <option>Plus de 75€</option>
                                             </select>
                                         </div>
                                         <div class="input-group">
@@ -156,12 +159,12 @@
                                         <div class="input-group">
                                             <select class="form-control">
                                                 <option>Prix</option>
-                                                <option>1 Lakh - 5 Lakh</option>
-                                                <option>5 Lakh - 10 Lakh</option>
-                                                <option>10 Lakh - 20 Lakh</option>
-                                                <option>20 Lakh - 50 Lakh</option>
-                                                <option>50 Lakh - 1 Crore</option>
-                                                <option>Above 1 Crore</option>
+                                                <option>10€ - 25€</option>
+                                                <option>25€ - 40€</option>
+                                                <option>40€ - 50€</option>
+                                                <option>50€ - 60€</option>
+                                                <option>60€ - 75€</option>
+                                                <option>Plus de 75€</option>
                                             </select>
                                         </div>
                                         <div class="input-group">
@@ -175,9 +178,8 @@
                                         <div class="input-group">
                                             <select class="form-control">
                                                 <option>Ville</option>
-                                                <option>Hatchback</option>
-                                                <option>Sedans</option>
-                                                <option>MUV</option>
+                                                <option>Paris</option>
+                                                <option>Lyon</option>
                                             </select>
                                         </div>
                                     </div>
@@ -185,20 +187,21 @@
                                         <div class="input-group">
                                             <select class="form-control">
                                                 <option>Marque</option>
-                                                <option>1 Lakh - 5 Lakh</option>
-                                                <option>5 Lakh - 10 Lakh</option>
-                                                <option>10 Lakh - 20 Lakh</option>
-                                                <option>20 Lakh - 50 Lakh</option>
-                                                <option>50 Lakh - 1 Crore</option>
-                                                <option>Above 1 Crore</option>
+                                                <option>Audi</option>
+                                                <option>BMW</option>
+                                                <option>Citroën</option>
+                                                <option>Fiat</option>
+                                                <option>Opel</option>
                                             </select>
                                         </div>
                                         <div class="input-group">
                                             <select class="form-control">
-                                                <option class="text-uppercase">modèle</option>
-                                                <option>Hatchback</option>
-                                                <option>Sedans</option>
-                                                <option>MUV</option>
+                                                <option class="text-uppercase">Modèle</option>
+                                                <option>E-tron</option>
+                                                <option>Active</option>
+                                                <option>Bolt</option>
+                                                <option>C-Zero</option>
+                                                <option>Fiat 500</option>
                                             </select>
                                         </div>
                                     </div>
@@ -214,11 +217,8 @@
                     </form>
                 </div>
             </div>
-            <!-- Form END -->
         </div>
-        <!-- Slider END -->
 
-        <!-- About Us -->
         <div class="section-full about-us bg-white content-inner-2" style="background-image: url({{ asset('template-emove/img/background/about-us.jpg') }}); background-position:bottom; background-repeat:no-repeat; background-size:100%;">
             <div class="container">
                 <div class="section-head text-center head-1">
@@ -264,7 +264,7 @@
                         <div class="dlab-box-bg m-b30 box-hover active" style="background-image: url({{ asset('template-emove/img/our-work/work/pic3.jpg') }})">
                             <div class="icon-bx-wraper center p-lr20 p-tb30">
                                 <div class="text-primary m-b20">
-                                    <span class="icon-cell"><i class="glyph-icon fa fa-car"></i></span>
+                                    <span class="icon-cell"><i class="glyph-icon fa fa-car" style="margin-right: 15px;"></i><i class="glyph-icon fa fa-motorcycle"></i></span>
                                 </div>
                                 <div class="icon-content">
                                     <h4 class="dlab-tilte text-uppercase">Location</h4>
@@ -303,7 +303,7 @@
                                 <p class="p-t0">Nous proposons à la location deux types de véhicules : voitures et scooters électriques.</p>
                             </div>
                             <div class="about-us-info">
-                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                                <p style="text-align: justify;">Lorem Ipsum is simply dummy text of the printing asil and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                                 <div class="media media-info">
                                     <div class="media-left">
                                         <a href="#">
@@ -312,7 +312,7 @@
                                     </div>
                                     <div class="media-body p-l15">
                                         <h4 class="font-weight-700 text-uppercase text-primary m-b10">Vous avez des questions ?</h4>
-                                        <h2 class="media-heading open-sans font-weight-700">01 123 456 789</h2>
+                                        <h2 class="media-heading open-sans font-weight-700">+33 6 83 76 62 84</h2>
                                     </div>
                                 </div>
                                 <div class="m-t30">
@@ -320,9 +320,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-7">
+                        <div class="col-md-offset-2 col-md-5">
                             <div class="about-side-img wow fadeInRight" data-wow-duration="1.50s" data-wow-delay="0.50s">
-                                <img src="{{ asset('template-emove/img/car.png') }}" alt="">
+                                <img src="{{ asset('template-emove/img/scooter.png') }}" alt="">
                             </div>
                         </div>
                     </div>
@@ -589,7 +589,7 @@
                                     <div class="testimonial-box">
                                         <div class="testimonial-pic radius shadow"><img src="{{ asset('template-emove/img/testimonials/pic1.jpg') }}" alt="" width="100" height="100"></div>
                                         <strong class="testimonial-name">John Doe</strong>
-                                        <span class="text-white">Car Dealer</span>
+                                        <span class="text-white">Loueur</span>
                                     </div>
                                 </div>
                             </div>
@@ -603,7 +603,7 @@
                                     <div class="testimonial-box">
                                         <div class="testimonial-pic radius shadow"><img src="{{ asset('template-emove/img/testimonials/pic2.jpg') }}" alt="" width="100" height="100"></div>
                                         <strong class="testimonial-name">John Doe</strong>
-                                        <span class="text-white">Car Dealer</span>
+                                        <span class="text-white">Loueur</span>
                                     </div>
                                 </div>
                             </div>
@@ -617,7 +617,7 @@
                                     <div class="testimonial-box">
                                         <div class="testimonial-pic radius shadow"><img src="{{ asset('template-emove/img/testimonials/pic3.jpg') }}" alt="" width="100" height="100"></div>
                                         <strong class="testimonial-name">John Doe</strong>
-                                        <span class="text-white">Car Dealer</span>
+                                        <span class="text-white">Loueur</span>
                                     </div>
                                 </div>
                             </div>

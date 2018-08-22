@@ -59,7 +59,10 @@
                             %}active{% endif %}">
                             <a href="{{ path('front_cars') }}">Voitures</a>
                         </li>
-                        <li class="has-mega-menu {%  if app.request.attributes.get('_route') == 'front_scooters' %}active{% endif %}">
+                        <li class="has-mega-menu
+                            {%  if app.request.attributes.get('_route') == 'front_scooters'
+                                or app.request.attributes.get('_route') == 'front_view_scooter'
+                            %}active{% endif %}">
                             <a href="{{ path('front_scooters') }}">Scooters</a>
                         </li>
                         <li class="has-mega-menu {%  if app.request.attributes.get('_route') == 'aboutus' %}active{% endif %}">

@@ -38,30 +38,6 @@ class Car
     private $image;
 
     /**
-     * @ORM\Column(type="string")
-     *
-     * @Assert\NotBlank(message="Image")
-     * @Assert\File(mimeTypes={ "image/jpeg", "image/png", "image/gif", "image/jpg" })
-     */
-    private $image2;
-
-    /**
-     * @ORM\Column(type="string")
-     *
-     * @Assert\NotBlank(message="Image")
-     * @Assert\File(mimeTypes={ "image/jpeg", "image/png", "image/gif", "image/jpg" })
-     */
-    private $image3;
-
-    /**
-     * @ORM\Column(type="string")
-     *
-     * @Assert\NotBlank(message="Image")
-     * @Assert\File(mimeTypes={ "image/jpeg", "image/png", "image/gif", "image/jpg" })
-     */
-    private $image4;
-
-    /**
      * @ORM\ManyToOne(targetEntity="CarModel", inversedBy="cars", cascade={"persist" ,"remove"})
      * @ORM\JoinColumn(nullable=false)
      */
@@ -297,77 +273,5 @@ class Car
     public function getImage()
     {
         return $this->image;
-    }
-
-    /**
-     * Set image2
-     *
-     * @param string $image2
-     *
-     * @return Car
-     */
-    public function setImage2($image2)
-    {
-        $this->image2 = $image2;
-
-        return $this;
-    }
-
-    /**
-     * Get image2
-     *
-     * @return string
-     */
-    public function getImage2()
-    {
-        return $this->image2;
-    }
-
-    /**
-     * Set image3
-     *
-     * @param string $image3
-     *
-     * @return Car
-     */
-    public function setImage3($image3)
-    {
-        $this->image3 = $image3;
-
-        return $this;
-    }
-
-    /**
-     * Get image3
-     *
-     * @return string
-     */
-    public function getImage3()
-    {
-        return $this->image3;
-    }
-
-    /**
-     * Set image4
-     *
-     * @param string $image4
-     *
-     * @return Car
-     */
-    public function setImage4($image4)
-    {
-        $this->image4 = $image4;
-
-        return $this;
-    }
-
-    /**
-     * Get image4
-     *
-     * @return string
-     */
-    public function getImage4()
-    {
-        return $this->image4;
     }
 }

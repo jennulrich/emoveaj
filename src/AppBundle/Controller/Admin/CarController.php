@@ -88,52 +88,6 @@ class CarController extends Controller
             //$car->setImage(new File($this->getParameter('images_directory').'/'.$car->getImage()));
             $car->setImage($imageName);
 
-
-            /** @var UploadedFile $image2 */
-            $image2 = $car->getImage2();
-
-            $imageName2 = $this->generateUniqueFileName().'.'.$image2->guessExtension();
-            //$imageName = $imageUploader->upload($image);
-
-            $image2->move(
-                $this->getParameter('images_directory'),
-                $imageName2
-            );
-
-            //$car->setImage(new File($this->getParameter('images_directory').'/'.$car->getImage()));
-            $car->setImage2($imageName2);
-
-
-            /** @var UploadedFile $image3 */
-            $image3 = $car->getImage3();
-
-            $imageName3 = $this->generateUniqueFileName().'.'.$image3->guessExtension();
-            //$imageName = $imageUploader->upload($image);
-
-            $image3->move(
-                $this->getParameter('images_directory'),
-                $imageName3
-            );
-
-            //$car->setImage(new File($this->getParameter('images_directory').'/'.$car->getImage()));
-            $car->setImage3($imageName3);
-
-
-            /** @var UploadedFile $image4 */
-            $image4 = $car->getImage4();
-
-            $imageName4 = $this->generateUniqueFileName().'.'.$image4->guessExtension();
-            //$imageName = $imageUploader->upload($image);
-
-            $image4->move(
-                $this->getParameter('images_directory'),
-                $imageName4
-            );
-
-            //$car->setImage(new File($this->getParameter('images_directory').'/'.$car->getImage()));
-            $car->setImage4($imageName4);
-
-            
             $this->carManager->save($car);
 
             return $this->redirectToRoute('admin_cars');

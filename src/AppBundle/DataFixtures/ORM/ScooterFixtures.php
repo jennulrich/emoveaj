@@ -24,7 +24,7 @@ class ScooterFixtures extends FixtureHelper implements DependentFixtureInterface
                 $scooter->setReference('REFSCOOT-100' . $this->faker->numberBetween(100, 500));
                 $scooter->setSerialNumber($this->faker->numberBetween(3100057, 21090057));
                 $scooter->setPrice($this->faker->numberBetween(19, 100));
-                $scooter->setImage($this->faker->imageUrl());
+                $scooter->setImage("test.png");
 
                 $manager->persist($scooter);
                 $this->setReference("scooter-".$i."-".$j, $scooter);

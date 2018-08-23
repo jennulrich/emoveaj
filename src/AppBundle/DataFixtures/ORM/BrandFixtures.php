@@ -10,76 +10,74 @@ class BrandFixtures extends FixtureHelper
 {
     public function load(ObjectManager $manager)
     {
-        $fixturesPath =  "/Applications/MAMP/htdocs/emoveaj/src/AppBundle/DataFixtures";
-
         $brands = [
             [
                 "name" => "Audi",
-                "image" => "BMW-logo.png"
+                "image" => "audi-logo.png"
             ],
             [
                 "name" => "BMW",
-                "image" => $fixturesPath."/img/BMW-logo.png"
+                "image" => "BMW-logo.png"
             ],
             [
                 "name" => "Chevrolet",
-                "image" => $fixturesPath."/img/chevrolet-logo.png"
+                "image" => "chevrolet-logo.png"
             ],
             [
                 "name" => "Citroën",
-                "image" => $fixturesPath."/img/citroen-logo.png"
+                "image" => "citroen-logo.png"
             ],
             [
                 "name" => "Fiat",
-                "image" => $fixturesPath."/img/fiat-logo.png"
+                "image" => "fiat-logo.png"
             ],
             [
                 "name" => "Ford",
-                "image" => $fixturesPath."/img/ford-logo.png"
+                "image" => "ford-logo.png"
             ],
             [
                 "name" => "Kia",
-                "image" => $fixturesPath."/img/kia-logo.png"
+                "image" => "kia-logo.png"
             ],
             [
                 "name" => "Mercedes",
-                "image" => $fixturesPath."/img/mercedes-logo.png"
+                "image" => "mercedes-logo.png"
             ],
             [
                 "name" => "Mitsubishi",
-                "image" => $fixturesPath."/img/mitshubishi-logo.png"
+                "image" => "mitsubishi-logo.png"
             ],
             [
                 "name" => "Nissan",
-                "image" => $fixturesPath."/img/nissan-logo.png"
+                "image" => "nissan-logo.png"
             ],
             [
                 "name" => "Opel",
-                "image" => $fixturesPath."/img/client-logo/opel-logo.png"
+                "image" => "opel-logo.png"
             ],
             [
                 "name" => "Peugeot",
-                "image" => $fixturesPath."/img/peugeot-logo.png"
+                "image" => "peugeot-logo.png"
             ],
             [
                 "name" => "Renault",
-                "image" => $fixturesPath."/img/renault-logo.png"
+                "image" => "renault-logo.png"
             ],
             [
                 "name" => "Seat",
-                "image" => $fixturesPath."/img/seat-logo.png"
+                "image" => "seat-logo.png"
             ],
             [
                 "name" => "Smart",
-                "image" => $fixturesPath."/img/smart-logo.png"
+                "image" => "smart-logo.png"
             ],
             [
                 "name" => "Toyota",
-                "image" => $fixturesPath."/img/toyota-logo.png"
+                "image" => "toyota-logo.png"
             ],
             [
                 "name" => "Volkswagen",
-                "image" => $fixturesPath."/img/volkswagen-logo.png"
+                "image" => "volkswagen-logo.png"
             ]
         ];
 

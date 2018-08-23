@@ -30,21 +30,6 @@ class CarType extends AbstractType
             ->add('image', FileType::class, array(
                 'label' => 'Image à la une',
                 'data_class' => null
-            ))
-            ->add('image2', FileType::class, array(
-                'label' => 'Image 2',
-                'data_class' => null,
-                'required' => false
-            ))
-            ->add('image3', FileType::class, array(
-                'label' => 'Image 3',
-                'data_class' => null,
-                'required' => false
-            ))
-            ->add('image4', FileType::class, array(
-                'label' => 'Image 4',
-                'data_class' => null,
-                'required' => false
             ));
     }
 

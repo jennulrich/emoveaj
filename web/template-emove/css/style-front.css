@@ -1,6 +1,9 @@
 .bg-car-list {
     background-image: url("../img/nissan.jpg");
 }
+.bg-car-list {
+    background-image: url("../img/nissan.jpg");
+}
 .bg-scooter-list {
     background-image: url("../img/scooter-list-2.jpg");
     background-position: bottom -95px right 0;

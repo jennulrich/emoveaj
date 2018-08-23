@@ -5977,10 +5977,10 @@ var CarDealer = function(){
 			var menu = jQuery('.sticky-header');
 			if ($(window).scrollTop() > menu.offset().top) {
 				menu.addClass('is-fixed');
-				$('.logo').attr('src','');
+				$('.logo').attr('src','../img/emovelogo.png');
 			} else {
 				menu.removeClass('is-fixed');
-				$('.logo').attr('src','')
+				$('.logo').attr('src','../img/emovelogo.png')
 			}
 		});
 		/* Main navigation fixed on top  when scroll down function custom end*/

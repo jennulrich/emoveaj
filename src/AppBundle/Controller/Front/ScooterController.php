@@ -35,11 +35,11 @@ class ScooterController extends Controller
     public function viewAction(int $id): Response
     {
         $scooter = $this->scooterManager->get($id);
-        $brand = $this->brandManager->get($id);
+        //$brand = $this->brandManager->get($id);
 
         return $this->render('front/scooter/detail.html.twig', [
             "scooter" => $scooter,
-            "brand" => $brand
+            //"brand" => $brand
         ]);
     }
 

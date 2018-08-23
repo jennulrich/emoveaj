@@ -16,7 +16,7 @@
             <div class="container">
                 <ul class="list-inline">
                     <li><a href="#">Accueil</a></li>
-                    <li>Nos voitures electriques</li>
+                    <li>Voitures</li>
                 </ul>
             </div>
         </div>
@@ -138,7 +138,8 @@
                                             <a href="{{ path('front_view_car', { 'id': car.id }) }}"><img src="#" alt=""></a>
                                         </div>
                                         <div class="dlab-info">
-                                            <img class="img-fluid" src="{{ asset('uploads/images/') }}{{ car.image }}" style="height: 120px; width: auto;">
+                                            {# <img class="img-fluid" src="{{ asset('uploads/images/') }}{{ car.image }}" style="height: 120px; width: auto;"> #}
+                                            <img src="{{ asset('template-emove/img/car2.png') }}" alt="" style="height: 120px; width: auto;">
                                             <h4 class="dlab-title" style="margin-bottom: 10px;margin-top: 10px;"><a href="{{ path('front_view_car', { 'id': car.id }) }}">{{ car.model.nameModel }}</a></h4>
                                             <div class="dlab-separator bg-black"></div>
                                             <p class="dlab-price"><span class="text-primary">{{ car.price }} €</span></p>

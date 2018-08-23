@@ -15,7 +15,7 @@
                 <table id="car" class="table table-bordered table-striped" width="100%" style="margin-top: 15px; font-size: 11pt">
                     <thead>
                     <tr>
-                        <th>Identifiant</th>
+                        <th>Logo</th>
                         <th>Nom</th>
                         <th>Actions</th>
                     </tr>
@@ -23,7 +23,7 @@
                     <tbody>
                     {% for brand in brands %}
                         <tr>
-                            <td style="vertical-align: middle"><img src="{{ brand.image }}" alt=""></td>
+                            <td style="vertical-align: middle"><img class="img-fluid" src="{{ asset('uploads/images/') }}{{ brand.image }}" style="width: 80px;"></td>
                             <td style="vertical-align: middle">{{ brand.name }}</td>
                             <td>
                                 <ul class="puce-none mb-0">
@@ -51,7 +51,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-body">
-                        <span>Êtes-vous sûr de vouloir supprimer cette news ?</span>
+                        <span>Êtes-vous sûr de vouloir supprimer cette marque ?</span>
                     </div>
                     <div class="modal-footer">
                         <a href="{{ path('admin_delete_brand', {"id":brand.id}) }}" class="btn btn-fill btn-info text-uppercase btn-sm">Supprimer</a>

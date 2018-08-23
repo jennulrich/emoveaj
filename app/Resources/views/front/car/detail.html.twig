@@ -1,0 +1,216 @@
+{% extends 'front/layout-front.html.twig' %}
+
+{% block content %}
+    <div class="page-content">
+        <!-- inner page banner -->
+        <div class="dlab-bnr-inr overlay-black-middle bg-car-list">
+            <div class="container">
+                <div class="dlab-bnr-inr-entry">
+                    <h1 class="text-white">{{ car.model.nameModel }}</h1>
+                </div>
+            </div>
+        </div>
+        <!-- inner page banner END -->
+        <!-- Breadcrumb row -->
+        <div class="breadcrumb-row">
+            <div class="container">
+                <ul class="list-inline">
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="{{ path('front_cars') }}">Voitures</a></li>
+                    <li>{{ car.model.nameModel }}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="section-full p-t50 bg-white content-inner-2">
+            <div class="container">
+                <div class="row">
+                    <!-- Side bar start -->
+                    <div class="col-md-12">
+                        <div class="m-b30">
+                            <h3 class="h3 m-t0">Principales spécifications de {{ car.model.nameModel }}</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="specifications owl-carousel owl-btn-center-lr">
+                <div class="item">
+                    <div class="dlab-thum-bx"> <img src="{{ asset('uploads/images/') }}{{ car.image }}" alt=""> </div>
+                </div>
+                <div class="item">
+                    <div class="dlab-thum-bx"> <img src="{{ asset('uploads/images/') }}{{ car.image }}" alt=""> </div>
+                </div>
+                <div class="item">
+                    <div class="dlab-thum-bx"> <img src="{{ asset('uploads/images/') }}{{ car.image }}" alt=""> </div>
+                </div>
+                <div class="item">
+                    <div class="dlab-thum-bx"> <img src="{{ asset('uploads/images/') }}{{ car.image }}" alt=""> </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <!-- Side bar start -->
+                    <div class="col-md-12">
+                        <div class="used-car-features grid2 clearfix m-b30 m-t30">
+                            <div class="car-features">
+                                <i class="fa fa-euro"></i>
+                                <h5>{{ car.price }} €</h5>
+                                <span>Prix</span>
+                            </div>
+                            <div class="car-features">
+                                <i class="fa fa-calendar"></i>
+                                <h5>2017</h5>
+                                <span>Année</span>
+                            </div>
+                            <div class="car-features">
+                                <i class="fa fa-flash"></i>
+                                <h5>Electrique</h5>
+                                <span>Borne</span>
+                            </div>
+                            <div class="car-features">
+                                <i class="fa fa-dashboard"></i>
+                                <h5>{{ car.kilometers }}km</h5>
+                                <span>Parcouru</span>
+                            </div>
+                            <div class="car-features">
+                                <i class="fa fa-cog"></i>
+                                <h5>Automatique</h5>
+                                <span>Transmission</span>
+                            </div>
+                            <div class="car-features">
+                                <i class="fa fa-users"></i>
+                                <h5>5</h5>
+                                <span>Passagers</span>
+                            </div>
+                        </div>
+                        <div class="clearfix m-t30">
+                            <ul class="nav theme-tabs m-b10">
+                                <li role="presentation" class="active">
+                                    <a data-toggle="tab"  aria-controls="engine"  href="car-detail-specifications.html#engine">
+                                        <i class="fa fa-cogs"></i>
+                                        Caractéristique du véhicule
+                                    </a>
+                                </li>
+                                <li role="presentation" >
+                                    <a data-toggle="tab"  aria-controls="comfort" href="car-detail-specifications.html#comfort">
+                                        <i class="fa fa-star"></i>
+                                        Confort
+                                    </a>
+                                </li>
+                                <li role="presentation" >
+                                    <a data-toggle="tab"  aria-controls="safety" href="car-detail-specifications.html#safety">
+                                        <i class="fa fa-euro"></i>
+                                        Prix
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="dlab-tabs">
+                                <div class="tab-content">
+                                    <div id="engine"  class="tab-pane active clearfix city-list">
+                                        <div class="icon-bx-wraper bx-style-1 p-a30">
+                                            <ul class="table-dl clearfix">
+                                                <li>
+                                                    <div class="leftview">Modéle</div>
+                                                    <div class="rightview">{{ car.model.nameModel }}</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Référence</div>
+                                                    <div class="rightview">{{ car.reference }}</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Immatriculation</div>
+                                                    <div class="rightview">{{ car.matriculation }}</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Kilomètre parcouru</div>
+                                                    <div class="rightview">{{ car.kilometers }} km</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">N° de série</div>
+                                                    <div class="rightview">{{ car.serialNumber }} km</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Accélération (0-100 km / h)</div>
+                                                    <div class="rightview">7.9</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Cylindrée (cc)</div>
+                                                    <div class="rightview">1968</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Boîte de vitesse</div>
+                                                    <div class="rightview">7 vitesses</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Airbag</div>
+                                                    <div class="rightview text-green"><i class="fa fa-check font-18"></i> Oui</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div id="comfort"  class="tab-pane clearfix city-list">
+                                        <div class="icon-bx-wraper bx-style-1 p-a30">
+                                            <ul class="table-dl clearfix">
+                                                <li>
+                                                    <div class="leftview">Couleur</div>
+                                                    <div class="rightview">{{ car.color }}</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Nombre de places</div>
+                                                    <div class="rightview">5</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Nombre de portes</div>
+                                                    <div class="rightview">5</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Longueur</div>
+                                                    <div class="rightview">4752mm</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Largeur</div>
+                                                    <div class="rightview">2029mm</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Direction assistée</div>
+                                                    <div class="rightview text-green"><i class="fa fa-check font-18"></i> Oui</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Fermeture automatique des portes</div>
+                                                    <div class="rightview text-red"><i class="fa fa-close font-18"></i> Non</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Bouton de démarrage / arrêt du moteur</div>
+                                                    <div class="rightview text-green"><i class="fa fa-check font-18"></i> Oui</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Capteur de stationnement</div>
+                                                    <div class="rightview text-green"><i class="fa fa-check font-18"></i> Oui</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div id="safety"  class="tab-pane clearfix city-list">
+                                        <div class="icon-bx-wraper bx-style-1 p-a30">
+                                            <ul class="table-dl clearfix">
+                                                <li>
+                                                    <div class="leftview">Location (jour)</div>
+                                                    <div class="rightview">{{ car.price }} €</div>
+                                                </li>
+                                                <li>
+                                                    <div class="leftview">Location (semaine)</div>
+                                                    <div class="rightview">3000€</div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Side bar END -->
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

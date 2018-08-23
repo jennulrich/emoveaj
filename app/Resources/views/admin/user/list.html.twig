@@ -54,8 +54,22 @@
             </div>
         </div>
     </div>
-
-
+    <!-- Modal de confirmation de suppression -->
+    {% for user in users %}
+        <div class="modal fade" id="{{ user.id }}" tabindex="-1" role="dialog" aria-labelledby="deleteModal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <span>Êtes-vous sûr de vouloir supprimer cette utilisateur?</span>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="{{ path('admin_delete_user', {"id":user.id}) }}" class="btn btn-fill btn-info text-uppercase btn-sm">Supprimer</a>
+                        <button type="button" class="btn btn-fill btn-danger btn-sm text-uppercase" data-dismiss="modal">Annuler</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
 {% endblock %}
 
 {% block javascripts %}

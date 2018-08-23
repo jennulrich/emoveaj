@@ -11,3 +11,11 @@ div.dlab-bnr-inr:before {
 .ow-client-logo {
     background-color: transparent;
 }
+/* Contact de formulaire */
+input#contact_name, input#contact_email, input#contact_phone, input#contact_subject, #contact_message{
+    width: 100%;
+}
+
+#contact_message{
+    height: 100px;
+}

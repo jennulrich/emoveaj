@@ -1,0 +1,38 @@
+{% extends 'admin/layout-admin.html.twig' %}
+
+{% block content %}
+    <div class="row" style="margin: 20px 0 15px 0">
+        <div class="col-md-6" style="padding-left: 0;">
+            <h2>{{ contact.name }}</h2>
+        </div>
+        <div class="col-md-6 text-right" style="padding-right: 0;">
+            <a href="{{ path('admin_contact') }}" class="btn return">
+                <i class="fa fa-arrow-left"></i>Retour à la liste
+            </a>
+        </div>
+    </div>
+    <table id="table-show" class="card">
+        <tbody class="card-body">
+        <tr>
+            <th>Nom</th>
+            <td>{{ contact.name }}</td>
+        </tr>
+        <tr>
+            <th>E-mail</th>
+            <td>{{ contact.email }}</td>
+        </tr>
+        <tr>
+            <th>Téléphone</th>
+            <td>{{ contact.phone }}</td>
+        </tr>
+        <tr>
+            <th>Sujet</th>
+            <td>{{ contact.subject }}</td>
+        </tr>
+        <tr>
+            <th>Message</th>
+            <td>{{ contact.message }}</td>
+        </tr>
+        </tbody>
+    </table>
+{% endblock %}

@@ -39,7 +39,7 @@ class ImageUploadListener
 
     private function uploadFile($entity)
     {
-        if (!$entity instanceof Car or !$entity instanceof Scooter or !$entity instanceof Brand) {
+        if (!$entity instanceof Car and !$entity instanceof Scooter and !$entity instanceof Brand) {
             return;
         }
 
@@ -57,7 +57,7 @@ class ImageUploadListener
     {
         $entity = $args->getEntity();
 
-        if (!$entity instanceof Car or !$entity instanceof Scooter or !$entity instanceof Brand) {
+        if (!$entity instanceof Car and !$entity instanceof Scooter and !$entity instanceof Brand) {
             return;
         }
 

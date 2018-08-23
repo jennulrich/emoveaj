@@ -3,7 +3,7 @@
 {% block content %}
     <div class="page-content">
         <!-- inner page banner -->
-        <div class="dlab-bnr-inr overlay-black-middle bg-car-list">
+        <div class="dlab-bnr-inr overlay-black-middle bg-scooter-list">
             <div class="container">
                 <div class="dlab-bnr-inr-entry">
                     <h1 class="text-white">Nos scooters electriques</h1>
@@ -138,6 +138,7 @@
                                                 <a href="{{ path('front_view_scooter', { 'id': scooter.id }) }}"><img src="#" alt=""></a>
                                             </div>
                                             <div class="dlab-info">
+                                                <img src="{{ asset('template-emove/img/scooter-list-3.jpg') }}" alt="" style="height: 120px; width: auto;">
                                                 <h4 class="dlab-title"><a href="{{ path('front_view_scooter', { 'id': scooter.id }) }}">{{ scooter.model.nameModel }}</a></h4>
                                                 <div class="dlab-separator bg-black"></div>
                                                 <p class="dlab-price"><span class="text-primary">{{ scooter.price }} €</span></p>

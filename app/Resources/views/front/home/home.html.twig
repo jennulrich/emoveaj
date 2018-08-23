@@ -320,7 +320,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-offset-2 col-md-5">
+                        <div class="col-md-offset-1 col-md-5">
                             <div class="about-side-img wow fadeInRight" data-wow-duration="1.50s" data-wow-delay="0.50s">
                                 <img src="{{ asset('template-emove/img/scooter.png') }}" alt="">
                             </div>
@@ -345,15 +345,15 @@
                                     <h4 class="m-b15 text-uppercase" style="margin-left: 15px;">Voitures électrique</h4>
                                     <div class="dlab-separator bg-primary" style="margin-left: 15px;"></div>
                                     <div class="col-md-12 owl-carousel owl-btn-style-2 quick-look">
-                                        {% for car in cars|sort %}
+                                        {% for car in cars %}
                                             <div class="post card-container">
                                                 <div class="dlab-feed-list m-b30">
                                                     <div class="dlab-media">
                                                         <a href="{{ path('front_view_car', { 'id': car.id }) }}"><img src="#" alt=""></a>
                                                     </div>
-                                                    <div class="dlab-info">
+                                                    <div class="dlab-info" style="text-align: center;">
                                                         {# <img class="img-fluid" src="{{ asset('uploads/images/') }}{{ car.image }}" style="height: 120px; width: auto;display: inline-block;"> #}
-                                                        <img src="{{ asset('template-emove/img/car2.png') }}" alt="" style="height: 120px; width: auto;">
+                                                        <img src="{{ asset('template-emove/img/car2.png') }}" alt="" style="height: 120px; width: auto; display: inline-block;">
                                                         <h4 class="dlab-title" style="margin-bottom: 10px;margin-top: 10px;"><a href="{{ path('front_view_car', { 'id': car.id }) }}">{{ car.model.nameModel }}</a></h4>
                                                         <div class="dlab-separator bg-black"></div>
                                                         <p class="dlab-price"><span class="text-primary">{{ car.price }} €</span></p>
@@ -380,9 +380,9 @@
                                                     <div class="dlab-media">
                                                         <a href="{{ path('front_view_scooter', { 'id': scooter.id }) }}"><img src="#" alt=""></a>
                                                     </div>
-                                                    <div class="dlab-info">
+                                                    <div class="dlab-info" style="text-align: center;">
                                                         {# <img class="img-fluid" src="{{ asset('uploads/images/') }}{{ scooter.image }}" style="height: 120px; width: auto;display: inline-block;"> #}
-                                                        <img src="{{ asset('template-emove/img/scooter-list-3.jpg') }}" alt="" style="height: 120px; width: auto;">
+                                                        <img src="{{ asset('template-emove/img/scooter-elec.png') }}" alt="" style="height: 120px; width: auto; display: inline-block;">
                                                         <h4 class="dlab-title" style="margin-bottom: 10px;margin-top: 10px;"><a href="{{ path('front_view_scooter', { 'id': scooter.id }) }}">{{ scooter.model.nameModel }}</a></h4>
                                                         <div class="dlab-separator bg-black"></div>
                                                         <p class="dlab-price"><span class="text-primary">{{ scooter.price }} €</span></p>
